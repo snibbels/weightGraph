@@ -1,34 +1,31 @@
 import './App.css';
 import 'w3-css';
-
+import data from './mockdata/data.json'
 import React, { Component } from 'react';
+import { HashRouter, Route } from 'react-router-dom';
 
-import WeightList from './components/WeightList';
+import PageTemplate from './ui/PageTemplate';
+import WeightList from './weekplan/WeightList';
+import Statistics from './stats/Statistics';
 
 class App extends Component {
   constructor() {
     super();
-    const localWeights = JSON.parse(localStorage.getItem('localWeights'))
-    let state = { weights: (localWeights) ? localWeights : [] };
-    this.state = state;
-    this.onAddWeight = this.onAddWeight.bind(this);
-  }
-
-  onAddWeight(weight) {
-    if (!weight) return;
-    const date = new Date().toDateString();
-    const weights = [
-      ...this.state.weights,
-      { weight, date }
-    ];
-    this.setState({ weights });
-    localStorage.setItem('localWeights', JSON.stringify(weights));
+    this.state = { ...data };
   }
 
   render() {
     return (
       <div className="App">
-        <WeightList weights={this.state.weights} onAddWeight={this.onAddWeight} />
+        <HashRouter>
+          <PageTemplate>
+            <Route exact path="/" render={() => (
+              <WeightList
+                {...this.state} />
+            )} />
+            <Route path="/stats" component={Statistics} />
+          </PageTemplate>
+        </HashRouter>
       </div>
     );
   }
