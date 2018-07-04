@@ -1,0 +1,177 @@
+{
+	"weekplan": [{
+			"name": "Montag",
+			"exercises": [{
+				"exerciseName": "Kniebeuge",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}, {
+				"exerciseName": "Rudern",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}, {
+				"exerciseName": "Bankdrücken",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}]
+		},
+		{
+			"name": "Mittwoch",
+			"exercises": [{
+				"exerciseName": "Kniebeuge",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}, {
+				"exerciseName": "Rudern",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}, {
+				"exerciseName": "Bankdrücken",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}]
+		},
+		{
+			"name": "Freitag",
+			"exercises": [{
+				"exerciseName": "Kniebeuge",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}, {
+				"exerciseName": "Rudern",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}, {
+				"exerciseName": "Bankdrücken",
+				"lastWeight": 6,
+				"sets": 3,
+				"wraps": 12,
+				"weightProtocoll": [{
+						"date": "04-07-2018",
+						"weight": 6
+					},
+					{
+						"date": "02-07-2018",
+						"weight": 5
+					},
+					{
+						"date": "28-06-2018",
+						"weight": 3.5
+					}
+				]
+			}]
+		}
+	]
+}
