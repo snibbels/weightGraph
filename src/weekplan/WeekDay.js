@@ -4,13 +4,13 @@ import Exercise from './Exercise';
 const WeekDay = ({ name, exercises }) => (
     <React.Fragment>
         <h3>{name}</h3>
-        <table>
+        <table className="w3-table">
             <tbody>
                 <tr>
                     <th>Übung</th>
                     <th>Sätze</th>
-                    <th>Wiederholungen</th>
-                    <th>letztes Gewicht</th>
+                    <th>Wdh</th>
+                    <th>Gewicht</th>
                 </tr>
                 {
                     exercises.map((e, i) => (
