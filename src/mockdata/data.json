@@ -2,11 +2,11 @@
 	"weekplan": [{
 			"name": "Montag",
 			"exercises": [{
-				"exerciseName": "Kniebeuge",
-				"lastWeight": 6,
+				"name": "Kniebeuge",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},
@@ -20,11 +20,11 @@
 					}
 				]
 			}, {
-				"exerciseName": "Rudern",
-				"lastWeight": 6,
+				"name": "Rudern",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},
@@ -38,11 +38,11 @@
 					}
 				]
 			}, {
-				"exerciseName": "Bankdrücken",
-				"lastWeight": 6,
+				"name": "Bankdrücken",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},
@@ -60,11 +60,11 @@
 		{
 			"name": "Mittwoch",
 			"exercises": [{
-				"exerciseName": "Kniebeuge",
-				"lastWeight": 6,
+				"name": "Kniebeuge",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},
@@ -78,11 +78,11 @@
 					}
 				]
 			}, {
-				"exerciseName": "Rudern",
-				"lastWeight": 6,
+				"name": "Rudern",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},
@@ -96,11 +96,11 @@
 					}
 				]
 			}, {
-				"exerciseName": "Bankdrücken",
-				"lastWeight": 6,
+				"name": "Bankdrücken",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},
@@ -118,11 +118,11 @@
 		{
 			"name": "Freitag",
 			"exercises": [{
-				"exerciseName": "Kniebeuge",
-				"lastWeight": 6,
+				"name": "Kniebeuge",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},
@@ -136,11 +136,11 @@
 					}
 				]
 			}, {
-				"exerciseName": "Rudern",
-				"lastWeight": 6,
+				"name": "Rudern",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},
@@ -154,11 +154,11 @@
 					}
 				]
 			}, {
-				"exerciseName": "Bankdrücken",
-				"lastWeight": 6,
+				"name": "Bankdrücken",
+				"weight": 6,
 				"sets": 3,
 				"wraps": 12,
-				"weightProtocoll": [{
+				"history": [{
 						"date": "04-07-2018",
 						"weight": 6
 					},

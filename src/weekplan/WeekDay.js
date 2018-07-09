@@ -1,7 +1,7 @@
 import React from 'react';
 import Exercise from './Exercise';
 
-const WeekDay = ({ name, exercises }) => (
+const WeekDay = ({ name, exercises, store }) => (
     <React.Fragment>
         <h3>{name}</h3>
         <table className="w3-table">
@@ -14,7 +14,7 @@ const WeekDay = ({ name, exercises }) => (
                 </tr>
                 {
                     exercises.map((e, i) => (
-                        <Exercise key={i} {...e} />
+                        <Exercise key={i} {...e} store={store} />
                     ))
                 }
             </tbody>
