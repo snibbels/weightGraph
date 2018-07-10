@@ -12,15 +12,9 @@ const WeightForm = ({ id, store }) => {
 
     let _weight;
 
-    let style = {
-        display: "inline-block",
-        width: "2em"
-    };
-
     return (
         <form onSubmit={onSubmit}>
             <input
-                style={style}
                 ref={input => _weight = input}
                 type='number'
                 placeholder="neues Gewicht"
