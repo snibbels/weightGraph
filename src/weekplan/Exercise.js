@@ -39,7 +39,10 @@ export default class Exercise extends Component {
                 <td>{wraps}</td>
                 <td>
                     {(editmode) ?
-                        <WeightForm onAddWeight={this.editWeight} /> :
+                        <WeightForm
+                            onAddWeight={this.editWeight}
+                            currentWeight={(weight + "kg")}
+                        /> :
                         (weight + "kg")}
                     <button
                         className="w3-button"
