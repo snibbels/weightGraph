@@ -1,6 +1,7 @@
 import C from './constants';
 
 export const weekplan = (state = [], action) => {
+    console.log("dispatch ", action.type);
     switch (action.type) {
         case C.ADD_WEEKDAY:
             return [
@@ -68,7 +69,8 @@ export const exercise = (state = {}, action) => {
         case C.ADD_WEIGHT:
             return (state.id !== action.id) ? state : ({
                 ...state,
-                weight: action.weight
+                weight: action.weight,
+                history: history(state.history, action)
             })
         default:
             return state;
@@ -76,9 +78,27 @@ export const exercise = (state = {}, action) => {
 }
 
 export const history = (state = [], action) => {
-    return [];
+    switch (action.type) {
+        case C.ADD_WEIGHT:
+            return [
+                ...state,
+                historyEntry(state, action)
+            ]
+        default:
+            return state;
+    }
+
 }
 
 export const historyEntry = (state = {}, action) => {
-    return {};
+    switch (action.type) {
+        case C.ADD_WEIGHT:
+            return {
+                date: action.timestamp,
+                weight: action.weight
+            }
+
+        default:
+            return state;
+    }
 }
