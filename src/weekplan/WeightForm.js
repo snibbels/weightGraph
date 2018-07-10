@@ -1,12 +1,9 @@
 import React from 'react';
-import { addWeight } from '../redux/actions';
 
-const WeightForm = ({ id, store }) => {
+const WeightForm = ({ onAddWeight }) => {
     const onSubmit = () => {
         if (!_weight) return;
-        store.dispatch(addWeight(
-            id, _weight.value, Date.now()
-        ));
+        onAddWeight(_weight.value);
         _weight.value = '';
     };
 
