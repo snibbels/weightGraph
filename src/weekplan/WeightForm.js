@@ -16,13 +16,13 @@ const WeightForm = ({ onAddWeight, currentWeight = 0 }) => {
     return (
         <form onSubmit={onSubmit} >
             <input
-                className="w3-input"
+                className="w3-input w3-half"
                 style={style}
                 ref={input => _weight = input}
                 type='number'
                 placeholder={currentWeight}
             />
-            <button className="w3-button">
+            <button className="w3-button w3-half">
                 <FaPlus />
             </button>
         </form>

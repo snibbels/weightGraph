@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import WeightForm from './WeightForm';
 import { FaEdit } from 'react-icons/lib/fa';
 import { addWeight } from '../redux/actions';
+import '../custom.css';
 
 
 export default class Exercise extends Component {
@@ -33,22 +34,24 @@ export default class Exercise extends Component {
         const { editmode } = this.state;
         const { name, sets, wraps, weight } = this.props;
         return (
-            <tr >
+            <tr className="hidden-container">
                 <td>{name}</td>
                 <td>{sets}</td>
                 <td>{wraps}</td>
                 <td>
-                    {(editmode) ?
-                        <WeightForm
-                            onAddWeight={this.editWeight}
-                            currentWeight={(weight + "kg")}
-                        /> :
-                        (weight + "kg")}
-                    <button
-                        className="w3-button"
+                    <div className="w3-half">
+                        {(editmode) ?
+                            <WeightForm
+                                onAddWeight={this.editWeight}
+                                currentWeight={(weight + "kg")}
+                            /> :
+                            (weight + "kg")}
+                    </div>
+                    <div
+                        className="hidden w3-padding w3-half"
                         onClick={this.toggleEditmode}>
                         <FaEdit />
-                    </button>
+                    </div>
                 </td>
             </tr >
         )
