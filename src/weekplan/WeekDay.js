@@ -4,7 +4,7 @@ import Exercise from './Exercise';
 const WeekDay = ({ name, exercises, store }) => (
     <React.Fragment>
         <h3>{name}</h3>
-        <table className="w3-table">
+        <table className="w3-table w3-responsive">
             <tbody>
                 <tr>
                     <th>Übung</th>

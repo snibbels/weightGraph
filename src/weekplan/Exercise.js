@@ -38,20 +38,20 @@ export default class Exercise extends Component {
                 <td>{name}</td>
                 <td>{sets}</td>
                 <td>{wraps}</td>
-                <td>
-                    <div className="w3-half">
-                        {(editmode) ?
-                            <WeightForm
-                                onAddWeight={this.editWeight}
-                                currentWeight={(weight + "kg")}
-                            /> :
-                            (weight + "kg")}
-                    </div>
-                    <div
-                        className="hidden w3-padding w3-half"
+                <td style={{ width: "11em" }}>
+                    {(editmode) ?
+                        <WeightForm
+                            onAddWeight={this.editWeight}
+                            currentWeight={(weight + "kg")}
+                        /> :
+                        (weight + "kg")}
+                </td>
+                <td style={{ width: "1em" }}>
+                    <button
+                        className="hidden w3-padding"
                         onClick={this.toggleEditmode}>
                         <FaEdit />
-                    </div>
+                    </button>
                 </td>
             </tr >
         )
