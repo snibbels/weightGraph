@@ -1,9 +1,8 @@
-@media (min-width: 700px) {
-    .hidden {
-        visibility: hidden;
-    }
-    .hidden-container:hover .hidden,
-    .hidden-container:active .hidden {
-        visibility: visible;
-    }
+.hidden {
+    visibility: hidden;
+}
+
+.hidden-container:hover .hidden,
+.hidden-container:active .hidden {
+    visibility: visible;
 }

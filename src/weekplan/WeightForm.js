@@ -1,28 +1,26 @@
 import React from 'react';
 import { FaPlus } from 'react-icons/lib/fa'
 
-const WeightForm = ({ onAddWeight, currentWeight = 0 }) => {
-    const onSubmit = () => {
+const WeightForm = ({ id, onAddWeight, currentWeight = 0 }) => {
+    const onSubmit = e => {
+        e.preventDefault();
         if (!_weight) return;
-        onAddWeight(_weight.value);
+        onAddWeight(_weight.value, id);
         _weight.value = '';
     };
 
     let _weight;
-    let style = {
-        width: "5em"
-    }
 
     return (
         <form onSubmit={onSubmit} >
             <input
+                style={{ width: "5em" }}
                 className="w3-input w3-half"
-                style={style}
                 ref={input => _weight = input}
                 type='number'
                 placeholder={currentWeight}
             />
-            <button className="w3-button w3-half">
+            <button className="w3-button w3-half" type="submit">
                 <FaPlus />
             </button>
         </form>
