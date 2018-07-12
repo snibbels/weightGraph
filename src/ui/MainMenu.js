@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaTrash } from 'react-icons/lib/fa'
 
 const activeStyle = {
     borderBottom: "4px solid lightgray"
@@ -15,6 +16,11 @@ const MainMenu = () => (
             activeStyle={activeStyle}
             className="w3-bar-item w3-button"
             to="/stats">Meine Statistik</NavLink>
+        <div
+            onClick={localStorage.clear('localWeights')}
+            className="w3-bar-item w3-button">
+            <FaTrash />
+        </div>
     </div>
 )
 
