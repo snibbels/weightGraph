@@ -3,14 +3,15 @@ import { NavLink } from 'react-router-dom';
 import { FaTrash } from 'react-icons/lib/fa'
 
 const activeStyle = {
-    borderBottom: "4px solid lightgray"
+    borderBottom: "4px solid #2395F3"
 }
 
 const MainMenu = () => (
-    <div className="w3-bar w3-blue">
+    <div className="w3-bar w3-white">
         <NavLink
             activeStyle={activeStyle}
             className="w3-bar-item w3-button"
+            exact
             to="/">Mein Trainingsplan</NavLink>
         <NavLink
             activeStyle={activeStyle}
