@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
+import { v4 } from 'uuid';
 import 'w3-css';
 import './App.css';
 import data from './mockdata/data.json';
 import { weekplan } from './redux/reducers';
+import Start from './start/Start';
 import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
-import WeightList from './weekplan/WeightList';
-import { v4 } from 'uuid';
-
-
 
 const store = createStore(combineReducers({ weekplan }), (
   localStorage['localWeights']) ?
@@ -25,6 +23,8 @@ const store = createStore(combineReducers({ weekplan }), (
     }))
   }
 );
+
+export const StoreContext = React.createContext(store);
 
 class App extends Component {
   constructor() {
@@ -41,10 +41,7 @@ class App extends Component {
       <div className="App">
         <HashRouter>
           <PageTemplate>
-            <Route exact path="/" render={() => (
-              <WeightList
-                {...store.getState()} store={store} />
-            )} />
+            <Route exact path="/" component={Start} />
             <Route path="/stats" component={Statistics} />
           </PageTemplate>
         </HashRouter>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaTrash } from 'react-icons/lib/fa';
+import { MdEdit } from 'react-icons/lib/md';
 import chart from '../icons/chart.svg';
 import dumbbell from '../icons/dumbbell.svg';
 
@@ -13,6 +13,10 @@ const icon = {
     margin: "0.5em"
 }
 
+const mdIcon = {
+    fontSize: "1.25em",
+}
+
 const MainMenu = () => (
     <div className="w3-bar w3-white">
         <NavLink
@@ -22,7 +26,7 @@ const MainMenu = () => (
             to="/">
             <img src={dumbbell} style={icon} alt="" />
             <span className="w3-hide-small">
-                Mein Trainingsplan
+                Start
             </span>
         </NavLink>
         <NavLink
@@ -34,11 +38,16 @@ const MainMenu = () => (
                 Meine Statistik
             </span>
         </NavLink>
-        <div
-            onClick={localStorage.clear('localWeights')}
-            className="w3-bar-item w3-button">
-            <FaTrash style={icon} />
-        </div>
+        <NavLink
+            activeStyle={activeStyle}
+            className="w3-bar-item w3-button"
+            to="/edit">
+            <MdEdit style={{ ...icon, ...mdIcon }} />
+            <span className="w3-hide-small">
+                Mein Trainingsplan
+            </span>
+
+        </NavLink>
     </div>
 )
 
