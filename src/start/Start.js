@@ -8,8 +8,14 @@ const Start = ({ week = 0, nextWorkout = "", progress = 0, onStartWorkout = f =>
             <p>Fortschritt <b>{progress}</b></p>
             <p>Nächste Einheit <b>{nextWorkout}</b></p>
         </ul>
-        <StartButton
-            className="w3-large w3-hover-blue w3-border w3-round-large" />
+        <span className="w3-row">
+            <StartButton className="
+                    w3-large 
+                    w3-hover-blue 
+                    w3-border 
+                    w3-round-large 
+                    w3-col s12 m6 l3" />
+        </span>
     </div>
 );
 
