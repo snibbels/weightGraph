@@ -15,7 +15,7 @@ export const editWorkout = (id) => ({
     editmode: true
 });
 
-export const addWorkout = (name) => ({
+export const addWorkout = (name = "Mein Plan") => ({
     type: C.ADD_WORKOUT,
     id: v4(),
     name,

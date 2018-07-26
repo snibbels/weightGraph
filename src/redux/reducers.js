@@ -7,6 +7,14 @@ export const logger = (state, action) => {
 
 export const workoutPlan = (state = {}, action) => {
     switch (action.type) {
+        case C.ADD_WORKOUT:
+            return {
+                id: action.id,
+                name: action.name,
+                timestamp: action.timestamp,
+                tags: action.tags,
+                splits: action.splits
+            }
         default:
             return state;
     }
@@ -28,7 +36,6 @@ export const currentSplitIndex = (state = "", action) => {
 
 export const splits = (state = [], action) => {
     switch (action.type) {
-
         default:
             return state;
     }

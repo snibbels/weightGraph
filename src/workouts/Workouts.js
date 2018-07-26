@@ -5,13 +5,15 @@ import StoreComponent from '../HOCs/StoreComponent';
 
 const _Workouts = ({store}) =>{
     let name;
+    const plan = store.getState().workoutPlan;
     const action = ()=>{
         store.dispatch(addWorkout(name));
     }
 
     return (
     <div>
-        <WorkoutPlan
+        <WorkoutPlan 
+            {...plan}
             className="w3-row-padding w3-border-bottom" />
         <div className="w3-row-padding w3-container 
                 w3-center ">
