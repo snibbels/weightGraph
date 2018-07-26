@@ -1,28 +1,21 @@
 import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
-import { v4 } from 'uuid';
 import 'w3-css';
 import './App.css';
 import data from './mockdata/data.json';
-import { weekplan } from './redux/reducers';
+import { currentSplitIndex, history, workoutPlan } from './redux/reducers';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
 import Workouts from './workouts/Workouts';
 
-const store = createStore(combineReducers({ weekplan }), (
+const store = createStore(combineReducers({
+  workoutPlan, history, currentSplitIndex
+}), (
   localStorage['localWeights']) ?
-  JSON.parse(localStorage['localWeights']) :
-  {
-    weekplan: data.weekplan.map(weekday => ({
-      ...weekday,
-      exercises: weekday.exercises.map(e => ({
-        ...e,
-        id: v4()
-      }))
-    }))
-  }
+    JSON.parse(localStorage['localWeights']) :
+    undefined
 );
 
 export const StoreContext = React.createContext(store);

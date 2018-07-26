@@ -51,13 +51,6 @@ export const exercise = (state = {}, action) => {
     }
 }
 
-export const workoutPlan = (state = {}, action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
-
 export const weights = (state = [], action) => {
     switch (action.type) {
 

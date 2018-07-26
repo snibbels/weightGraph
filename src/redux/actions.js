@@ -15,9 +15,10 @@ export const editWorkout = (id) => ({
     editmode: true
 });
 
-export const addWorkout = (id, name) => ({
+export const addWorkout = (name) => ({
     type: C.ADD_WORKOUT,
-    id, name,
+    id: v4(),
+    name,
     timestamp: Date.now(),
     tags: [],
     splits: []
