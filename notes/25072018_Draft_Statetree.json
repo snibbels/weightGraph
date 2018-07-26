@@ -10,10 +10,7 @@
             "name": "test",
             "exercises": [{
                 "name": "test",
-                "id": "fx000fff",
-                "muscles": [
-                    "muscle1", "muscle2"
-                ]
+                "id": "fx000fff"
             }]
         }]
     },
