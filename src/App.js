@@ -4,21 +4,21 @@ import { combineReducers, createStore } from 'redux';
 import 'w3-css';
 import './App.css';
 import data from './mockdata/data.json';
-import { currentSplitIndex, history, workoutPlan } from './redux/reducers';
+import { logger, currentSplitIndex, history, workoutPlan } from './redux/reducers';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
 import Workouts from './workouts/Workouts';
 
 const store = createStore(combineReducers({
-  workoutPlan, history, currentSplitIndex
+  logger, workoutPlan, history, currentSplitIndex
 }), (
   localStorage['localWeights']) ?
     JSON.parse(localStorage['localWeights']) :
     undefined
 );
 
-export const StoreContext = React.createContext(store);
+export const StoreContext = React.createContext({ store });
 
 class App extends Component {
   constructor() {
