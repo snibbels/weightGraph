@@ -1,8 +1,9 @@
 import React from 'react'
 import WorkoutPlan from './WorkoutPlan';
 import {addWorkout} from '../redux/actions';
+import StoreComponent from '../HOCs/StoreComponent';
 
-const Workouts = ({store}) =>{
+const _Workouts = ({store}) =>{
     let name;
     const action = ()=>{
         store.dispatch(addWorkout(name));
@@ -21,5 +22,7 @@ const Workouts = ({store}) =>{
         </div>
     </div>
 );}
+
+const Workouts = StoreComponent(_Workouts);
 
 export default Workouts;
