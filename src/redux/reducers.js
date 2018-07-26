@@ -1,5 +1,10 @@
 import C from './constants';
 
+export const logger = (state, action) => {
+    console.log("dispatch", action.type);
+    return null;
+}
+
 export const workoutPlan = (state = {}, action) => {
     switch (action.type) {
         default:
