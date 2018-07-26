@@ -1,6 +1,6 @@
 import React from 'react'
 import WorkoutPlan from './WorkoutPlan';
-import {addWorkout} from '../redux/actions';
+import {addWorkout, addSplit} from '../redux/actions';
 import StoreComponent from '../HOCs/StoreComponent';
 
 const _Workouts = ({store}) =>{
@@ -8,6 +8,9 @@ const _Workouts = ({store}) =>{
     const plan = store.getState().workoutPlan;
     const action = ()=>{
         store.dispatch(addWorkout(name));
+        store.dispatch(addSplit("Brust & Bizeps", true));
+        store.dispatch(addSplit("Rücken & Trizeps", true));
+        store.dispatch(addSplit("Beine & Schultern", true));
     }
 
     return (

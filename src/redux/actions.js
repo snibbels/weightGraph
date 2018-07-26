@@ -1,5 +1,6 @@
 import C from './constants';
 import { v4 } from 'uuid';
+import { exercises } from './reducers';
 
 export const addExercise = (name, splitId, planId) => ({
     type: C.ADD_EXERCISE,
@@ -30,4 +31,12 @@ export const updateWorkout = (id, name, tags, splits) => ({
     timestamp: Date.now(),
     tags,
     splits
+});
+
+export const addSplit = (name = "split", editmode = false) => ({
+    type: C.ADD_SPLIT,
+    name,
+    id: v4(),
+    exercises: [],
+    editmode
 });
