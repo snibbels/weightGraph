@@ -9,6 +9,7 @@ import { weekplan } from './redux/reducers';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
+import Workouts from './workouts/Workouts';
 
 const store = createStore(combineReducers({ weekplan }), (
   localStorage['localWeights']) ?
@@ -43,6 +44,7 @@ class App extends Component {
           <PageTemplate>
             <Route exact path="/" component={Start} />
             <Route path="/stats" component={Statistics} />
+            <Route path="/edit" component={Workouts} />
           </PageTemplate>
         </HashRouter>
       </div>
