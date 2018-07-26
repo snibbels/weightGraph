@@ -1,26 +1,32 @@
 import C from './constants';
+import { v4 } from 'uuid';
 
-export const addWeight = (id, weight) => ({
-    type: C.ADD_WEIGHT,
-    id,
-    weight,
-    timestamp: Date.now()
-});
-
-export const addExercise = (id, weekday, name, sets = 3, wraps = 12, weight = 0) => ({
+export const addExercise = (name, splitId, planId) => ({
     type: C.ADD_EXERCISE,
-    id,
-    weekday,
+    id: v4(),
     name,
-    sets,
-    wraps,
-    weight
+    splitId,
+    planId
 });
 
-export const addWeekday = (id, name, exercises = []) => ({
-    type: C.ADD_WEEKDAY,
+export const editWorkout = (id) => ({
+    type: C.EDIT_WORKOUT,
     id,
-    name,
-    exercises
+    editmode: true
 });
 
+export const addWorkout = (id, name) => ({
+    type: C.ADD_WORKOUT,
+    id, name,
+    timestamp: Date.now(),
+    tags: [],
+    splits: []
+});
+
+export const updateWorkout = (id, name, tags, splits) => ({
+    type: C.ADD_WORKOUT,
+    id, name,
+    timestamp: Date.now(),
+    tags,
+    splits
+});
