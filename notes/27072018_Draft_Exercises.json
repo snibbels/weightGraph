@@ -1,0 +1,175 @@
+[{
+        "name": "Bankdrücken, flach",
+        "category": [
+            "Brust"
+        ]
+    },
+    {
+        "name": "Bankdrücken, schräg",
+        "category": [
+            "Brust"
+        ]
+    },
+    {
+        "name": "Überzüge",
+        "category": [
+            "Brust"
+        ]
+    },
+    {
+        "name": "Liegestütze",
+        "category": [
+            "Brust", "Rücken"
+        ]
+    },
+    {
+        "name": "Fliegende",
+        "category": [
+            "Brust"
+        ]
+    },
+    {
+        "name": "Curl, stehend",
+        "category": [
+            "Bizeps"
+        ]
+    },
+    {
+        "name": "Curl, sitzend",
+        "category": [
+            "Bizeps"
+        ]
+    },
+    {
+        "name": "Hammercurl",
+        "category": [
+            "Bizeps"
+        ]
+    },
+    {
+        "name": "Curl an Hantelbank",
+        "category": [
+            "Bizeps"
+        ]
+    },
+    {
+        "name": "Konzentrationscurl",
+        "category": [
+            "Bizeps"
+        ]
+    },
+    {
+        "name": "Rudern, einarmig",
+        "category": [
+            "Rücken"
+        ]
+    },
+    {
+        "name": "Reverse Butterfly",
+        "category": [
+            "Rücken"
+        ]
+    },
+    {
+        "name": "Rudern, beidarmig",
+        "category": [
+            "Rücken"
+        ]
+    },
+    {
+        "name": "Rudern, stehend",
+        "category": [
+            "Rücken"
+        ]
+    },
+    {
+        "name": "Dips",
+        "category": [
+            "Trizeps"
+        ]
+    },
+    {
+        "name": "Trizeps Kickback",
+        "category": [
+            "Trizeps"
+        ]
+    },
+    {
+        "name": "Stirndrücken",
+        "category": [
+            "Trizeps"
+        ]
+    },
+    {
+        "name": "Trizepsdrücken, beidarmig",
+        "category": [
+            "Trizeps"
+        ]
+    },
+    {
+        "name": "Trizepsdrücken, einarmig",
+        "category": [
+            "Trizeps"
+        ]
+    },
+    {
+        "name": "Frontheben, einarmig",
+        "category": [
+            "Schultern"
+        ]
+    },
+    {
+        "name": "Schulterdrücken",
+        "category": [
+            "Schultern"
+        ]
+    },
+    {
+        "name": "Seitheben, sitzend",
+        "category": [
+            "Schultern"
+        ]
+    },
+    {
+        "name": "Seitheben, stehend",
+        "category": [
+            "Schultern"
+        ]
+    },
+    {
+        "name": "Shrugs",
+        "category": [
+            "Schultern"
+        ]
+    },
+    {
+        "name": "Ausfallschritt",
+        "category": [
+            "Beine"
+        ]
+    },
+    {
+        "name": "Wadenheber",
+        "category": [
+            "Beine"
+        ]
+    },
+    {
+        "name": "Kniebeuge",
+        "category": [
+            "Beine"
+        ]
+    },
+    {
+        "name": "Kniebeuge, einbeinig",
+        "category": [
+            "Beine"
+        ]
+    },
+    {
+        "name": "Kniebeuge an Hantelbank",
+        "category": [
+            "Beine"
+        ]
+    }
+]
