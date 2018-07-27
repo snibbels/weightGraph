@@ -43,10 +43,10 @@ export const updateWorkout = (id, name, tags, splits) => ({
     splits
 });
 
-export const addSplit = (name = "split", editmode = false) => ({
+export const addSplit = (name = "split", muscles = []) => ({
     type: C.ADD_SPLIT,
     name,
     id: v4(),
     exercises: [],
-    editmode
+    muscles
 });

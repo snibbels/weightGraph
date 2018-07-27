@@ -9,7 +9,7 @@ import Start from './start/Start';
 import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
 import Workouts from './workouts/Workouts';
-import { defaults } from './redux/constants';
+import { defaults, muscles } from './redux/constants';
 
 const location = window.location;
 const { protocol, host } = location;
@@ -18,9 +18,9 @@ const exerciseUrl = `${protocol}//${host}/exercises.json`
 
 const setup = () => {
   store.dispatch(addWorkout());
-  store.dispatch(addSplit("Brust & Bizeps", true));
-  store.dispatch(addSplit("Rücken & Trizeps", true));
-  store.dispatch(addSplit("Beine & Schultern", true));
+  store.dispatch(addSplit("Brust & Bizeps", [muscles.BIZEPS, muscles.CHEST]));
+  store.dispatch(addSplit("Rücken & Trizeps", [muscles.BACK, muscles.TRIZEPS]));
+  store.dispatch(addSplit("Beine & Schultern", [muscles.LEGS, muscles.SHOULDER]));
   fetch(exerciseUrl)
     .then(response => response.json())
     .then(data => data.map(

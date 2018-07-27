@@ -93,7 +93,7 @@ export const split = (state = {}, action) => {
                 name: action.name,
                 id: action.id,
                 exercises: action.exercises,
-                editmode: action.editmode
+                muscles: action.muscles
             }
         default:
             return state;
