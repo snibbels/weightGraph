@@ -15,8 +15,7 @@ const _Split = ({ name, muscles, className, style, store }) => {
             <h4>{name}</h4>
             <ul className="w3-ul">
                 {exercises.map((e, i) => (
-                    <SplitItem {...e} key={i}
-                        className="w3-display-container w3-hover-blue" />
+                    <SplitItem {...e} key={i} className="w3-hover" />
                 ))}
             </ul>
         </div>
