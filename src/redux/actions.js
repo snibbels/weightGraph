@@ -1,13 +1,12 @@
 import C from './constants';
 import { v4 } from 'uuid';
-import { exercises } from './reducers';
 
-export const addExercise = (name, splitId, planId) => ({
+export const addExercise = (name, category) => ({
     type: C.ADD_EXERCISE,
     id: v4(),
     name,
-    splitId,
-    planId
+    category,
+    timestamp: Date.now()
 });
 
 export const editWorkout = (id) => ({

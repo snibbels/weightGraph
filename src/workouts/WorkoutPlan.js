@@ -3,7 +3,7 @@ import Split from './Split';
 
 const WorkoutPlan = ({ name, splits = [], className, style }) => (
     <div className={className} style={style} >
-        {name ? (<h3>{name}</h3>) : ""}
+        {name ? (<h2>{name}</h2>) : ""}
         {splits.map((s, i) => (
             <Split
                 key={i}

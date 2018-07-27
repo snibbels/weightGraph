@@ -5,6 +5,18 @@ export const logger = (state, action) => {
     return null;
 }
 
+export const exercises = (state = [], action) => {
+    switch (action.type) {
+        case C.ADD_EXERCISE:
+            return [
+                ...state,
+                exercise(state, action)
+            ];
+        default:
+            return state;
+    }
+};
+
 export const workoutPlan = (state = {}, action) => {
     switch (action.type) {
         case C.ADD_WORKOUT:
@@ -39,6 +51,16 @@ export const currentSplitIndex = (state = "", action) => {
     }
 }
 
+export const exercise = (state = {}, action) => {
+    switch (action.type) {
+        case C.ADD_EXERCISE:
+            let { name, category, id, timestamp } = action
+            return { name, category, id, timestamp }
+        default:
+            return state;
+    }
+};
+
 export const splits = (state = [], action) => {
     switch (action.type) {
         case C.ADD_SPLIT:
@@ -64,20 +86,6 @@ export const split = (state = {}, action) => {
             return state;
     }
 };
-
-export const exercises = (state = [], action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-};
-
-export const exercise = (state = {}, action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
 
 export const weights = (state = [], action) => {
     switch (action.type) {

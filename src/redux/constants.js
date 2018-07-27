@@ -10,3 +10,7 @@ const C = {
 };
 
 export default C;
+
+export const defaults = {
+    LOCALSTORAGE_NAME: 'localWeights'
+}
