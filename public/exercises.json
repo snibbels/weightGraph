@@ -1,175 +1,175 @@
 [{
         "name": "Bankdrücken, flach",
-        "category": [
-            "Brust"
+        "muscles": [
+            "CHEST"
         ]
     },
     {
         "name": "Bankdrücken, schräg",
-        "category": [
-            "Brust"
+        "muscles": [
+            "CHEST"
         ]
     },
     {
         "name": "Überzüge",
-        "category": [
-            "Brust"
+        "muscles": [
+            "CHEST"
         ]
     },
     {
         "name": "Liegestütze",
-        "category": [
-            "Brust", "Rücken"
+        "muscles": [
+            "CHEST", "BACK"
         ]
     },
     {
         "name": "Fliegende",
-        "category": [
-            "Brust"
+        "muscles": [
+            "CHEST"
         ]
     },
     {
         "name": "Curl, stehend",
-        "category": [
-            "Bizeps"
+        "muscles": [
+            "BIZEPS"
         ]
     },
     {
         "name": "Curl, sitzend",
-        "category": [
-            "Bizeps"
+        "muscles": [
+            "BIZEPS"
         ]
     },
     {
         "name": "Hammercurl",
-        "category": [
-            "Bizeps"
+        "muscles": [
+            "BIZEPS"
         ]
     },
     {
         "name": "Curl an Hantelbank",
-        "category": [
-            "Bizeps"
+        "muscles": [
+            "BIZEPS"
         ]
     },
     {
         "name": "Konzentrationscurl",
-        "category": [
-            "Bizeps"
+        "muscles": [
+            "BIZEPS"
         ]
     },
     {
         "name": "Rudern, einarmig",
-        "category": [
-            "Rücken"
+        "muscles": [
+            "BACK"
         ]
     },
     {
         "name": "Reverse Butterfly",
-        "category": [
-            "Rücken"
+        "muscles": [
+            "BACK"
         ]
     },
     {
         "name": "Rudern, beidarmig",
-        "category": [
-            "Rücken"
+        "muscles": [
+            "BACK"
         ]
     },
     {
         "name": "Rudern, stehend",
-        "category": [
-            "Rücken"
+        "muscles": [
+            "BACK"
         ]
     },
     {
         "name": "Dips",
-        "category": [
-            "Trizeps"
+        "muscles": [
+            "TRIZEPS"
         ]
     },
     {
         "name": "Trizeps Kickback",
-        "category": [
-            "Trizeps"
+        "muscles": [
+            "TRIZEPS"
         ]
     },
     {
         "name": "Stirndrücken",
-        "category": [
-            "Trizeps"
+        "muscles": [
+            "TRIZEPS"
         ]
     },
     {
         "name": "Trizepsdrücken, beidarmig",
-        "category": [
-            "Trizeps"
+        "muscles": [
+            "TRIZEPS"
         ]
     },
     {
         "name": "Trizepsdrücken, einarmig",
-        "category": [
-            "Trizeps"
+        "muscles": [
+            "TRIZEPS"
         ]
     },
     {
         "name": "Frontheben, einarmig",
-        "category": [
-            "Schultern"
+        "muscles": [
+            "SHOULDERS"
         ]
     },
     {
         "name": "Schulterdrücken",
-        "category": [
-            "Schultern"
+        "muscles": [
+            "SHOULDERS"
         ]
     },
     {
         "name": "Seitheben, sitzend",
-        "category": [
-            "Schultern"
+        "muscles": [
+            "SHOULDERS"
         ]
     },
     {
         "name": "Seitheben, stehend",
-        "category": [
-            "Schultern"
+        "muscles": [
+            "SHOULDERS"
         ]
     },
     {
         "name": "Shrugs",
-        "category": [
-            "Schultern"
+        "muscles": [
+            "SHOULDERS"
         ]
     },
     {
         "name": "Ausfallschritt",
-        "category": [
-            "Beine"
+        "muscles": [
+            "LEGS"
         ]
     },
     {
         "name": "Wadenheber",
-        "category": [
-            "Beine"
+        "muscles": [
+            "LEGS"
         ]
     },
     {
         "name": "Kniebeuge",
-        "category": [
-            "Beine"
+        "muscles": [
+            "LEGS"
         ]
     },
     {
         "name": "Kniebeuge, einbeinig",
-        "category": [
-            "Beine"
+        "muscles": [
+            "LEGS"
         ]
     },
     {
         "name": "Kniebeuge an Hantelbank",
-        "category": [
-            "Beine"
+        "muscles": [
+            "LEGS"
         ]
     }
 ]

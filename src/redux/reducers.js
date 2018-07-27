@@ -54,8 +54,8 @@ export const currentSplitIndex = (state = "", action) => {
 export const exercise = (state = {}, action) => {
     switch (action.type) {
         case C.ADD_EXERCISE:
-            let { name, category, id, timestamp } = action
-            return { name, category, id, timestamp }
+            let { name, muscles, id, timestamp } = action
+            return { name, muscles, id, timestamp }
         default:
             return state;
     }

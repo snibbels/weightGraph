@@ -14,3 +14,13 @@ export default C;
 export const defaults = {
     LOCALSTORAGE_NAME: 'localWeights'
 }
+
+export const muscles = {
+    CHEST: "CHEST",
+    BACK: "BACK",
+    LEGS: "LEGS",
+    BIZEPS: "BIZEPS",
+    TRIZEPS: "TRIZEPS",
+    SHOULDER: "SHOULDER",
+    ABS: "ABS"
+}

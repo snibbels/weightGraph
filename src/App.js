@@ -25,7 +25,7 @@ const setup = () => {
     .then(response => response.json())
     .then(data => data.map(
       exercise => store.dispatch(
-        addExercise(exercise.name, exercise.category)
+        addExercise(exercise.name, exercise.muscles)
       )
     ))
 }
