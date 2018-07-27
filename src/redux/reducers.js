@@ -12,6 +12,11 @@ export const exercises = (state = [], action) => {
                 ...state,
                 exercise(state, action)
             ];
+        case C.SELECT_EXERCISE:
+        case C.UNSELECT_EXERCISE:
+            return state.map(
+                e => exercise(e, action)
+            );
         default:
             return state;
     }
@@ -56,6 +61,14 @@ export const exercise = (state = {}, action) => {
         case C.ADD_EXERCISE:
             let { name, muscles, id, timestamp } = action
             return { name, muscles, id, timestamp }
+        case C.SELECT_EXERCISE:
+            return (state.id !== action.id) ?
+                state :
+                { ...state, selected: true }
+        case C.UNSELECT_EXERCISE:
+            return (state.id !== action.id) ?
+                state :
+                { ...state, selected: false }
         default:
             return state;
     }

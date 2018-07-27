@@ -1,13 +1,24 @@
 import C from './constants';
 import { v4 } from 'uuid';
 
-export const addExercise = (name, category) => ({
+export const addExercise = (name, muscles) => ({
     type: C.ADD_EXERCISE,
     id: v4(),
     name,
-    category,
+    selected: false,
+    muscles,
     timestamp: Date.now()
 });
+
+export const selectExercise = id => ({
+    type: C.SELECT_EXERCISE,
+    id
+});
+
+export const unselectExercise = id => ({
+    type: C.UNSELECT_EXERCISE,
+    id
+})
 
 export const editWorkout = (id) => ({
     type: C.EDIT_WORKOUT,
