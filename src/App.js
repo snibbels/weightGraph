@@ -12,8 +12,8 @@ import Workouts from './workouts/Workouts';
 import { defaults, muscles } from './redux/constants';
 
 const location = window.location;
-const { protocol, host } = location;
-const exerciseUrl = `${protocol}//${host}/exercises.json`
+const { protocol, host, pathname } = location;
+const exerciseUrl = `${protocol}//${host}${pathname}/exercises.json`
 
 
 const setup = () => {
