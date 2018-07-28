@@ -5,8 +5,8 @@ const buttonStyle = {
     fontSize: "2em"
 };
 
-const StartButton = ({ className }) => (
-    <div className={className + " w3-button"}>
+const StartButton = ({ className, ...props }) => (
+    <div className={className + " w3-button"} {...props}>
         <MdPlayArrow
             style={buttonStyle}
             className="w3-circle w3-border w3-margin" />

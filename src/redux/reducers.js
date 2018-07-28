@@ -49,8 +49,10 @@ export const history = (state = [], action) => {
     }
 };
 
-export const currentSplitIndex = (state = "", action) => {
+export const currentSplitIndex = (state = 0, action) => {
     switch (action.type) {
+        case C.INCREMENT_SPLITINDEX:
+            return action.newIndex;
         default:
             return state;
     }

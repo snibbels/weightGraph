@@ -18,12 +18,6 @@ export const selectExercise = id => ({
 export const unselectExercise = id => ({
     type: C.UNSELECT_EXERCISE,
     id
-})
-
-export const editWorkout = (id) => ({
-    type: C.EDIT_WORKOUT,
-    id,
-    editmode: true
 });
 
 export const addWorkout = (name = "Mein Plan") => ({
@@ -35,18 +29,17 @@ export const addWorkout = (name = "Mein Plan") => ({
     splits: []
 });
 
-export const updateWorkout = (id, name, tags, splits) => ({
-    type: C.ADD_WORKOUT,
-    id, name,
-    timestamp: Date.now(),
-    tags,
-    splits
-});
-
 export const addSplit = (name = "split", muscles = []) => ({
     type: C.ADD_SPLIT,
     name,
     id: v4(),
     exercises: [],
     muscles
+});
+
+export const incrementSplitIndex = (currentIndex, maxIndex) => ({
+    type: C.INCREMENT_SPLITINDEX,
+    newIndex: (currentIndex < maxIndex) ?
+        ++currentIndex :
+        0
 });
