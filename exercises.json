@@ -1,0 +1,175 @@
+[{
+        "name": "Bankdrücken, flach",
+        "muscles": [
+            "CHEST"
+        ]
+    },
+    {
+        "name": "Bankdrücken, schräg",
+        "muscles": [
+            "CHEST"
+        ]
+    },
+    {
+        "name": "Überzüge",
+        "muscles": [
+            "CHEST"
+        ]
+    },
+    {
+        "name": "Liegestütze",
+        "muscles": [
+            "CHEST", "BACK"
+        ]
+    },
+    {
+        "name": "Fliegende",
+        "muscles": [
+            "CHEST"
+        ]
+    },
+    {
+        "name": "Curl, stehend",
+        "muscles": [
+            "BIZEPS"
+        ]
+    },
+    {
+        "name": "Curl, sitzend",
+        "muscles": [
+            "BIZEPS"
+        ]
+    },
+    {
+        "name": "Hammercurl",
+        "muscles": [
+            "BIZEPS"
+        ]
+    },
+    {
+        "name": "Curl an Hantelbank",
+        "muscles": [
+            "BIZEPS"
+        ]
+    },
+    {
+        "name": "Konzentrationscurl",
+        "muscles": [
+            "BIZEPS"
+        ]
+    },
+    {
+        "name": "Rudern, einarmig",
+        "muscles": [
+            "BACK"
+        ]
+    },
+    {
+        "name": "Reverse Butterfly",
+        "muscles": [
+            "BACK"
+        ]
+    },
+    {
+        "name": "Rudern, beidarmig",
+        "muscles": [
+            "BACK"
+        ]
+    },
+    {
+        "name": "Rudern, stehend",
+        "muscles": [
+            "BACK"
+        ]
+    },
+    {
+        "name": "Dips",
+        "muscles": [
+            "TRIZEPS"
+        ]
+    },
+    {
+        "name": "Trizeps Kickback",
+        "muscles": [
+            "TRIZEPS"
+        ]
+    },
+    {
+        "name": "Stirndrücken",
+        "muscles": [
+            "TRIZEPS"
+        ]
+    },
+    {
+        "name": "Trizepsdrücken, beidarmig",
+        "muscles": [
+            "TRIZEPS"
+        ]
+    },
+    {
+        "name": "Trizepsdrücken, einarmig",
+        "muscles": [
+            "TRIZEPS"
+        ]
+    },
+    {
+        "name": "Frontheben, einarmig",
+        "muscles": [
+            "SHOULDER"
+        ]
+    },
+    {
+        "name": "Schulterdrücken",
+        "muscles": [
+            "SHOULDER"
+        ]
+    },
+    {
+        "name": "Seitheben, sitzend",
+        "muscles": [
+            "SHOULDER"
+        ]
+    },
+    {
+        "name": "Seitheben, stehend",
+        "muscles": [
+            "SHOULDER"
+        ]
+    },
+    {
+        "name": "Shrugs",
+        "muscles": [
+            "SHOULDER"
+        ]
+    },
+    {
+        "name": "Ausfallschritt",
+        "muscles": [
+            "LEGS"
+        ]
+    },
+    {
+        "name": "Wadenheber",
+        "muscles": [
+            "LEGS"
+        ]
+    },
+    {
+        "name": "Kniebeuge",
+        "muscles": [
+            "LEGS"
+        ]
+    },
+    {
+        "name": "Kniebeuge, einbeinig",
+        "muscles": [
+            "LEGS"
+        ]
+    },
+    {
+        "name": "Kniebeuge an Hantelbank",
+        "muscles": [
+            "LEGS"
+        ]
+    }
+]
