@@ -14,8 +14,8 @@ const _Split = ({ name, muscles, className, style, store }) => {
     return (
         <div className={className} style={style}>
             <h4>{name}</h4>
-            {muscles.map(m => (
-                <MuscleTag muscle={m} />
+            {muscles.map((m, i) => (
+                <MuscleTag muscle={m} key={i} />
             ))}
             <ul className="w3-ul">
                 {exercises.map((e, i) => (

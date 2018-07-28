@@ -24,8 +24,8 @@ const _Exercise = ({ store, id, name, muscles, selected }) => {
             className="w3-display-topright w3-padding, w3-button
             w3-hover-blue w3-large"
             deleteMode={selected}/>
-        {muscles.map(m => (
-            <MuscleTag muscle={m}/>
+        {muscles.map((m, i)=> (
+            <MuscleTag muscle={m} key={i}/>
         ))}
     </div>
 );}
