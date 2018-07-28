@@ -2,6 +2,7 @@ import React from 'react'
 import StoreComponent from '../HOCs/StoreComponent'
 import { unselectExercise, selectExercise } from '../redux/actions';
 import AddDeleteButton from '../ui/AddDeleteButton';
+import MuscleTag from './MuscleTag';
 
 const _Exercise = ({ store, id, name, muscles, selected }) => {
     const toggleSelect = ()=> store.dispatch(
@@ -23,6 +24,9 @@ const _Exercise = ({ store, id, name, muscles, selected }) => {
             className="w3-display-topright w3-padding, w3-button
             w3-hover-blue w3-large"
             deleteMode={selected}/>
+        {muscles.map(m => (
+            <MuscleTag muscle={m}/>
+        ))}
     </div>
 );}
 

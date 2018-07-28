@@ -26,3 +26,13 @@ export const muscles = {
     SHOULDER: "SHOULDER",
     ABS: "ABS"
 }
+
+export const muscleColors = {
+    CHEST: "blue",
+    BACK: "green",
+    LEGS: "red",
+    BIZEPS: "pink",
+    TRIZEPS: "purple",
+    SHOULDER: "yellow",
+    ABS: "turquoise"
+}
