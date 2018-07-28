@@ -11,13 +11,17 @@ const _Exercise = ({ store, id, name, muscles, selected }) => {
     );
     
     return (
-    <div className="w3-card w3-margin w3-padding w3-large
-        w3-col s11 m4 l3 w3-display-container">
+    <div 
+        onClick={toggleSelect}
+        style ={{cursor: "pointer"}}
+        className={`w3-card w3-margin w3-padding w3-large
+        w3-col s11 m4 l3 w3-display-container
+        ${selected ? "w3-blue" : ""}
+        `}>
         <p>{name}</p>
         <AddDeleteButton 
-            onClick={toggleSelect}
             className="w3-display-topright w3-padding, w3-button
-            w3-hover-blue"
+            w3-hover-blue w3-large"
             deleteMode={selected}/>
     </div>
 );}

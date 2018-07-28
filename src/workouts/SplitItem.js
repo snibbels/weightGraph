@@ -9,7 +9,8 @@ const _SplitItem = ({ id, name, className, store }) => (
         </span>
         <span className="w3-display-right"
             onClick={() => store.dispatch(unselectExercise(id))}>
-            <div className="w3-padding w3-button w3-hover-blue">
+            <div className="w3-padding w3-button w3-hover-blue
+            w3-large">
                 &times;
             </div>
         </span>
