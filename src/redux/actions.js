@@ -44,17 +44,16 @@ export const incrementSplitIndex = (currentIndex, maxIndex) => ({
         0
 });
 
-export const startWorkout = (splitIndex, split, exercises, exerciseIndex, maxSets) => ({
+export const startWorkout = (split, exercises, maxSets) => ({
     type: C.START_WORKOUT,
-    splitIndex,
     split,
     exercises,
-    exerciseIndex,
-    exersise: exercises[exerciseIndex],
+    exerciseIndex: 0,
+    exersise: exercises[0],
     set: 0,
     maxSets,
     isLastIteration: (
-        exerciseIndex >= exercises.length - 1 &&
+        exercises.length === 1 &&
         maxSets === 0
     )
 });
