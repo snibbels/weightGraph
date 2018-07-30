@@ -49,10 +49,12 @@ export const history = (state = [], action) => {
     }
 };
 
-export const currentSplitIndex = (state = 0, action) => {
+export const workout = (state = {}, action) => {
     switch (action.type) {
-        case C.INCREMENT_SPLITINDEX:
-            return action.newIndex;
+        case C.START_WORKOUT:
+        case C.CANCEL_WORKOUT:
+        case C.FINISH_WORKOUT:
+        case C.ITERATE_WORKOUT:
         default:
             return state;
     }
