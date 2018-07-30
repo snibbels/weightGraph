@@ -5,6 +5,10 @@ import { cancelWorkout, startWorkout, finishWorkout, iterateWorkout } from '../r
 class _Workout extends Component {
     constructor(props) {
         super(props);
+        this.start = this.start.bind(this);
+        this.cancel = this.cancel.bind(this);
+        this.finish = this.finish.bind(this);
+        this.iterate = this.iterate.bind(this);
     }
 
     start() {
@@ -44,10 +48,29 @@ class _Workout extends Component {
     }
 
     render() {
+        const { exercise, set, split, isLastIteration } =
+            this.props.store.getState().workout;
         return (
             <div>
-                [Workout]
-      </div>
+                <h2>{split.name}</h2>
+                <p>{exercise ? exercise.name : ""}</p>
+                <p>{set}</p>
+                <div className="w3-button" onClick={this.start}>
+                    start
+                </div>
+                <div className="w3-button" onClick={this.iterate}>
+                    iterate
+                </div>
+                <div className="w3-button" onClick={this.cancel}>
+                    cancel
+                </div>
+                {
+                    isLastIteration ?
+                        (<div className="w3-button" onClick={this.finish}>
+                            finish
+                </div>) : ""
+                }
+            </div>
         )
     }
 }

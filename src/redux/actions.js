@@ -49,7 +49,7 @@ export const startWorkout = (split, exercises, maxSets) => ({
     split,
     exercises,
     exerciseIndex: 0,
-    exersise: exercises[0],
+    exercise: exercises[0],
     set: 0,
     maxSets,
     isLastIteration: (
@@ -68,13 +68,20 @@ export const finishWorkout = (splitIndex, splits) => ({
     split: splits[(splitIndex < splits.length - 1) ? splitIndex + 1 : 0]
 });
 
-export const iterateWorkout = (exercises, exerciseIndex, set, maxSets) => ({
-    type: C.ITERATE_WORKOUT,
-    exerciseIndex: (exerciseIndex < exercises.length - 1) ? exerciseIndex + 1 : 0,
-    exercise: exercises[(exerciseIndex < exercises.length - 1) ? exerciseIndex + 1 : 0],
-    set: (set < maxSets - 1) ? ++set : 0,
-    isLastIteration: (
-        exerciseIndex >= exercises.length - 1 &&
-        set >= maxSets - 1
-    )
-});
+export const iterateWorkout = (exercises, exerciseIndex, set, maxSets) => {
+    const _set = (set < maxSets - 1) ? (set + 1) : 0;
+    const _exerciseIndex = (set < maxSets - 1) ? exerciseIndex : (
+        (exerciseIndex < exercises.length - 1) ? exerciseIndex + 1 : 0
+    );
+
+    return ({
+        type: C.ITERATE_WORKOUT,
+        set: _set,
+        exerciseIndex: _exerciseIndex,
+        exercise: exercises[_exerciseIndex],
+        isLastIteration: (
+            _exerciseIndex >= exercises.length - 1 &&
+            _set >= maxSets - 1
+        )
+    });
+}
