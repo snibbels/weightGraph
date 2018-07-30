@@ -11,6 +11,7 @@ import PageTemplate from './ui/PageTemplate';
 import Workouts from './workouts/Workouts';
 import { defaults, muscles } from './redux/constants';
 import Action from './start/Action';
+import Workout from './workout/Workout';
 
 const location = window.location;
 const { protocol, host, pathname } = location;
@@ -64,7 +65,7 @@ class App extends Component {
             <Route exact path="/" component={Start} />
             <Route path="/stats" component={Statistics} />
             <Route path="/edit" component={Workouts} />
-            <Route path="/action" component={Action} />
+            <Route path="/workout" component={Workout} />
           </PageTemplate>
         </HashRouter>
       </div>

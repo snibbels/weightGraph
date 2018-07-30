@@ -14,7 +14,7 @@ const Start = () => (
             <NextSplit/>
         </ul>
         <span className="w3-row">
-        <Link to="/action">
+        <Link to="/workout">
             <StartButton className="
                     w3-large 
                     w3-hover-blue 
