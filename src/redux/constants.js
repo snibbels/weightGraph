@@ -14,7 +14,8 @@ const C = {
 export default C;
 
 export const defaults = {
-    LOCALSTORAGE_NAME: 'localWeights'
+    LOCALSTORAGE_NAME: 'localWeights',
+    SET_AMOUNT: 3
 }
 
 export const muscles = {
