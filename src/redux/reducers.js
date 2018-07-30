@@ -49,17 +49,6 @@ export const history = (state = [], action) => {
     }
 };
 
-export const workout = (state = {}, action) => {
-    switch (action.type) {
-        case C.START_WORKOUT:
-        case C.CANCEL_WORKOUT:
-        case C.FINISH_WORKOUT:
-        case C.ITERATE_WORKOUT:
-        default:
-            return state;
-    }
-}
-
 export const exercise = (state = {}, action) => {
     switch (action.type) {
         case C.ADD_EXERCISE:

@@ -4,7 +4,8 @@ import { combineReducers, createStore } from 'redux';
 import 'w3-css';
 import { addSplit, addWorkout, addExercise } from './redux/actions'
 import './App.css';
-import { workout, exercises, history, logger, workoutPlan } from './redux/reducers';
+import { exercises, history, logger, workoutPlan } from './redux/reducers';
+import { workout } from './redux/workoutReducers';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
