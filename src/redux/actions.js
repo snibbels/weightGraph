@@ -52,10 +52,8 @@ export const startWorkout = (split, exercises, maxSets) => ({
     exercise: exercises[0],
     set: 0,
     maxSets,
-    isLastIteration: (
-        exercises.length === 1 &&
-        maxSets === 0
-    )
+    isLastExercise: (exercises.length === 1),
+    isLastSet: (maxSets === 1)
 });
 
 export const cancelWorkout = () => ({
@@ -79,9 +77,7 @@ export const iterateWorkout = (exercises, exerciseIndex, set, maxSets) => {
         set: _set,
         exerciseIndex: _exerciseIndex,
         exercise: exercises[_exerciseIndex],
-        isLastIteration: (
-            _exerciseIndex >= exercises.length - 1 &&
-            _set >= maxSets - 1
-        )
+        isLastExercise: (_exerciseIndex >= exercises.length - 1),
+        isLastSet: (_set >= maxSets - 1)
     });
 }
