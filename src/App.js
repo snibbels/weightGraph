@@ -42,6 +42,7 @@ const store = createStore(combineReducers({
 );
 
 export const StoreContext = React.createContext({ store });
+export const cardStyleClasses = ["w3-card", "w3-left-align", "w3-margin", "w3-padding"].join(' ');
 
 class App extends Component {
   constructor() {

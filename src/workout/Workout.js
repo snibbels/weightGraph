@@ -1,14 +1,33 @@
 import React, { Component } from 'react'
 import StoreComponent from '../HOCs/StoreComponent'
 import { cancelWorkout, startWorkout, finishWorkout, iterateWorkout } from '../redux/actions';
-
+import { cardStyleClasses } from '../App';
+import IterationButton from './IterationButton';
+import PauseButton from './PauseButton';
 class _Workout extends Component {
     constructor(props) {
         super(props);
+
         this.start = this.start.bind(this);
         this.cancel = this.cancel.bind(this);
         this.finish = this.finish.bind(this);
         this.iterate = this.iterate.bind(this);
+        this.pause = this.pause.bind(this);
+    }
+
+    componentWillMount() {
+        this.start();
+        this.isActive = true;
+        this.setState({
+            isPaused: false
+        })
+    }
+
+    componentWillUnmount() {
+        if (this.isActive) {
+            this.cancel();
+        }
+        clearTimeout(this.timeout);
     }
 
     start() {
@@ -38,6 +57,7 @@ class _Workout extends Component {
         const { splitIndex } = state.workout;
         const { splits } = state.workoutPlan;
         store.dispatch(finishWorkout(splitIndex, splits));
+        this.isActive = false;
     }
 
     iterate() {
@@ -47,28 +67,43 @@ class _Workout extends Component {
         store.dispatch(iterateWorkout(exercises, exerciseIndex, set, maxSets))
     }
 
+    pause(duration, next = f => f, steps = 100) {
+        this.setState({
+            isPaused: true,
+            duration,
+            progress: 0
+        });
+        const intervalId = setInterval(() =>
+            this.setState({
+                progress: (this.state.progress + (100 / steps))
+            }), duration / steps)
+        this.timeout = setTimeout(() => {
+            this.setState({ isPaused: false })
+            window.navigator.vibrate(500);
+            clearInterval(intervalId);
+            next();
+        }, duration);
+    }
+
     render() {
-        const { exercise, set, split, isLastIteration } =
+        const { exercise, set, split, isLastExercise, isLastSet } =
             this.props.store.getState().workout;
         return (
-            <div>
+            <div className={cardStyleClasses}>
                 <h2>{split.name}</h2>
-                <p>{exercise ? exercise.name : ""}</p>
-                <p>{set}</p>
-                <div className="w3-button" onClick={this.start}>
-                    start
-                </div>
-                <div className="w3-button" onClick={this.iterate}>
-                    iterate
-                </div>
-                <div className="w3-button" onClick={this.cancel}>
-                    cancel
-                </div>
+                <h3>{exercise ? exercise.name : ""}</h3>
+                <p>Satz:<b> {set + 1}</b></p>
+                <p>Wiederholungen: 12</p>
                 {
-                    isLastIteration ?
-                        (<div className="w3-button" onClick={this.finish}>
-                            finish
-                </div>) : ""
+                    this.state.isPaused ?
+                        (<PauseButton
+                            progress={this.state.progress}
+                            className="w3-jumbo" />) :
+                        (<IterationButton
+                            className="w3-jumbo"
+                            isLastExercise={isLastExercise} isLastSet={isLastSet}
+                            finish={this.finish} iterate={this.iterate} pause={this.pause}
+                        />)
                 }
             </div>
         )

@@ -6,7 +6,7 @@ import Progress from './Progress';
 import {Link} from 'react-router-dom'
 
 const Start = () => (
-    <div className="w3-card w3-left-align w3-margin w3-padding" >
+    <div className="p" >
         <h2>Dein Training</h2>
         <ul className="w3-list">
             <Progress/>
