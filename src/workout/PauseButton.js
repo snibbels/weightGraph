@@ -19,8 +19,11 @@ const style = {
 
 const PauseButton = ({ className, progress }) => {
     return (
-        <CircularProgressBar styles={style} className={className}
-            percentage={progress} text={`${progress}%`} />
+        <div>
+            <h3>Pause läuft ...</h3>
+            <CircularProgressBar styles={style} className={className}
+                percentage={progress} text={`${progress}%`} />
+        </div>
     );
 }
 

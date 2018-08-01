@@ -6,7 +6,7 @@ const buttonStyle = {
 };
 
 const StartButton = ({ className, ...props }) => (
-    <div className={className + " w3-button"} {...props}>
+    <div className={className} {...props}>
         <MdPlayArrow
             style={buttonStyle}
             className="w3-circle w3-border w3-margin" />

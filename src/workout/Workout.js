@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import StoreComponent from '../HOCs/StoreComponent'
 import { cancelWorkout, startWorkout, finishWorkout, iterateWorkout } from '../redux/actions';
-import { cardStyleClasses } from '../App';
+import { cardStyleClasses, flexCardContainer, flexCardRow } from '../App';
 import IterationButton from './IterationButton';
 import PauseButton from './PauseButton';
 class _Workout extends Component {
@@ -89,22 +89,30 @@ class _Workout extends Component {
         const { exercise, set, split, isLastExercise, isLastSet } =
             this.props.store.getState().workout;
         return (
-            <div className={cardStyleClasses}>
-                <h2>{split.name}</h2>
-                <h3>{exercise ? exercise.name : ""}</h3>
-                <p>Satz:<b> {set + 1}</b></p>
-                <p>Wiederholungen: 12</p>
-                {
-                    this.state.isPaused ?
-                        (<PauseButton
-                            progress={this.state.progress}
-                            className="w3-jumbo" />) :
-                        (<IterationButton
-                            className="w3-jumbo"
-                            isLastExercise={isLastExercise} isLastSet={isLastSet}
-                            finish={this.finish} iterate={this.iterate} pause={this.pause}
-                        />)
-                }
+            <div className={flexCardRow}>
+                <div className={`${flexCardContainer}`}>
+                    <div className={`${cardStyleClasses}`}>
+                        <h2>{split.name}</h2>
+                        <h3>{exercise ? exercise.name : ""}</h3>
+                        <p>Satz:<b> {set + 1}</b></p>
+                        <p>Wiederholungen: 12</p>
+                    </div>
+                </div>
+                <div className={`${flexCardContainer}`}>
+                    <div className={`${cardStyleClasses}`}>
+                        {
+                            this.state.isPaused ?
+                                (<PauseButton
+                                    progress={this.state.progress}
+                                    className="w3-jumbo" />) :
+                                (<IterationButton
+                                    className="w3-jumbo"
+                                    isLastExercise={isLastExercise} isLastSet={isLastSet}
+                                    finish={this.finish} iterate={this.iterate} pause={this.pause}
+                                />)
+                        }
+                    </div>
+                </div>
             </div>
         )
     }

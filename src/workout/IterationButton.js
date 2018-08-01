@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { MdPause } from 'react-icons/lib/md'
+import { MdPause, MdStop } from 'react-icons/lib/md'
 
 const IterationButton = ({ isLastExercise, isLastSet, finish = f => f,
     iterate = f => f, pause = f => f, className }) => {
@@ -23,22 +23,28 @@ const IterationButton = ({ isLastExercise, isLastSet, finish = f => f,
         border: "20px solid #2395F388"
     };
 
-    return (
-        <div className={className}>
-            {
-                isLastSet && isLastExercise ?
-                    (<Link 
-                        className="w3-large w3-hover-blue 
-                            w3-border w3-round-large w3-col s12 m6 l3" 
-                        onClick={finish} to="/">
-                        Training Beenden
-                    </Link>) :
-                    <MdPause className="w3-circle"
-                        style={style}
-                        onClick={isLastSet ? onNextExercise : onNextSet} />
-            }
-        </div>
-    );
+    if (isLastExercise && isLastSet)
+        return (
+            <Link
+                className={`w3-large`}
+                style={{ textDecoration: "none" }}
+                onClick={finish} to="/">
+                <h3>Training beenden</h3>
+                <MdStop className="w3-circle"
+                    style={style} />
+            </Link>
+        );
+    else
+        return (
+            <div className={className}>
+                <h3>Pause: {(isLastSet ? timeBetweenExercises : timeBetweenSets) / (60 * 1000)} min</h3>
+                <MdPause className="w3-circle"
+                    style={style}
+                    onClick={isLastSet ? onNextExercise : onNextSet} />
+            </div>
+        )
 }
+
+
 
 export default IterationButton;

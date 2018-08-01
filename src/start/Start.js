@@ -3,26 +3,28 @@ import StartButton from './StartButton';
 import NextSplit from './NextSplit';
 import Week from './Week';
 import Progress from './Progress';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { cardStyleClasses, flexCardRow, flexCardContainer } from '../App';
 
 const Start = () => (
-    <div className="p" >
-        <h2>Dein Training</h2>
-        <ul className="w3-list">
-            <Progress/>
-            <Week/>
-            <NextSplit/>
-        </ul>
-        <span className="w3-row">
-        <Link to="/workout">
-            <StartButton className="
-                    w3-large 
-                    w3-hover-blue 
-                    w3-border 
-                    w3-round-large 
-                    w3-col s12 m6 l3" />
-            </Link>
-        </span>
+    <div className={flexCardRow} >
+        <div className={flexCardContainer}>
+            <div className={cardStyleClasses}>
+                <h2>Dein Training</h2>
+                <ul className="w3-list">
+                    <Progress />
+                    <Week />
+                    <NextSplit />
+                </ul>
+            </div>
+        </div>
+        <div className={flexCardContainer}>
+            <div className={`${cardStyleClasses} w3-hover-blue`}>
+                <Link to="/workout" style={{ textDecoration: "none" }} >
+                    <StartButton className="w3-large" />
+                </Link>
+            </div>
+        </div>
     </div>
 );
 
