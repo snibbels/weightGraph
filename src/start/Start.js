@@ -11,10 +11,10 @@ const Start = () => (
         <div className={flexCardContainer}>
             <div className={cardStyleClasses}>
                 <h2>Dein Training</h2>
-                <ul className="w3-list">
-                    <Progress />
-                    <Week />
-                    <NextSplit />
+                <ul className="w3-ul">
+                    <li className="w3-padding"><Progress /></li>
+                    <li className="w3-padding"><Week /></li>
+                    <li className="w3-padding"><NextSplit /></li>
                 </ul>
             </div>
         </div>

@@ -3,17 +3,14 @@ import StoreComponent from '../HOCs/StoreComponent';
 
 const _NextSplit = ({ store, ...props }) => {
 
-    const { currentSplitIndex } = store.getState();
-    const { splits = [] } = store.getState().workoutPlan;
-    const nextSplit = splits[currentSplitIndex];
-
+    const { split } = store.getState().workout;
     return (
         <div {...props}>
             <span>
                 {
-                    (!!nextSplit) ?
-                        `Nächste Einheit: ${nextSplit.name}` :
-                        "Diggah, gibt keine Splits"
+                    (!!split) ?
+                        `Nächste Einheit: ${split.name}` :
+                        ""
                 }
             </span>
         </div>
