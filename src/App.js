@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import 'w3-css';
-import { addSplit, addWorkout, addExercise } from './redux/actions'
 import './App.css';
+import { addExercise, addSplit, addWorkout } from './redux/actions';
+import { defaults, muscles } from './redux/constants';
 import { exercises, history, logger, workoutPlan } from './redux/reducers';
 import { workout } from './redux/workoutReducers';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
-import Workouts from './workouts/Workouts';
-import { defaults, muscles } from './redux/constants';
-import Action from './start/Action';
 import Workout from './workout/Workout';
+import Workouts from './workouts/Workouts';
 
 const location = window.location;
 const { protocol, host, pathname } = location;
@@ -42,7 +41,7 @@ const store = createStore(combineReducers({
 );
 
 export const StoreContext = React.createContext({ store });
-export const cardStyleClasses = ["w3-card", "w3-left-align", "w3-margin", "w3-padding"].join(' ');
+export const cardStyleClasses = ["w3-card", "w3-left-align", "w3-margin", "w3-padding", "w3-display-container"].join(' ');
 
 class App extends Component {
   constructor() {

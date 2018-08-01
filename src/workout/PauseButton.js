@@ -1,6 +1,5 @@
-import React from 'react'
-import { MdPause } from 'react-icons/lib/md'
-import CircularProgressBar from 'react-circular-progressbar'
+import React from 'react';
+import CircularProgressBar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const style = {
