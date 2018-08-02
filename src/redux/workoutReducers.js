@@ -16,7 +16,8 @@ export const workout = (state = {}, action) => {
                 set: set(state.set, action),
                 maxSets: maxSets(state.maxSets, action),
                 isLastExercise: isLastExercise(state.isLastExercise, action),
-                isLastSet: isLastSet(state.isLastSet, action)
+                isLastSet: isLastSet(state.isLastSet, action),
+                weight: weight(state, action)
             }
     }
 }
@@ -121,6 +122,16 @@ export const isLastSet = (state = false, action) => {
         case C.CANCEL_WORKOUT:
         case C.FINISH_WORKOUT:
             return false;
+        default:
+            return state;
+    }
+}
+
+export const weight = (state = 0, action) => {
+    switch (action.type) {
+        case C.START_WORKOUT:
+        case C.ITERATE_WORKOUT:
+            return action.weight;
         default:
             return state;
     }
