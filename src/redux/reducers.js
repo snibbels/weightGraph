@@ -1,4 +1,5 @@
 import C from './constants';
+import { addHistoryEntry } from './actions';
 
 export const logger = (state, action) => {
     console.log("dispatch", action.type);
@@ -44,10 +45,29 @@ export const workoutPlan = (state = {}, action) => {
 
 export const history = (state = [], action) => {
     switch (action.type) {
+        case C.ADD_HISTORY_ENTRY:
+            return [
+                historyEntry(state, action),
+                ...state
+            ];
         default:
             return state;
     }
 };
+
+export const historyEntry = (state = {}, action) => {
+    switch (action.type) {
+        case C.ADD_HISTORY_ENTRY:
+            return {
+                id: action.id,
+                exerciseId: action.exerciseId,
+                weight: action.weight,
+                timestamp: action.timestamp
+            }
+        default:
+            return state;
+    }
+}
 
 export const exercise = (state = {}, action) => {
     switch (action.type) {

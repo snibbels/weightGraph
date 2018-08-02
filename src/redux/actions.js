@@ -81,3 +81,11 @@ export const iterateWorkout = (exercises, exerciseIndex, set, maxSets) => {
         isLastSet: (_set >= maxSets - 1)
     });
 }
+
+export const addHistoryEntry = (exerciseId, weight) => ({
+    type: C.ADD_HISTORY_ENTRY,
+    id: v4(),
+    exerciseId,
+    weight,
+    timestamp: Date.now()
+});
