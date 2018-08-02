@@ -19,7 +19,7 @@ const _Start = ({ store }) => {
                         <Link to="/edit" style={{ textDecoration: "none" }}>
                             <div className="w3-display-container">
                                 <p>Du hast noch keinen Trainingsplan.</p>
-                                <p>Erstelle hier deinen ersten Trainingsplan</p>
+                                <p>Erstelle hier deinen ersten Trainingsplan.</p>
                                 <div
                                     style={{ padding: "4px" }}
                                     className="w3-display-right w3-circle w3-blue">

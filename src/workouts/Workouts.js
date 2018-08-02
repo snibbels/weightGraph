@@ -21,7 +21,7 @@ const _Workouts = ({ store }) => {
                                 <div className={cardStyleClasses}>
                                     <h3>Willkommen im Editor</h3>
                                     <p>Hier siehst Du deine Splits und alle Übungen.</p>
-                                    <p>Du kannst die Übungen durch antippen deinem Trainingsplan hinzufügen</p>
+                                    <p>Du kannst die Übungen durch antippen deinem Trainingsplan hinzufügen.</p>
                                 </div>
                             </div>
                         </div>
