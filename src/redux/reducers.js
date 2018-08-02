@@ -1,5 +1,4 @@
 import C from './constants';
-import { addHistoryEntry } from './actions';
 
 export const logger = (state, action) => {
     console.log("dispatch", action.type);
