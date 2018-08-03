@@ -6,9 +6,8 @@ const WorkoutPlan = ({ name, splits = [], className, style }) => (
     <div className={className} style={style} >
         {name ? (<h2>{name}</h2>) : ""}
         {splits.map((s, i) => (
-            <div className={`${flexCardContainer}`} >
+            <div className={`${flexCardContainer}`} key={i}>
                 <Split
-                    key={i}
                     {...s}
                     className={`${cardStyleClasses}`} />
             </div>
