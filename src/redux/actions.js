@@ -45,7 +45,10 @@ export const incrementSplitIndex = (currentIndex, maxIndex) => ({
 });
 
 export const startWorkout = (split, exercises, maxSets, history = []) => {
-    const { weight } = history.filter(item => item.exerciseId === exercises[0].id)[0]
+    const exercise = exercises[0];
+    const latest = exercise ? history.filter(item => item.exerciseId === exercise.id)[0] : undefined;
+    const weight = latest ? latest.weight : 0;
+
     return {
         type: C.START_WORKOUT,
         split,
@@ -54,8 +57,8 @@ export const startWorkout = (split, exercises, maxSets, history = []) => {
         exercise: exercises[0],
         set: 0,
         maxSets,
-        isLastExercise: (exercises.length === 1),
-        isLastSet: (maxSets === 1),
+        isLastExercise: (exercises.length <= 1),
+        isLastSet: (maxSets === 1 || exercises.length === 0),
         weight
     }
 }
@@ -75,8 +78,9 @@ export const iterateWorkout = (exercises, exerciseIndex, set, maxSets, history =
     const _exerciseIndex = (set < maxSets - 1) ? exerciseIndex : (
         (exerciseIndex < exercises.length - 1) ? exerciseIndex + 1 : 0
     );
-    const { weight } = history.filter(item => item.exerciseId === exercises[exerciseIndex].id)[0];
-    console.log(weight, history.filter(item => item.exerciseId === exercises[exerciseIndex].id))
+    const exercise = exercises[exerciseIndex];
+    const latest = exercise ? history.filter(item => item.exerciseId === exercise.id)[0] : undefined;
+    const weight = latest ? latest.weight : 0;
 
     return ({
         type: C.ITERATE_WORKOUT,

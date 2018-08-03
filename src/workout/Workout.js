@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
-import StoreComponent from '../HOCs/StoreComponent'
-import { cancelWorkout, startWorkout, finishWorkout, iterateWorkout, addHistoryEntry } from '../redux/actions';
+import React, { Component } from 'react';
 import { cardStyleClasses, flexCardContainer, flexCardRow } from '../App';
-import IterationButton from './IterationButton';
-import PauseButton from './PauseButton';
-import Weights from './Weights';
+import StoreComponent from '../HOCs/StoreComponent';
+import { addHistoryEntry, cancelWorkout, finishWorkout, iterateWorkout, startWorkout } from '../redux/actions';
 import Meta from './Meta';
 import Timer from './Timer';
+import Weights from './Weights';
 class _Workout extends Component {
     constructor(props) {
         super(props);
@@ -79,6 +77,7 @@ class _Workout extends Component {
         const { weight } = this.state;
         const { history } = state;
         const { exercise, exercises, exerciseIndex, set, maxSets } = state.workout;
+        if (!exercise || !exercises) return;
         store.dispatch(iterateWorkout(exercises, exerciseIndex, set, maxSets, history))
         store.dispatch(addHistoryEntry(exercise.id, weight))
     }
@@ -102,8 +101,6 @@ class _Workout extends Component {
     }
 
     render() {
-        const { exercise, set, split, isLastExercise, isLastSet } =
-            this.props.store.getState().workout;
         const { weight } = this.state;
         return (
             <div className={flexCardRow}>
@@ -118,10 +115,17 @@ class _Workout extends Component {
                     <Timer className={cardStyleClasses}
                         {...this.state}
                         {...this.props.store.getState().workout}
+                        iterate={this.iterate}
+                        pause={this.pause}
+                        start={this.start}
+                        finish={this.finish}
                     />
                 </div>
                 <div className={`${flexCardContainer}`}>
-                    <Weights className={`${cardStyleClasses}`} addWeight={this.addWeight} sum={weight} />
+                    <Weights
+                        className={`${cardStyleClasses}`}
+                        addWeight={this.addWeight}
+                        sum={weight} />
                 </div>
             </div>
         )

@@ -29,7 +29,7 @@ const MainMenu = () => (
                 Start
             </span>
         </NavLink>
-        <NavLink
+        {/* <NavLink
             activeStyle={activeStyle}
             className="w3-bar-item w3-button"
             to="/stats">
@@ -37,7 +37,7 @@ const MainMenu = () => (
             <span className="w3-hide-small">
                 Meine Statistik
             </span>
-        </NavLink>
+        </NavLink> */}
         <NavLink
             activeStyle={activeStyle}
             className="w3-bar-item w3-button"

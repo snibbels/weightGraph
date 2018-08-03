@@ -9,7 +9,7 @@ const parseSumToDiscs = (sum, discs) =>
                 : accumulator
         , []);
 
-const Weights = ({ sum = 5, displayedDiscs = [20, 10, 5, 2.5, 1.25, 0.5],
+const Weights = ({ sum = 5, displayedDiscs = [20, 10, 5, 4, 2.5, 2, 1.25, 1, 0.5],
     addWeight = f => f, ...props }) => {
 
     const selectedDiscs = parseSumToDiscs(sum, displayedDiscs);
