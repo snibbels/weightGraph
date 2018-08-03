@@ -5,6 +5,8 @@ import { cardStyleClasses, flexCardContainer, flexCardRow } from '../App';
 import IterationButton from './IterationButton';
 import PauseButton from './PauseButton';
 import Weights from './Weights';
+import Meta from './Meta';
+import Timer from './Timer';
 class _Workout extends Component {
     constructor(props) {
         super(props);
@@ -106,30 +108,17 @@ class _Workout extends Component {
         return (
             <div className={flexCardRow}>
                 <div className={`${flexCardContainer}`}>
-                    <div className={`${cardStyleClasses}`}>
-                        <h2>{split.name}</h2>
-                        <h3>{exercise ? exercise.name : ""}</h3>
-                        <p>letztes Gewicht:
-                            <b> {weight} kg </b>
-                        </p>
-                        <p>Satz:<b> {set + 1}</b></p>
-                        <p>Wiederholungen: 12</p>
-                    </div>
+                    <Meta
+                        className={cardStyleClasses}
+                        {...this.props.store.getState().workout}
+                        {...this.state}
+                    />
                 </div>
                 <div className={`${flexCardContainer}`}>
-                    <div className={`${cardStyleClasses}`}>
-                        {
-                            this.state.isPaused ?
-                                (<PauseButton
-                                    progress={this.state.progress}
-                                    className="w3-jumbo" />) :
-                                (<IterationButton
-                                    className="w3-jumbo"
-                                    isLastExercise={isLastExercise} isLastSet={isLastSet}
-                                    finish={this.finish} iterate={this.iterate} pause={this.pause}
-                                />)
-                        }
-                    </div>
+                    <Timer className={cardStyleClasses}
+                        {...this.state}
+                        {...this.props.store.getState().workout}
+                    />
                 </div>
                 <div className={`${flexCardContainer}`}>
                     <Weights className={`${cardStyleClasses}`} addWeight={this.addWeight} sum={weight} />
