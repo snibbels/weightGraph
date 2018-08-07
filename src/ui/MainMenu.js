@@ -18,13 +18,15 @@ const mdIcon = {
     fontSize: "1.25em",
 }
 
+const isActive = (match, location) => match.isExact || location.pathname === "/workout";
+
 const MainMenu = () => (
     <div className="w3-bar w3-white">
         <NavLink
             activeStyle={activeStyle}
             style={{ textDecoration: "none" }}
             className="w3-bar-item"
-            exact
+            isActive={isActive}
             to="/">
             <Dumbbell style={{ ...icon, ...mdIcon }} />
             <span className="w3-hide-small">

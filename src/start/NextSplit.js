@@ -8,9 +8,9 @@ const _NextSplit = ({ store, ...props }) => {
         <div {...props}>
             <span>
                 {
-                    (!!split) ?
+                    (!!split && !!split.name) ?
                         `Nächste Einheit: ${split.name}` :
-                        ""
+                        "Beginne jetzt mit deinem ersten Training"
                 }
             </span>
         </div>
