@@ -2,10 +2,11 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdEdit } from 'react-icons/lib/md';
 import chart from '../icons/chart.svg';
-import dumbbell from '../icons/dumbbell.svg';
+import Dumbbell from '../icons/Dumbbell.js';
 
 const activeStyle = {
-    borderBottom: "4px solid #2395F3"
+    borderBottom: "4px solid #2395F3",
+    color: "#2395F3"
 }
 
 const icon = {
@@ -21,17 +22,19 @@ const MainMenu = () => (
     <div className="w3-bar w3-white">
         <NavLink
             activeStyle={activeStyle}
-            className="w3-bar-item w3-button"
+            style={{ textDecoration: "none" }}
+            className="w3-bar-item"
             exact
             to="/">
-            <img src={dumbbell} style={icon} alt="" />
+            <Dumbbell style={{ ...icon, ...mdIcon }} />
             <span className="w3-hide-small">
                 Start
             </span>
         </NavLink>
         {/* <NavLink
             activeStyle={activeStyle}
-            className="w3-bar-item w3-button"
+            style={{textDecoration: "none"}}
+            className="w3-bar-item"
             to="/stats">
             <img src={chart} style={icon} alt="" />
             <span className="w3-hide-small">
@@ -40,7 +43,8 @@ const MainMenu = () => (
         </NavLink> */}
         <NavLink
             activeStyle={activeStyle}
-            className="w3-bar-item w3-button"
+            style={{ textDecoration: "none" }}
+            className="w3-bar-item"
             to="/edit">
             <MdEdit style={{ ...icon, ...mdIcon }} />
             <span className="w3-hide-small">
