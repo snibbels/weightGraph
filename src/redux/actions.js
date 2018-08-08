@@ -70,7 +70,8 @@ export const cancelWorkout = () => ({
 export const finishWorkout = (splitIndex, splits) => ({
     type: C.FINISH_WORKOUT,
     splitIndex: (splitIndex < splits.length - 1) ? splitIndex + 1 : 0,
-    split: splits[(splitIndex < splits.length - 1) ? splitIndex + 1 : 0]
+    split: splits[(splitIndex < splits.length - 1) ? splitIndex + 1 : 0],
+    timestamp: Date.now()
 });
 
 export const iterateWorkout = (exercises, exerciseIndex, set, maxSets, history = []) => {

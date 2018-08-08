@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'
 import { cardStyleClasses, flexCardRow, flexCardContainer } from '../App';
 import StoreComponent from '../HOCs/StoreComponent';
 import { MdEdit } from 'react-icons/lib/md';
+import FlexCardRow from '../ui/FlexCardRow';
+import Protocol from './Protocol';
 
 const _Start = ({ store }) => {
     const isWorkoutEmpty = !store.getState().exercises.map(e => e.selected).filter(e => e).length;
@@ -35,25 +37,23 @@ const _Start = ({ store }) => {
         )
     else
         return (
-            <div className={flexCardRow} >
-                <div className={flexCardContainer}>
-                    <div className={cardStyleClasses}>
-                        <h2>Dein Training</h2>
-                        <ul className="w3-ul">
-                            {/* <li className="w3-padding"><Progress /></li>
+            <FlexCardRow>
+                <div className={cardStyleClasses}>
+                    <h2>Dein Training</h2>
+                    <ul className="w3-ul">
+                        {/* <li className="w3-padding"><Progress /></li>
                     <li className="w3-padding"><Week /></li> */}
-                            <li className="w3-padding"><NextSplit /></li>
-                        </ul>
-                    </div>
+                        <li className="w3-padding"><NextSplit /></li>
+                    </ul>
                 </div>
-                <div className={flexCardContainer}>
-                    <div className={`${cardStyleClasses} w3-hover-blue`}>
-                        <Link to="/workout" style={{ textDecoration: "none" }} >
-                            <StartButton className="w3-large" />
-                        </Link>
-                    </div>
+                <div className={`${cardStyleClasses} w3-hover-blue`}>
+                    <Link to="/workout" style={{ textDecoration: "none" }} >
+                        <StartButton className="w3-large" />
+                    </Link>
                 </div>
-            </div>
+                <Protocol {...store.getState().workoutPlan} className={cardStyleClasses} />
+
+            </FlexCardRow>
         );
 }
 

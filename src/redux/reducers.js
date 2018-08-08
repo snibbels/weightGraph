@@ -37,6 +37,11 @@ export const workoutPlan = (state = {}, action) => {
                 ...state,
                 splits: splits(state.splits, action)
             };
+        case C.FINISH_WORKOUT:
+            return {
+                ...state,
+                lastWorkout: action.timestamp
+            };
         default:
             return state;
     }
