@@ -1,7 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { MdEdit } from 'react-icons/lib/md';
-import chart from '../icons/chart.svg';
+import { NavLink } from 'react-router-dom';
 import Dumbbell from '../icons/Dumbbell.js';
 
 const activeStyle = {

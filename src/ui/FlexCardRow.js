@@ -8,8 +8,8 @@ const FlexCardRow = ({ children }) => (
     <div className={flexCardRow}>
         {
             children.map(
-                c => (
-                    <div className={flexCardContainer}>
+                (c, i) => (
+                    <div className={flexCardContainer} key={i}>
                         {c}
                     </div>
                 )

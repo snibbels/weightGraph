@@ -1,8 +1,8 @@
 import React from 'react';
 import StartButton from './StartButton';
 import NextSplit from './NextSplit';
-import Week from './Week';
-import Progress from './Progress';
+// import Week from './Week';
+// import Progress from './Progress';
 import { Link } from 'react-router-dom'
 import { cardStyleClasses, flexCardRow, flexCardContainer } from '../App';
 import StoreComponent from '../HOCs/StoreComponent';
