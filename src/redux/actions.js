@@ -10,14 +10,14 @@ export const addExercise = (name, muscles) => ({
     timestamp: Date.now()
 });
 
-export const selectExercise = id => ({
+export const selectExercise = (id, name, muscles) => ({
     type: C.SELECT_EXERCISE,
-    id
+    id, name, muscles
 });
 
-export const unselectExercise = id => ({
+export const unselectExercise = (id, name, muscles) => ({
     type: C.UNSELECT_EXERCISE,
-    id
+    id, name, muscles
 });
 
 export const addWorkout = (name = "Mein Plan") => ({

@@ -8,8 +8,8 @@ import { flexCardContainer, cardStyleClasses } from '../App';
 const _Exercise = ({ store, id, name, muscles, selected }) => {
     const toggleSelect = ()=> store.dispatch(
         selected ? 
-        unselectExercise(id):
-        selectExercise(id)
+        unselectExercise(id, name, muscles):
+        selectExercise(id, name, muscles)
     );
     
     return (

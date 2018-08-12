@@ -33,6 +33,8 @@ export const workoutPlan = (state = {}, action) => {
                 splits: action.splits
             };
         case C.ADD_SPLIT:
+        case C.SELECT_EXERCISE:
+        case C.UNSELECT_EXERCISE:
             return {
                 ...state,
                 splits: splits(state.splits, action)
@@ -98,6 +100,11 @@ export const splits = (state = [], action) => {
                 ...state,
                 split(state, action)
             ];
+        case C.SELECT_EXERCISE:
+        case C.UNSELECT_EXERCISE:
+            return state.map(
+                s => split(s, action)
+            );
         default:
             return state;
     }
@@ -112,6 +119,23 @@ export const split = (state = {}, action) => {
                 exercises: action.exercises,
                 muscles: action.muscles
             }
+        case C.SELECT_EXERCISE:
+            return !state.muscles.find(muscle => (action.muscles.indexOf(muscle) > -1)) ?
+                state :
+                {
+                    ...state,
+                    exercises: [
+                        ...state.exercises, action.id
+                    ]
+                }
+        case C.UNSELECT_EXERCISE:
+            return !state.muscles.find(muscle => (action.muscles.indexOf(muscle) > -1)) ?
+                state :
+                {
+                    ...state,
+                    exercises: state.exercises.filter(e => e.id !== action.id)
+                }
+
         default:
             return state;
     }

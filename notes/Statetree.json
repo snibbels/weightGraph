@@ -1,0 +1,1049 @@
+{
+    "logger": null,
+    "exercises": [
+        {
+            "name": "Bankdrücken, flach",
+            "muscles": [
+                "CHEST"
+            ],
+            "id": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "timestamp": 1533204819650,
+            "selected": true
+        },
+        {
+            "name": "Bankdrücken, schräg",
+            "muscles": [
+                "CHEST"
+            ],
+            "id": "5b9f0c5b-bb1d-4071-9d89-bba3fe4ff7dc",
+            "timestamp": 1533204819664,
+            "selected": true
+        },
+        {
+            "name": "Überzüge",
+            "muscles": [
+                "CHEST"
+            ],
+            "id": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "timestamp": 1533204819682,
+            "selected": false
+        },
+        {
+            "name": "Liegestütze",
+            "muscles": [
+                "CHEST",
+                "BACK"
+            ],
+            "id": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "timestamp": 1533204819689,
+            "selected": true
+        },
+        {
+            "name": "Fliegende",
+            "muscles": [
+                "CHEST"
+            ],
+            "id": "bfceb5f9-c6af-41bc-9a34-389106c28df9",
+            "timestamp": 1533204819696
+        },
+        {
+            "name": "Curl, stehend",
+            "muscles": [
+                "BIZEPS"
+            ],
+            "id": "2a9487fe-e079-4f7c-bd72-70e7352d8bd7",
+            "timestamp": 1533204819721
+        },
+        {
+            "name": "Curl, sitzend",
+            "muscles": [
+                "BIZEPS"
+            ],
+            "id": "02568ba4-9d0d-4511-b0a0-5f1abb6643b4",
+            "timestamp": 1533204819733
+        },
+        {
+            "name": "Hammercurl",
+            "muscles": [
+                "BIZEPS"
+            ],
+            "id": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "timestamp": 1533204819739,
+            "selected": false
+        },
+        {
+            "name": "Curl an Hantelbank",
+            "muscles": [
+                "BIZEPS"
+            ],
+            "id": "02502586-d185-414b-abff-abcca32a57c8",
+            "timestamp": 1533204819747
+        },
+        {
+            "name": "Konzentrationscurl",
+            "muscles": [
+                "BIZEPS"
+            ],
+            "id": "93f998ce-6a57-43fc-88f0-5dc625fdbadd",
+            "timestamp": 1533204819752
+        },
+        {
+            "name": "Rudern, einarmig",
+            "muscles": [
+                "BACK"
+            ],
+            "id": "3462a0f1-0000-4786-b5a6-f75439f4aeb2",
+            "timestamp": 1533204819759,
+            "selected": false
+        },
+        {
+            "name": "Reverse Butterfly",
+            "muscles": [
+                "BACK"
+            ],
+            "id": "e4edee00-ab51-47ed-9f16-e1b8d3102781",
+            "timestamp": 1533204819763
+        },
+        {
+            "name": "Rudern, beidarmig",
+            "muscles": [
+                "BACK"
+            ],
+            "id": "a0b4b88a-0bfb-4d0c-a080-e91925043ffd",
+            "timestamp": 1533204819768
+        },
+        {
+            "name": "Rudern, stehend",
+            "muscles": [
+                "BACK"
+            ],
+            "id": "39fd7f70-0df0-45ae-b9b0-f0209a26e788",
+            "timestamp": 1533204819772
+        },
+        {
+            "name": "Dips",
+            "muscles": [
+                "TRIZEPS"
+            ],
+            "id": "4aa5b758-305d-496c-9154-48f1dbf725a9",
+            "timestamp": 1533204819777
+        },
+        {
+            "name": "Trizeps Kickback",
+            "muscles": [
+                "TRIZEPS"
+            ],
+            "id": "9a46e97a-dd37-4e1a-9dea-62305621dcbe",
+            "timestamp": 1533204819782
+        },
+        {
+            "name": "Stirndrücken",
+            "muscles": [
+                "TRIZEPS"
+            ],
+            "id": "f4b4a0d7-5ff0-44d1-b40c-befd2ee6e390",
+            "timestamp": 1533204819803
+        },
+        {
+            "name": "Trizepsdrücken, beidarmig",
+            "muscles": [
+                "TRIZEPS"
+            ],
+            "id": "c3b2393a-d776-4a66-a824-2cc52e06f49c",
+            "timestamp": 1533204819814
+        },
+        {
+            "name": "Trizepsdrücken, einarmig",
+            "muscles": [
+                "TRIZEPS"
+            ],
+            "id": "659bf57f-97ba-48ab-997f-a2e3ba15e618",
+            "timestamp": 1533204819824
+        },
+        {
+            "name": "Frontheben, einarmig",
+            "muscles": [
+                "SHOULDER"
+            ],
+            "id": "e2f4d3d2-a3fe-4bf5-958a-3664f417365d",
+            "timestamp": 1533204819842
+        },
+        {
+            "name": "Schulterdrücken",
+            "muscles": [
+                "SHOULDER"
+            ],
+            "id": "448783e1-e89f-4c82-a3b5-6db5890f6253",
+            "timestamp": 1533204819879,
+            "selected": false
+        },
+        {
+            "name": "Seitheben, sitzend",
+            "muscles": [
+                "SHOULDER"
+            ],
+            "id": "645a5f42-1af6-4017-9a68-56630e95b6a2",
+            "timestamp": 1533204819888,
+            "selected": true
+        },
+        {
+            "name": "Seitheben, stehend",
+            "muscles": [
+                "SHOULDER"
+            ],
+            "id": "79f943f3-37a4-44ae-88b9-d41bc8a09273",
+            "timestamp": 1533204819898
+        },
+        {
+            "name": "Shrugs",
+            "muscles": [
+                "SHOULDER"
+            ],
+            "id": "6b9d6748-68eb-4b3c-a60e-22d853373fcc",
+            "timestamp": 1533204819918
+        },
+        {
+            "name": "Ausfallschritt",
+            "muscles": [
+                "LEGS"
+            ],
+            "id": "28d0b3e2-041f-43b5-8251-d128d68e9b8a",
+            "timestamp": 1533204819931
+        },
+        {
+            "name": "Wadenheber",
+            "muscles": [
+                "LEGS"
+            ],
+            "id": "9af20d98-417e-48f5-8489-291edc54e69a",
+            "timestamp": 1533204819938
+        },
+        {
+            "name": "Kniebeuge",
+            "muscles": [
+                "LEGS"
+            ],
+            "id": "e9c6a719-a10c-4873-8966-234006e52503",
+            "timestamp": 1533204819957
+        },
+        {
+            "name": "Kniebeuge, einbeinig",
+            "muscles": [
+                "LEGS"
+            ],
+            "id": "2f4ea6d0-f8bb-433a-92cd-29e8ffe84d13",
+            "timestamp": 1533204819967
+        },
+        {
+            "name": "Kniebeuge an Hantelbank",
+            "muscles": [
+                "LEGS"
+            ],
+            "id": "910b60f7-fe1d-4c88-90f9-bd4a9433b74b",
+            "timestamp": 1533204819992
+        }
+    ],
+    "workoutPlan": {
+        "id": "7168db75-7889-46ca-a6c3-a500b526989f",
+        "name": "Mein Plan",
+        "timestamp": 1533204819493,
+        "tags": [],
+        "splits": [
+            {
+                "name": "Brust & Bizeps",
+                "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                "exercises": [
+                    "85a7fdae-60ad-44de-b155-7ce834036355",
+                    "5b9f0c5b-bb1d-4071-9d89-bba3fe4ff7dc"
+                ],
+                "muscles": [
+                    "BIZEPS",
+                    "CHEST"
+                ]
+            },
+            {
+                "name": "Rücken & Trizeps",
+                "id": "d02448c9-cb3c-4f9e-b93a-2c2c8682cd89",
+                "exercises": [
+                    "a20a826a-fbda-4e9f-b47a-80ad9fc0f795"
+                ],
+                "muscles": [
+                    "BACK",
+                    "TRIZEPS"
+                ]
+            },
+            {
+                "name": "Beine & Schultern",
+                "id": "a8d40755-a892-48e2-a598-9d79fdbffa66",
+                "exercises": [],
+                "muscles": [
+                    "LEGS",
+                    "SHOULDER"
+                ]
+            }
+        ],
+        "lastWorkout": 1534009367394
+    },
+    "history": [
+        {
+            "id": "835cf5ae-e42c-4b7e-a483-0235b388456b",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1534009407991
+        },
+        {
+            "id": "2049d1f7-cc18-4826-b49d-d2467767cc39",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1534009407141
+        },
+        {
+            "id": "0d1bfbf2-6359-4851-8f2c-527a1161d007",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1534009406338
+        },
+        {
+            "id": "b85724c3-ba9b-4639-8103-1b6f6295a39d",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 31.5,
+            "timestamp": 1534009399190
+        },
+        {
+            "id": "285485af-355b-45bf-97ce-38939bff7ba3",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 31.5,
+            "timestamp": 1534009397946
+        },
+        {
+            "id": "cfa460e5-1fa9-490d-9868-eccb0b92b948",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 31.5,
+            "timestamp": 1534009396510
+        },
+        {
+            "id": "142f4dca-ae6c-4f50-884a-bd3a8e180c2f",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 29,
+            "timestamp": 1534009392121
+        },
+        {
+            "id": "a70b1f01-9312-40de-9eb2-afdc93ae3c38",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 29,
+            "timestamp": 1534009390583
+        },
+        {
+            "id": "f0305494-8540-41c5-b122-4711471fb527",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 29,
+            "timestamp": 1534009386446
+        },
+        {
+            "id": "ca0649d4-82e6-4f4d-8525-a19395359dce",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1534009376700
+        },
+        {
+            "id": "2a64c122-40f6-4441-afe5-579a56a7fd30",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1534009375496
+        },
+        {
+            "id": "8f4f8232-9e02-44d5-94cf-f1c5823997f6",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1534009374153
+        },
+        {
+            "id": "22985db7-1a88-44e7-8c37-9c221d376fce",
+            "exerciseId": "645a5f42-1af6-4017-9a68-56630e95b6a2",
+            "weight": 10,
+            "timestamp": 1534009365647
+        },
+        {
+            "id": "636f2c51-366d-46f0-a737-48285559d998",
+            "exerciseId": "645a5f42-1af6-4017-9a68-56630e95b6a2",
+            "weight": 0,
+            "timestamp": 1534009360038
+        },
+        {
+            "id": "75a47f9f-43bd-4887-88df-282e52d6b6b8",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 26.5,
+            "timestamp": 1534009354752
+        },
+        {
+            "id": "0246b8d3-cc7f-4dbc-b72f-b83bf7114cf3",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 26.5,
+            "timestamp": 1534009347438
+        },
+        {
+            "id": "22c06cbd-f682-45a4-b7fe-b38ae6a7ea10",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 26.5,
+            "timestamp": 1533927055204
+        },
+        {
+            "id": "174b6457-92bd-4066-af81-828012dccfee",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 26.5,
+            "timestamp": 1533927055073
+        },
+        {
+            "id": "d9836800-fe34-48a1-bab9-e3d19b61b1b8",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 26.5,
+            "timestamp": 1533927054829
+        },
+        {
+            "id": "dab381c8-f7d1-4265-8fb4-8cedf769ff3b",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 26.5,
+            "timestamp": 1533927054688
+        },
+        {
+            "id": "28a712e7-aabd-422a-8d57-9e850e8f7fb7",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 26.5,
+            "timestamp": 1533927054379
+        },
+        {
+            "id": "ced08e27-ebde-4c0d-a543-e9fc481c647c",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 26.5,
+            "timestamp": 1533927053410
+        },
+        {
+            "id": "94c7d9fd-ac71-4281-8757-11a49e9f7734",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 26.5,
+            "timestamp": 1533927052797
+        },
+        {
+            "id": "39c59ba3-7161-479c-9e79-436d7d7e77f2",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 26.5,
+            "timestamp": 1533927052035
+        },
+        {
+            "id": "cf70ada1-34b6-4aab-867c-c41ec9ead0ed",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533927049131
+        },
+        {
+            "id": "c782323c-49cd-423d-9870-8c96d8b60b4a",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533927048033
+        },
+        {
+            "id": "6a47a346-bda0-407c-9744-9fa0f1f806b3",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533927047182
+        },
+        {
+            "id": "89ddccf8-47de-4910-83c2-a7aaa3c8294f",
+            "exerciseId": "645a5f42-1af6-4017-9a68-56630e95b6a2",
+            "weight": 0,
+            "timestamp": 1533927043098
+        },
+        {
+            "id": "4695efc6-25c1-4f5d-96b5-8818221a955c",
+            "exerciseId": "645a5f42-1af6-4017-9a68-56630e95b6a2",
+            "weight": 0,
+            "timestamp": 1533927042437
+        },
+        {
+            "id": "7a5a4a4d-4c75-4bea-86ee-185d0bbaecf5",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 9,
+            "timestamp": 1533927038552
+        },
+        {
+            "id": "14a7b04d-7ecc-4396-a002-343f2dde8696",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 9,
+            "timestamp": 1533927037898
+        },
+        {
+            "id": "d630aa9e-c153-4d27-be04-117d15581149",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 9,
+            "timestamp": 1533927033501
+        },
+        {
+            "id": "4d69e0f7-b664-4f8f-9cfa-c21d3c0965fd",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 9,
+            "timestamp": 1533927032633
+        },
+        {
+            "id": "ae6d2354-99ba-4adb-8cac-f3bfb3170126",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 9,
+            "timestamp": 1533927030115
+        },
+        {
+            "id": "630aa062-e1da-4968-b610-0ce7d7c038c4",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 9,
+            "timestamp": 1533927028026
+        },
+        {
+            "id": "d28b1d8c-2be7-4e29-b96c-311f7913ffd8",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 9,
+            "timestamp": 1533927027244
+        },
+        {
+            "id": "0a252ae8-4966-4779-801d-b7f4b4a22387",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 6.5,
+            "timestamp": 1533927023945
+        },
+        {
+            "id": "49510a5f-655d-4b89-9668-0055fcde6a73",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 6.5,
+            "timestamp": 1533927022900
+        },
+        {
+            "id": "61c14585-a46c-424a-b532-2a0c7153faf2",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 6.5,
+            "timestamp": 1533927021761
+        },
+        {
+            "id": "e8475c09-c67f-41f0-aab5-7885274c7de8",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533927018255
+        },
+        {
+            "id": "ac0ffbb3-5404-43d4-bfe4-abf47686d27f",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533927014621
+        },
+        {
+            "id": "872df8f5-419b-437a-893b-f5c5706cf04b",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533927013729
+        },
+        {
+            "id": "8c50f31f-5bbb-4045-b012-f4ed004ec227",
+            "exerciseId": "645a5f42-1af6-4017-9a68-56630e95b6a2",
+            "weight": 0,
+            "timestamp": 1533926998612
+        },
+        {
+            "id": "722b2967-fee4-4e38-99ee-8073c71e82b9",
+            "exerciseId": "645a5f42-1af6-4017-9a68-56630e95b6a2",
+            "weight": 0,
+            "timestamp": 1533926997921
+        },
+        {
+            "id": "e416f66d-c0bd-4cda-9cbb-73b27a7edd29",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 0,
+            "timestamp": 1533926993921
+        },
+        {
+            "id": "d5d8ad54-fada-43d1-8da9-a61f38fd87a3",
+            "exerciseId": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+            "weight": 0,
+            "timestamp": 1533926993048
+        },
+        {
+            "id": "071e1d2a-dd4e-411f-a2d5-e6ad3a963e5e",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 26.5,
+            "timestamp": 1533926852919
+        },
+        {
+            "id": "ca62fb20-c7ef-4085-9d2d-2633883d50e1",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 26.5,
+            "timestamp": 1533926851844
+        },
+        {
+            "id": "ccc018a5-663b-4fd8-a1bb-8f7814a4b22f",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 26.5,
+            "timestamp": 1533926850353
+        },
+        {
+            "id": "4a52cfab-1c8f-4efb-b7e3-813383577b20",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 26.5,
+            "timestamp": 1533926848211
+        },
+        {
+            "id": "a3cf5518-5de6-4541-85e3-9cae20a62e91",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 26.5,
+            "timestamp": 1533926844153
+        },
+        {
+            "id": "d48d169f-0654-4b60-903f-ee55ff40513d",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533926842824
+        },
+        {
+            "id": "9dbf1c94-7809-4ef1-a9fe-f61dba86fe86",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533926837333
+        },
+        {
+            "id": "35b44d34-2b2a-4069-86d6-9f3873268ec7",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 26.5,
+            "timestamp": 1533926835794
+        },
+        {
+            "id": "05d1b01a-5326-4bd1-8a87-59bcdc954753",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 46.5,
+            "timestamp": 1533926819725
+        },
+        {
+            "id": "0086f9ae-bced-48ab-9fe3-1e7c577fced1",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 46.5,
+            "timestamp": 1533926818826
+        },
+        {
+            "id": "b0569d0c-9163-4e21-8002-65e1aaa81f37",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 46.5,
+            "timestamp": 1533926817244
+        },
+        {
+            "id": "971b291b-3a89-4fb7-afd3-6af202735ead",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 46.5,
+            "timestamp": 1533926816036
+        },
+        {
+            "id": "cf8870a0-28fa-4998-ba69-ec7f8be488d2",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 46.5,
+            "timestamp": 1533926814554
+        },
+        {
+            "id": "dead192e-e6d9-497b-909a-67da883b3566",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 46.5,
+            "timestamp": 1533926812903
+        },
+        {
+            "id": "1ec0877c-54ac-4338-b827-0ca352e5517d",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 46.5,
+            "timestamp": 1533926812027
+        },
+        {
+            "id": "1126136f-b389-4192-8380-209bfe6e97fb",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 46.5,
+            "timestamp": 1533926811245
+        },
+        {
+            "id": "2f3b6c33-e772-4bd4-92ba-25cc29f3ce65",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 21.5,
+            "timestamp": 1533926767799
+        },
+        {
+            "id": "e29d2c37-5de4-4f0e-9784-7e27f4335027",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 17.5,
+            "timestamp": 1533926761681
+        },
+        {
+            "id": "f5182fa8-42ab-4a0d-95c7-acb782a335ed",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 17.5,
+            "timestamp": 1533926760669
+        },
+        {
+            "id": "3a47c83b-1974-424d-9ea3-a6c49c392f15",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 17.5,
+            "timestamp": 1533926759492
+        },
+        {
+            "id": "fc98db54-8bbc-4ab9-b103-ead8675b0cab",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 17.5,
+            "timestamp": 1533926758767
+        },
+        {
+            "id": "78f20565-63cf-4640-a838-35a099baf8c9",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 15,
+            "timestamp": 1533926755458
+        },
+        {
+            "id": "4a52a3c8-266e-438c-a16b-27653d034503",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 15,
+            "timestamp": 1533926753660
+        },
+        {
+            "id": "169923db-7e1a-46d9-a9b0-a5b7858e6f55",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 15,
+            "timestamp": 1533926752577
+        },
+        {
+            "id": "3c76a139-d038-421a-9173-8717bc2eb82c",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 10,
+            "timestamp": 1533757871502
+        },
+        {
+            "id": "fe3e26e8-8427-405d-8c07-8d74122dbf5a",
+            "exerciseId": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+            "weight": 10,
+            "timestamp": 1533757871323
+        },
+        {
+            "id": "c6114d39-0d46-4e28-bad6-068e861a91dc",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 10,
+            "timestamp": 1533757871043
+        },
+        {
+            "id": "7fa63a71-10e7-4087-b498-82ef2ee8d1de",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 10,
+            "timestamp": 1533757870946
+        },
+        {
+            "id": "562cdd6d-1134-4c53-a7b5-d0719f4809da",
+            "exerciseId": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+            "weight": 10,
+            "timestamp": 1533757870467
+        },
+        {
+            "id": "4e331775-7022-4cd6-8eec-02db4908914f",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 10,
+            "timestamp": 1533757869549
+        },
+        {
+            "id": "4ee7b432-e47c-42ef-84d4-7de1494bad92",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 10,
+            "timestamp": 1533757868822
+        },
+        {
+            "id": "48dce15f-a8ee-409c-bd5e-2befec48bcc4",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 10,
+            "timestamp": 1533757867941
+        },
+        {
+            "id": "f26fae19-ab35-4347-bc1e-e3d2ae35b3d9",
+            "exerciseId": "448783e1-e89f-4c82-a3b5-6db5890f6253",
+            "weight": 20,
+            "timestamp": 1533222630664
+        },
+        {
+            "id": "2c501d02-edc0-4071-99e1-b2efccfbeb93",
+            "exerciseId": "448783e1-e89f-4c82-a3b5-6db5890f6253",
+            "weight": 20,
+            "timestamp": 1533222565247
+        },
+        {
+            "id": "a7d920d4-2575-47e3-93cb-6a2f32d9fe4c",
+            "exerciseId": "3462a0f1-0000-4786-b5a6-f75439f4aeb2",
+            "weight": 6.75,
+            "timestamp": 1533222475423
+        },
+        {
+            "id": "75e2723c-040d-4a5c-8cf6-fbb5669713de",
+            "exerciseId": "3462a0f1-0000-4786-b5a6-f75439f4aeb2",
+            "weight": 6.75,
+            "timestamp": 1533222398091
+        },
+        {
+            "id": "78501e81-174c-4dee-81d9-1f5dc5127411",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 10,
+            "timestamp": 1533222321955
+        },
+        {
+            "id": "ee828be2-1369-4718-ae12-162a23fe56cf",
+            "exerciseId": "85a7fdae-60ad-44de-b155-7ce834036355",
+            "weight": 10,
+            "timestamp": 1533222249520
+        }
+    ],
+    "workout": {
+        "splitIndex": 0,
+        "split": {
+            "name": "Brust & Bizeps",
+            "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+            "exercises": [],
+            "muscles": [
+                "BIZEPS",
+                "CHEST"
+            ]
+        },
+        "exercises": [],
+        "exerciseIndex": 0,
+        "exercise": 0,
+        "set": 0,
+        "maxSets": 3,
+        "isLastExercise": false,
+        "isLastSet": false,
+        "weight": {
+            "splitIndex": 0,
+            "split": {
+                "name": "Brust & Bizeps",
+                "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                "exercises": [],
+                "muscles": [
+                    "BIZEPS",
+                    "CHEST"
+                ]
+            },
+            "exercises": [],
+            "exerciseIndex": 0,
+            "exercise": 0,
+            "set": 0,
+            "maxSets": 3,
+            "isLastExercise": false,
+            "isLastSet": false,
+            "weight": {
+                "splitIndex": 0,
+                "split": {
+                    "name": "Brust & Bizeps",
+                    "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                    "exercises": [],
+                    "muscles": [
+                        "BIZEPS",
+                        "CHEST"
+                    ]
+                },
+                "exercises": [],
+                "exerciseIndex": 0,
+                "exercise": 0,
+                "set": 0,
+                "maxSets": 3,
+                "isLastExercise": false,
+                "isLastSet": false,
+                "weight": {
+                    "splitIndex": 0,
+                    "split": {
+                        "name": "Brust & Bizeps",
+                        "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                        "exercises": [],
+                        "muscles": [
+                            "BIZEPS",
+                            "CHEST"
+                        ]
+                    },
+                    "exercises": [],
+                    "exerciseIndex": 0,
+                    "exercise": 0,
+                    "set": 0,
+                    "maxSets": 3,
+                    "isLastExercise": false,
+                    "isLastSet": false,
+                    "weight": {
+                        "splitIndex": 0,
+                        "split": {
+                            "name": "Brust & Bizeps",
+                            "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                            "exercises": [],
+                            "muscles": [
+                                "BIZEPS",
+                                "CHEST"
+                            ]
+                        },
+                        "exercises": [],
+                        "exerciseIndex": 0,
+                        "exercise": 0,
+                        "set": 0,
+                        "maxSets": 3,
+                        "isLastExercise": false,
+                        "isLastSet": false,
+                        "weight": {
+                            "splitIndex": 0,
+                            "split": {
+                                "name": "Brust & Bizeps",
+                                "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                                "exercises": [],
+                                "muscles": [
+                                    "BIZEPS",
+                                    "CHEST"
+                                ]
+                            },
+                            "exercises": [],
+                            "exerciseIndex": 0,
+                            "exercise": 0,
+                            "set": 0,
+                            "maxSets": 3,
+                            "isLastExercise": false,
+                            "isLastSet": false,
+                            "weight": {
+                                "splitIndex": 0,
+                                "split": {
+                                    "name": "Brust & Bizeps",
+                                    "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                                    "exercises": [],
+                                    "muscles": [
+                                        "BIZEPS",
+                                        "CHEST"
+                                    ]
+                                },
+                                "exercises": [],
+                                "exerciseIndex": 0,
+                                "exercise": 0,
+                                "set": 0,
+                                "maxSets": 3,
+                                "isLastExercise": false,
+                                "isLastSet": false,
+                                "weight": {
+                                    "splitIndex": 0,
+                                    "split": {
+                                        "name": "Brust & Bizeps",
+                                        "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                                        "exercises": [],
+                                        "muscles": [
+                                            "BIZEPS",
+                                            "CHEST"
+                                        ]
+                                    },
+                                    "exercises": [],
+                                    "exerciseIndex": 0,
+                                    "exercise": 0,
+                                    "set": 0,
+                                    "maxSets": 3,
+                                    "isLastExercise": false,
+                                    "isLastSet": false,
+                                    "weight": {
+                                        "splitIndex": 0,
+                                        "split": {
+                                            "name": "Brust & Bizeps",
+                                            "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                                            "exercises": [],
+                                            "muscles": [
+                                                "BIZEPS",
+                                                "CHEST"
+                                            ]
+                                        },
+                                        "exercises": [],
+                                        "exerciseIndex": 0,
+                                        "exercise": 0,
+                                        "set": 0,
+                                        "maxSets": 3,
+                                        "isLastExercise": false,
+                                        "isLastSet": false,
+                                        "weight": {
+                                            "splitIndex": 0,
+                                            "split": {
+                                                "name": "Brust & Bizeps",
+                                                "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                                                "exercises": [],
+                                                "muscles": [
+                                                    "BIZEPS",
+                                                    "CHEST"
+                                                ]
+                                            },
+                                            "exercises": [],
+                                            "exerciseIndex": 0,
+                                            "exercise": 0,
+                                            "set": 0,
+                                            "maxSets": 3,
+                                            "isLastExercise": false,
+                                            "isLastSet": false,
+                                            "weight": {
+                                                "splitIndex": 0,
+                                                "split": {
+                                                    "name": "Brust & Bizeps",
+                                                    "id": "65ef3e4d-d5ca-4059-9570-8b93e8c2ec62",
+                                                    "exercises": [],
+                                                    "muscles": [
+                                                        "BIZEPS",
+                                                        "CHEST"
+                                                    ]
+                                                },
+                                                "exercises": [
+                                                    {
+                                                        "name": "Bankdrücken, flach",
+                                                        "muscles": [
+                                                            "CHEST"
+                                                        ],
+                                                        "id": "85a7fdae-60ad-44de-b155-7ce834036355",
+                                                        "timestamp": 1533204819650,
+                                                        "selected": true
+                                                    },
+                                                    {
+                                                        "name": "Überzüge",
+                                                        "muscles": [
+                                                            "CHEST"
+                                                        ],
+                                                        "id": "9dbc7e25-530b-44d1-a897-b12b02eb4b43",
+                                                        "timestamp": 1533204819682,
+                                                        "selected": true
+                                                    },
+                                                    {
+                                                        "name": "Liegestütze",
+                                                        "muscles": [
+                                                            "CHEST",
+                                                            "BACK"
+                                                        ],
+                                                        "id": "a20a826a-fbda-4e9f-b47a-80ad9fc0f795",
+                                                        "timestamp": 1533204819689,
+                                                        "selected": true
+                                                    },
+                                                    {
+                                                        "name": "Hammercurl",
+                                                        "muscles": [
+                                                            "BIZEPS"
+                                                        ],
+                                                        "id": "c78277a4-26f3-4174-9099-8df02cbe9e1d",
+                                                        "timestamp": 1533204819739,
+                                                        "selected": true
+                                                    }
+                                                ],
+                                                "exerciseIndex": 0,
+                                                "exercise": {
+                                                    "name": "Bankdrücken, flach",
+                                                    "muscles": [
+                                                        "CHEST"
+                                                    ],
+                                                    "id": "85a7fdae-60ad-44de-b155-7ce834036355",
+                                                    "timestamp": 1533204819650,
+                                                    "selected": true
+                                                },
+                                                "set": 0,
+                                                "maxSets": 3,
+                                                "isLastExercise": false,
+                                                "isLastSet": false,
+                                                "weight": 26.5
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}z
