@@ -4,12 +4,10 @@ import StoreComponent from '../HOCs/StoreComponent'
 import MuscleTag from './MuscleTag';
 
 
-const _Split = ({ name, muscles, className, style, store }) => {
-    const exercises = store.getState().exercises.filter(
-        e => (e.selected && !!muscles.find(
-            muscle => (e.muscles.indexOf(muscle) > -1)
-        ))
-    );
+const _Split = ({ name, muscles, className, style, store, exercises = [] }) => {
+    const splitExercises = store.getState().exercises.map(
+        e => exercises.indexOf(e.id) > -1 ? e : undefined
+    ).filter(item => item);
 
     return (
         <div className={className} style={style}>
@@ -18,7 +16,7 @@ const _Split = ({ name, muscles, className, style, store }) => {
                 <MuscleTag muscle={m} key={i} />
             ))}
             <ul className="w3-ul">
-                {exercises.map((e, i) => (
+                {splitExercises.map((e, i) => (
                     <SplitItem {...e} key={i} className="w3-hover" />
                 ))}
             </ul>

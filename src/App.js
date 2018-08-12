@@ -3,7 +3,7 @@ import { HashRouter, Route } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import 'w3-css';
 import './App.css';
-import { addExercise, addSplit, addWorkout } from './redux/actions';
+import { addExercise, addSplit, addWorkout, selectExercise, unselectExercise } from './redux/actions';
 import { defaults, muscles } from './redux/constants';
 import { exercises, history, logger, workoutPlan } from './redux/reducers';
 import { workout } from './redux/workoutReducers';
@@ -59,6 +59,20 @@ class App extends Component {
     if (!localStorage.getItem(defaults.LOCALSTORAGE_NAME)) {
       setup();
     }
+    // To provide compatibility with older versions, exercises will be reselected
+    if (store.getState().workoutPlan.splits.filter(
+      s => s.exercises.filter(e => e).length > 0
+    ).length === 0) {
+      store.getState().exercises.forEach(
+        e => {
+          if (e.selected) {
+            store.dispatch(unselectExercise(e.id, e.name, e.muscles));
+            store.dispatch(selectExercise(e.id, e.name, e.muscles));
+          }
+        }
+      )
+    }
+    // end of compatibility code
   }
 
   render() {
