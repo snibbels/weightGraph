@@ -3,7 +3,8 @@ import StoreComponent from '../HOCs/StoreComponent';
 
 const _NextSplit = ({ store, ...props }) => {
 
-    const { split } = store.getState().workout;
+    const { splitIndex, workoutPlan } = store.getState();
+    const split = workoutPlan.splits[splitIndex];
     return (
         <div {...props}>
             <span>

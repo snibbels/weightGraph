@@ -44,21 +44,26 @@ export const incrementSplitIndex = (currentIndex, maxIndex) => ({
         0
 });
 
-export const startWorkout = (split, exercises, maxSets, history = []) => {
-    const exercise = exercises[0];
-    const latest = exercise ? history.filter(item => item.exerciseId === exercise.id)[0] : undefined;
+export const changeWeight = weight => ({
+    type: C.CHANGE_WEIGHT,
+    weight
+})
+
+export const startWorkout = (split, history = []) => {
+    const { exercises, id } = split;
+    const exerciseId = exercises[0];
+    const historyId = history.filter(
+        item => item.exerciseId === exerciseId
+    ).map(item => item.id)[0]
+    const latest = history.find(h => h.id === historyId);
     const weight = latest ? latest.weight : 0;
 
     return {
         type: C.START_WORKOUT,
-        split,
+        splitId: id,
+        exerciseId,
         exercises,
-        exerciseIndex: 0,
-        exercise: exercises[0],
-        set: 0,
-        maxSets,
-        isLastExercise: (exercises.length <= 1),
-        isLastSet: (maxSets === 1 || exercises.length === 0),
+        historyId,
         weight
     }
 }
@@ -67,32 +72,28 @@ export const cancelWorkout = () => ({
     type: C.CANCEL_WORKOUT
 });
 
-export const finishWorkout = (splitIndex, splits) => ({
+export const finishWorkout = (splitIndex, splits = []) => ({
     type: C.FINISH_WORKOUT,
     splitIndex: (splitIndex < splits.length - 1) ? splitIndex + 1 : 0,
-    split: splits[(splitIndex < splits.length - 1) ? splitIndex + 1 : 0],
     timestamp: Date.now()
 });
 
-export const iterateWorkout = (exercises, exerciseIndex, set, maxSets, history = []) => {
-    const _set = (set < maxSets - 1) ? (set + 1) : 0;
-    const _exerciseIndex = (set < maxSets - 1) ? exerciseIndex : (
-        (exerciseIndex < exercises.length - 1) ? exerciseIndex + 1 : 0
-    );
-    const exercise = exercises[exerciseIndex];
-    const latest = exercise ? history.filter(item => item.exerciseId === exercise.id)[0] : undefined;
+export const nextExercise = (exerciseId, history = [], isLastExercise = false) => {
+
+    const latest = history.find(h => h.exerciseId === exerciseId);
     const weight = latest ? latest.weight : 0;
 
-    return ({
-        type: C.ITERATE_WORKOUT,
-        set: _set,
-        exerciseIndex: _exerciseIndex,
-        exercise: exercises[_exerciseIndex],
-        isLastExercise: (_exerciseIndex >= exercises.length - 1),
-        isLastSet: (_set >= maxSets - 1),
-        weight
-    });
+    return {
+        type: C.NEXT_EXERCISE,
+        set: 1, exerciseId, weight, isLastExercise
+    }
 }
+
+export const nextSet = (set, isLastSet) => ({
+    type: C.NEXT_SET,
+    set,
+    isLastSet
+})
 
 export const addHistoryEntry = (exerciseId, weight) => ({
     type: C.ADD_HISTORY_ENTRY,

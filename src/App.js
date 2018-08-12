@@ -5,7 +5,7 @@ import 'w3-css';
 import './App.css';
 import { addExercise, addSplit, addWorkout, selectExercise, unselectExercise } from './redux/actions';
 import { defaults, muscles } from './redux/constants';
-import { exercises, history, logger, workoutPlan } from './redux/reducers';
+import { exercises, history, logger, workoutPlan, splitIndex } from './redux/reducers';
 import { workout } from './redux/workoutReducers';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
@@ -33,7 +33,7 @@ const setup = () => {
 }
 
 const store = createStore(combineReducers({
-  logger, exercises, workoutPlan, history, workout
+  logger, exercises, workoutPlan, history, workout, splitIndex
 }), (
   localStorage['localWeights']) ?
     JSON.parse(localStorage['localWeights']) :

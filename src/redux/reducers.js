@@ -22,6 +22,15 @@ export const exercises = (state = [], action) => {
     }
 };
 
+export const splitIndex = (state = 0, action) => {
+    switch (action.type) {
+        case C.FINISH_WORKOUT:
+            return action.splitIndex
+        default:
+            return state;
+    }
+}
+
 export const workoutPlan = (state = {}, action) => {
     switch (action.type) {
         case C.ADD_WORKOUT:
@@ -129,12 +138,10 @@ export const split = (state = {}, action) => {
                     ]
                 }
         case C.UNSELECT_EXERCISE:
-            return !state.muscles.find(muscle => (action.muscles.indexOf(muscle) > -1)) ?
-                state :
-                {
-                    ...state,
-                    exercises: state.exercises.filter(e => e.id !== action.id)
-                }
+            return {
+                ...state,
+                exercises: state.exercises.filter(e => e !== action.id)
+            }
 
         default:
             return state;

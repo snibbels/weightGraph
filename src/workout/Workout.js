@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { cardStyleClasses, flexCardContainer, flexCardRow } from '../App';
 import StoreComponent from '../HOCs/StoreComponent';
-import { addHistoryEntry, cancelWorkout, finishWorkout, iterateWorkout, startWorkout } from '../redux/actions';
+import { addHistoryEntry, cancelWorkout, finishWorkout, iterateWorkout, startWorkout, changeWeight, nextSet, nextExercise } from '../redux/actions';
 import Meta from './Meta';
 import Timer from './Timer';
 import Weights from './Weights';
+import { exercises } from '../redux/workoutReducers';
 class _Workout extends Component {
     constructor(props) {
         super(props);
@@ -12,18 +13,16 @@ class _Workout extends Component {
         this.addWeight = this.addWeight.bind(this);
         this.start = this.start.bind(this);
         this.cancel = this.cancel.bind(this);
+        this.pause = this.pause.bind(this);
         this.finish = this.finish.bind(this);
         this.iterate = this.iterate.bind(this);
-        this.pause = this.pause.bind(this);
     }
 
     componentWillMount() {
         this.start();
         this.isActive = true;
-        const { weight = 0 } = this.props.store.getState().workout;
         this.setState({
-            isPaused: false,
-            weight
+            isPaused: false
         })
     }
 
@@ -35,51 +34,61 @@ class _Workout extends Component {
     }
 
     addWeight(value) {
-        this.setState({
-            weight: (this.state.weight + value)
-        });
+        const { store } = this.props;
+        const { weight } = store.getState().workout;
+        store.dispatch(
+            changeWeight(weight + value)
+        )
     }
 
     start() {
         const { store } = this.props;
         const state = store.getState();
-        const { splitIndex } = state.workout;
+        const { splitIndex, history } = state;
         const { splits } = state.workoutPlan;
-        const { exercises, history } = state;
         const split = splits[splitIndex];
-        const maxSets = 3;
-        store.dispatch(startWorkout(
-            split,
-            exercises.filter(
-                ex => (ex.selected && !!split.muscles.find(
-                    m => ex.muscles.indexOf(m) > -1
-                ))
-            ),
-            maxSets,
-            history
-        ));
+        store.dispatch(startWorkout(split, history));
     }
     cancel() {
         this.props.store.dispatch(cancelWorkout());
     }
-    finish() {
-        const { store } = this.props;
-        const state = store.getState();
-        const { splitIndex } = state.workout;
-        const { splits } = state.workoutPlan;
-        store.dispatch(finishWorkout(splitIndex, splits));
-        this.isActive = false;
-    }
 
     iterate() {
         const { store } = this.props;
-        const state = store.getState();
-        const { weight } = this.state;
-        const { history } = state;
-        const { exercise, exercises, exerciseIndex, set, maxSets } = state.workout;
-        if (!exercise || !exercises) return;
-        store.dispatch(iterateWorkout(exercises, exerciseIndex, set, maxSets, history))
-        store.dispatch(addHistoryEntry(exercise.id, weight))
+        const { workout, history } = store.getState();
+        const { exercises = [], exerciseId, set = 1, weight } = workout;
+        const maxSets = 3;
+        const exerciseIndex = exercises.indexOf(exerciseId);
+
+        if (set < maxSets) {
+            const newSet = set + 1
+            store.dispatch(nextSet(newSet, newSet >= maxSets))
+        } else if (exerciseIndex < exercises.length - 1) {
+            const tempIndex = exerciseIndex + 1;
+            const isLastExercise = tempIndex >= exercises.length - 1
+            store.dispatch(
+                addHistoryEntry(exerciseId, weight)
+            )
+            store.dispatch(
+                nextExercise(exercises[tempIndex], history, isLastExercise)
+            )
+        } else {
+            this.finish()
+        }
+    }
+
+    finish() {
+        const { store } = this.props;
+        const { splitIndex, workoutPlan, workout } = store.getState();
+        const { exerciseId, weight } = workout;
+        const { splits = [] } = workoutPlan;
+        this.isActive = false;
+        store.dispatch(
+            addHistoryEntry(exerciseId, weight)
+        )
+        store.dispatch(
+            finishWorkout(splitIndex, splits)
+        )
     }
 
     pause(duration, next = f => f, steps = 100) {
@@ -101,24 +110,33 @@ class _Workout extends Component {
     }
 
     render() {
-        const { weight } = this.state;
+        const state = this.props.store.getState();
+        const { exercises, workout, workoutPlan } = state;
+        const exercise = exercises.find(e => e.id === workout.exerciseId);
+        const split = workoutPlan.splits.find(s => s.id === workout.splitId);
+        const { weight, set, isLastExercise, isLastSet } = workout;
+
         return (
             <div className={flexCardRow}>
                 <div className={`${flexCardContainer}`}>
                     <Meta
                         className={cardStyleClasses}
-                        {...this.props.store.getState().workout}
-                        {...this.state}
+                        exercise={exercise}
+                        split={split}
+                        weight={weight}
+                        set={set}
                     />
                 </div>
                 <div className={`${flexCardContainer}`}>
                     <Timer className={cardStyleClasses}
                         {...this.state}
-                        {...this.props.store.getState().workout}
+                        {...workout}
+                        isLastExercise={isLastExercise || !exercise}
+                        isLastSet={isLastSet || !exercise}
                         iterate={this.iterate}
+                        finish={this.finish}
                         pause={this.pause}
                         start={this.start}
-                        finish={this.finish}
                     />
                 </div>
                 <div className={`${flexCardContainer}`}>

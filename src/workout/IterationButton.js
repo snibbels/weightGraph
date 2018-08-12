@@ -4,8 +4,8 @@ import { MdPause, MdStop } from 'react-icons/lib/md'
 
 const IterationButton = ({ isLastExercise, isLastSet, finish = f => f,
     iterate = f => f, pause = f => f, className }) => {
-    const timeBetweenSets = 1 * 1000 * 60;
-    const timeBetweenExercises = 3 * 1000 * 60;
+    const timeBetweenSets = 1 //* 1000 * 60;
+    const timeBetweenExercises = 3// * 1000 * 60;
 
     const onNextExercise = () => {
         pause(timeBetweenExercises, iterate)
@@ -28,7 +28,7 @@ const IterationButton = ({ isLastExercise, isLastSet, finish = f => f,
             <Link
                 className={`w3-large`}
                 style={{ textDecoration: "none" }}
-                onClick={finish} to="/">
+                onClick={iterate} to="/">
                 <h3>Training beenden</h3>
                 <MdStop className="w3-circle"
                     style={style} />

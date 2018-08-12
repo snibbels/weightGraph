@@ -3,22 +3,41 @@ import C from "./constants";
 export const workout = (state = {}, action) => {
     switch (action.type) {
         case C.START_WORKOUT:
+            return {
+                splitId: action.splitId,
+                exerciseId: action.exerciseId,
+                exercises: action.exercises,
+                historyId: action.historyId,
+                weight: action.weight,
+                set: 1,
+                isLastExercise: false,
+                isLastSet: false
+            }
+        case C.NEXT_EXERCISE:
+            return {
+                ...state,
+                set: action.set,
+                exerciseId: action.exerciseId,
+                weight: action.weight,
+                isLastExercise: action.isLastExercise,
+                isLastSet: false
+            }
+        case C.NEXT_SET:
+            return {
+                ...state,
+                set: action.set,
+                isLastSet: action.isLastSet
+            }
         case C.CANCEL_WORKOUT:
         case C.FINISH_WORKOUT:
-        case C.ITERATE_WORKOUT:
-        default:
+            return {}
+        case C.CHANGE_WEIGHT:
             return {
-                splitIndex: splitIndex(state.splitIndex, action),
-                split: split(state.split, action),
-                exercises: exercises(state.exercises, action),
-                exerciseIndex: exerciseIndex(state.exerciseIndex, action),
-                exercise: exercise(state.exercise, action),
-                set: set(state.set, action),
-                maxSets: maxSets(state.maxSets, action),
-                isLastExercise: isLastExercise(state.isLastExercise, action),
-                isLastSet: isLastSet(state.isLastSet, action),
-                weight: weight(state, action)
+                ...state,
+                weight: action.weight
             }
+        default:
+            return state
     }
 }
 
