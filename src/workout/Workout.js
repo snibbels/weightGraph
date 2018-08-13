@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { cardStyleClasses, flexCardContainer, flexCardRow } from '../App';
 import StoreComponent from '../HOCs/StoreComponent';
-import { addHistoryEntry, cancelWorkout, finishWorkout, iterateWorkout, startWorkout, changeWeight, nextSet, nextExercise } from '../redux/actions';
+import { addHistoryEntry, cancelWorkout, changeWeight, finishWorkout, nextExercise, nextSet, startWorkout } from '../redux/actions';
 import Meta from './Meta';
 import Timer from './Timer';
 import Weights from './Weights';
-import { exercises } from '../redux/workoutReducers';
 class _Workout extends Component {
     constructor(props) {
         super(props);
