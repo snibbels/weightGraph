@@ -58,6 +58,30 @@ export const workoutPlan = (state = {}, action) => {
     }
 };
 
+export const ui = (state = {}, action) => {
+    switch (action.type) {
+        case C.TOGGLE_ADD_EXERCISE_FORM:
+            return {
+                ...state,
+                showAddExerciseForm: showAddExerciseForm(state.showAddExerciseForm, action)
+            }
+        default:
+            return {
+                ...state,
+                showAddExerciseForm: showAddExerciseForm(state.showAddExerciseForm, action)
+            };
+    }
+}
+
+export const showAddExerciseForm = (state = false, action) => {
+    switch (action.type) {
+        case C.TOGGLE_ADD_EXERCISE_FORM:
+            return !state
+        default:
+            return state;
+    }
+}
+
 export const history = (state = [], action) => {
     switch (action.type) {
         case C.ADD_HISTORY_ENTRY:

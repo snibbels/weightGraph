@@ -29,6 +29,8 @@ export const addWorkout = (name = "Mein Plan") => ({
     splits: []
 });
 
+export const toggleAddExerciseForm = () => ({ type: C.TOGGLE_ADD_EXERCISE_FORM });
+
 export const addSplit = (name = "split", muscles = []) => ({
     type: C.ADD_SPLIT,
     name,

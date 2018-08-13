@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import StoreComponent from '../HOCs/StoreComponent';
-import { muscles } from '../redux/constants';
-import { flexCardContainer, cardStyleClasses } from '../ui/FlexCardRow';
 import { addExercise } from '../redux/actions';
+import { muscles } from '../redux/constants';
+import { cardStyleClasses } from '../ui/FlexCardRow';
 
-const _AddExerciseForm = ({ store }) => {
+const _AddExerciseForm = ({ store, toggleView }) => {
     let _muscle, _name;
     const submit = () => {
         if (!_muscle.value || !_name.value) return;
@@ -13,7 +13,9 @@ const _AddExerciseForm = ({ store }) => {
     }
 
     const cancel = () => {
-        _name.value = _muscle.value = null;
+        _name.value = null;
+        _muscle.value = "default";
+        toggleView();
     }
 
     return (
@@ -23,13 +25,12 @@ const _AddExerciseForm = ({ store }) => {
                     ref={el => _name = el}
                     type="text"
                     placeholder="Name"
-                    style={{ width: "50%", display: "inline" }}
                     className="w3-input" />
                 <select
+                    defaultValue="default"
                     ref={el => _muscle = el}
-                    style={{ width: "50%" }}
-                    className="w3-select">
-                    <option value={null} disabled selected >Muskelgruppe</option>
+                    className="w3-select w3-white">
+                    <option value="default" disabled >Muskelgruppe</option>
                     {
                         Object.keys(muscles).map(
                             (k, i) => (
@@ -40,8 +41,8 @@ const _AddExerciseForm = ({ store }) => {
                         )
                     }
                 </select>
-                <input type="button" value="Hinzufügen" style={{ width: "50%" }} className="w3-button" onClick={submit} />
-                <input type="button" value="Abbrechen" style={{ width: "50%" }} className="w3-button" onClick={cancel} />
+                <input type="button" value="Hinzufügen" className="w3-button" onClick={submit} />
+                <input type="button" value="Abbrechen" className="w3-button" onClick={cancel} />
             </div>
         </div >
     );
