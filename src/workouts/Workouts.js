@@ -7,7 +7,10 @@ import { flexCardRow, cardStyleClasses, flexCardContainer } from '../App';
 
 const _Workouts = ({ store }) => {
     const plan = store.getState().workoutPlan;
-    const exercises = store.getState().exercises
+    const exercises = store.getState().exercises.sort(
+        (e1, e2) => e1.muscles.join('') === e2.muscles.join('') ? 0 :
+            e1.muscles.join('') < e2.muscles.join('') ? -1 : 1
+    )
     const isWorkoutEmpty = !store.getState().exercises.map(e => e.selected).filter(e => e).length;
 
 
