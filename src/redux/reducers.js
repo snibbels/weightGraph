@@ -9,8 +9,8 @@ export const exercises = (state = [], action) => {
     switch (action.type) {
         case C.ADD_EXERCISE:
             return [
-                ...state,
-                exercise(state, action)
+                exercise(state, action),
+                ...state
             ];
         case C.SELECT_EXERCISE:
         case C.UNSELECT_EXERCISE:
