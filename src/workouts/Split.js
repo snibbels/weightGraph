@@ -5,9 +5,14 @@ import MuscleTag from './MuscleTag';
 
 
 const _Split = ({ name, muscles, className, style, store, exercises = [] }) => {
-    const splitExercises = store.getState().exercises.map(
-        e => exercises.indexOf(e.id) > -1 ? e : undefined
-    ).filter(item => item);
+    // const splitExercises = store.getState().exercises.map(
+    //     e => exercises.indexOf(e.id) > -1 ? e : undefined
+    // ).filter(item => item)
+    const allExercises = store.getState().exercises;
+
+    const splitExercises = exercises.map(
+        e => allExercises.find(ex => ex.id === e)
+    );
 
     return (
         <div className={className} style={style}>
