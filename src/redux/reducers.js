@@ -87,10 +87,21 @@ export const ui = (state = {}, action) => {
                 ...state,
                 showAddExerciseForm: showAddExerciseForm(state.showAddExerciseForm, action)
             }
+        case C.SHOW_POPUP:
+            return {
+                ...state,
+                popUpId: action.id
+            }
+        case C.HIDE_POPUP:
+            return {
+                ...state,
+                popUpId: ""
+            }
         default:
             return {
                 ...state,
-                showAddExerciseForm: showAddExerciseForm(state.showAddExerciseForm, action)
+                showAddExerciseForm: showAddExerciseForm(state.showAddExerciseForm, action),
+                popUpId: ""
             };
     }
 }

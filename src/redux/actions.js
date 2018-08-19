@@ -113,4 +113,13 @@ export const changeTimerSettings = (timeBetweenSets, timeBetweenExercises) => ({
 export const restoreDefaultSettings = () => ({
     type: C.RESTORE_DEFAULT_SETTINGS,
     defaults: defaultSettings
-})
+});
+
+export const showPopUp = id => ({
+    type: C.SHOW_POPUP,
+    id
+});
+
+export const hidePopUp = () => ({
+    type: C.HIDE_POPUP
+});
