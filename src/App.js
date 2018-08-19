@@ -24,7 +24,6 @@ const setup = () => {
   store.dispatch(addSplit("Brust & Bizeps", [muscles.BIZEPS, muscles.CHEST]));
   store.dispatch(addSplit("Rücken & Trizeps", [muscles.BACK, muscles.TRIZEPS]));
   store.dispatch(addSplit("Beine & Schultern", [muscles.LEGS, muscles.SHOULDER]));
-  store.dispatch(restoreDefaultSettings());
   fetch(exerciseUrl)
     .then(response => response.json())
     .then(data => data.reverse().map(
@@ -62,6 +61,10 @@ class App extends Component {
   componentWillMount() {
     if (!localStorage.getItem(defaults.LOCALSTORAGE_NAME)) {
       setup();
+    }
+    const { settings } = store;
+    if (isObjectEmpty(settings)) {
+      store.dispatch(restoreDefaultSettings())
     }
     // To provide compatibility with older versions, exercises will be reselected
     if (store.getState().workoutPlan.splits.filter(

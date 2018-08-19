@@ -110,7 +110,7 @@ class _Workout extends Component {
 
     render() {
         const state = this.props.store.getState();
-        const { exercises, workout, workoutPlan } = state;
+        const { exercises, workout, workoutPlan, settings } = state;
         const exercise = exercises.find(e => e.id === workout.exerciseId);
         const split = workoutPlan.splits.find(s => s.id === workout.splitId);
         const { weight, set, isLastExercise, isLastSet } = workout;
@@ -136,6 +136,7 @@ class _Workout extends Component {
                         finish={this.finish}
                         pause={this.pause}
                         start={this.start}
+                        {...settings}
                     />
                 </div>
                 <div className={`${flexCardContainer}`}>

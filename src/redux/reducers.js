@@ -42,9 +42,6 @@ export const settings = (state = {}, action) => {
                 timeBetweenExercises: action.timeBetweenExercises
             }
         case C.RESTORE_DEFAULT_SETTINGS:
-            console.log({
-                ...action.defaults
-            })
             return {
                 ...action.defaults
             }
