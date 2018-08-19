@@ -12,6 +12,7 @@ import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
 import Workout from './workout/Workout';
 import Workouts from './workouts/Workouts';
+import Settings from './settings/Settings';
 
 const location = window.location;
 const { protocol, host, pathname } = location;
@@ -84,6 +85,7 @@ class App extends Component {
             <Route path="/stats" component={Statistics} />
             <Route path="/edit" component={Workouts} />
             <Route path="/workout" component={Workout} />
+            <Route path="/settings" component={Settings} />
           </PageTemplate>
         </HashRouter>
       </div>

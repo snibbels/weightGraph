@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdEdit } from 'react-icons/lib/md';
+import { MdEdit, MdSettings } from 'react-icons/lib/md';
 import { NavLink } from 'react-router-dom';
 import Dumbbell from '../icons/Dumbbell.js';
 
@@ -51,7 +51,16 @@ const MainMenu = () => (
             <span className="w3-hide-small">
                 Mein Trainingsplan
             </span>
-
+        </NavLink>
+        <NavLink
+            activeStyle={activeStyle}
+            style={{ textDecoration: "none" }}
+            className="w3-bar-item"
+            to="/settings">
+            <MdSettings style={{ ...icon, ...mdIcon }} />
+            <span className="w3-hide-small">
+                Einstellungen
+            </span>
         </NavLink>
     </div>
 )
