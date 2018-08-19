@@ -27,7 +27,7 @@ const setup = () => {
   store.dispatch(restoreDefaultSettings());
   fetch(exerciseUrl)
     .then(response => response.json())
-    .then(data => data.map(
+    .then(data => data.reverse().map(
       exercise => store.dispatch(
         addExercise(exercise.name, exercise.muscles)
       )
