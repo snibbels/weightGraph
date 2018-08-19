@@ -1,0 +1,15 @@
+.pop-up{
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: -120px;
+    height: 120px;
+    max-width: 1000px;
+    margin: auto;
+    transition: bottom 0.2s
+}
+
+.visible{
+    box-shadow: 0 0px 4px 4px lightgray;
+    bottom: 0;
+}
