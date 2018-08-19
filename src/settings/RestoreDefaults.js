@@ -10,8 +10,8 @@ const _RestoreDefaults = ({ store, ...props }) => {
         window.location.reload();
     }
     const id = "RESTORE_DEFAULTS_POPUP";
-    const onHide = () => store.dispatch(hidePopUp())
-    const showConfirm = () => store.dispatch(showPopUp(id))
+    const onHide = () => store.dispatch(hidePopUp());
+    const showConfirm = () => store.dispatch(showPopUp(id));
     const { popUpId } = store.getState().ui;
     const isVisible = popUpId === id;
 

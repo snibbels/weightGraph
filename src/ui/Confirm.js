@@ -7,12 +7,20 @@ const _Confirm = ({ onAccept = f => f, onDecline = f => f, onHide = f => f, mess
         <div className="w3-display-bottomright w3-padding">
             <button
                 className="w3-button"
-                onClick={() => { onDecline(); onHide(); }}>
+                onClick={e => {
+                    e.stopPropagation();
+                    onDecline();
+                    onHide();
+                }}>
                 Abbrechen
             </button>
             <button
                 className="w3-button w3-blue"
-                onClick={() => { onAccept(); onHide(); }}>
+                onClick={e => {
+                    e.stopPropagation();
+                    onAccept();
+                    onHide();
+                }}>
                 Bestätigen
             </button>
         </div>

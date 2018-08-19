@@ -1,7 +1,6 @@
 import React from 'react';
 import StoreComponent from '../HOCs/StoreComponent';
 import ExerciseList from './ExerciseList';
-import Reset from './Reset';
 import WorkoutPlan from './WorkoutPlan';
 import { flexCardRow, cardStyleClasses, flexCardContainer } from '../App';
 
@@ -32,7 +31,6 @@ const _Workouts = ({ store }) => {
                 {...plan}
                 className={`${flexCardRow} w3-border-bottom w3-row-padding`} />
             <ExerciseList exercises={exercises} className="w3-row-padding" />
-            <Reset className="w3-card w3-padding w3-margin" />
         </div>
     );
 }
