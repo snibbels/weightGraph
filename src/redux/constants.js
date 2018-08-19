@@ -11,7 +11,9 @@ const C = {
     UNSELECT_EXERCISE: "UNSELECT_EXERCISE",
     ADD_HISTORY_ENTRY: "ADD_HISTORY_ENTRY",
     CHANGE_WEIGHT: "CHANGE_WEIGHT",
-    TOGGLE_ADD_EXERCISE_FORM: "TOGGLE_ADD_EXERCISE_FORM"
+    TOGGLE_ADD_EXERCISE_FORM: "TOGGLE_ADD_EXERCISE_FORM",
+    CHANGE_TIMER_SETTINGS: "CHANGE_TIMER_SETTINGS",
+    RESTORE_DEFAULT_SETTINGS: "RESTORE_DEFAULT_SETTINGS"
 };
 
 export default C;
@@ -19,6 +21,11 @@ export default C;
 export const defaults = {
     LOCALSTORAGE_NAME: 'localWeights',
     SET_AMOUNT: 3
+}
+
+export const defaultSettings = {
+    timeBetweenSets: 1000 * 60,
+    timeBetweenExercises: 1000 * 60 * 3
 }
 
 export const muscles = {

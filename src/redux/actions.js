@@ -1,4 +1,4 @@
-import C from './constants';
+import C, { defaultSettings } from './constants';
 import { v4 } from 'uuid';
 
 export const addExercise = (name, muscles) => ({
@@ -104,3 +104,13 @@ export const addHistoryEntry = (exerciseId, weight) => ({
     weight,
     timestamp: Date.now()
 });
+
+export const changeTimerSettings = (timeBetweenSets, timeBetweenExercises) => ({
+    type: C.CHANGE_TIMER_SETTINGS,
+    timeBetweenExercises, timeBetweenSets
+});
+
+export const restoreDefaultSettings = () => ({
+    type: C.RESTORE_DEFAULT_SETTINGS,
+    defaults: defaultSettings
+})

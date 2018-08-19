@@ -7,13 +7,18 @@ export const flexCardContainer = ["w3-col", "s12 m6 l4", "w3-padding"].join(' ')
 const FlexCardRow = ({ children }) => (
     <div className={flexCardRow}>
         {
-            children.map(
-                (c, i) => (
-                    <div className={flexCardContainer} key={i}>
-                        {c}
+            Array.isArray(children) ?
+                children.map(
+                    (c, i) => (
+                        <div className={flexCardContainer} key={i}>
+                            {c}
+                        </div>
+                    )
+                ) : (
+                    <div className={flexCardContainer}>
+                        {children}
                     </div>
                 )
-            )
         }
     </div>
 );

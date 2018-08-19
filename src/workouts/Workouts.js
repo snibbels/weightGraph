@@ -11,7 +11,7 @@ const _Workouts = ({ store }) => {
     const isWorkoutEmpty = !store.getState().exercises
         .map(e => e.selected).filter(e => e).length;
 
-
+    // TODO: splits 
     return (
         <div>
             {

@@ -3,9 +3,9 @@ import { HashRouter, Route } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import 'w3-css';
 import './App.css';
-import { addExercise, addSplit, addWorkout, selectExercise, unselectExercise } from './redux/actions';
+import { addExercise, addSplit, addWorkout, selectExercise, unselectExercise, restoreDefaultSettings } from './redux/actions';
 import { defaults, muscles } from './redux/constants';
-import { exercises, history, logger, workoutPlan, splitIndex, ui } from './redux/reducers';
+import { exercises, history, logger, workoutPlan, splitIndex, ui, settings } from './redux/reducers';
 import { workout } from './redux/workoutReducers';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
@@ -24,6 +24,7 @@ const setup = () => {
   store.dispatch(addSplit("Brust & Bizeps", [muscles.BIZEPS, muscles.CHEST]));
   store.dispatch(addSplit("Rücken & Trizeps", [muscles.BACK, muscles.TRIZEPS]));
   store.dispatch(addSplit("Beine & Schultern", [muscles.LEGS, muscles.SHOULDER]));
+  store.dispatch(restoreDefaultSettings());
   fetch(exerciseUrl)
     .then(response => response.json())
     .then(data => data.map(
@@ -34,12 +35,14 @@ const setup = () => {
 }
 
 const store = createStore(combineReducers({
-  logger, exercises, workoutPlan, history, workout, splitIndex, ui
+  logger, settings, exercises, workoutPlan, history, workout, splitIndex, ui
 }), (
   localStorage['localWeights']) ?
     JSON.parse(localStorage['localWeights']) :
     undefined
 );
+
+const isObjectEmpty = obj => !obj || !Object.keys(obj) || !Object.keys(obj).length;
 
 export const StoreContext = React.createContext({ store });
 export const cardStyleClasses = ["w3-card", "w3-left-align", "w3-padding", "w3-display-container"].join(' ');

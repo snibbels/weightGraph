@@ -31,6 +31,28 @@ export const splitIndex = (state = 0, action) => {
     }
 }
 
+// TODO: start from defaults but restore settings OR
+// TODO: store defaults in component props
+export const settings = (state = {}, action) => {
+    switch (action.type) {
+        case C.CHANGE_TIMER_SETTINGS:
+            return {
+                ...state,
+                timeBetweenSets: action.timeBetweenSets,
+                timeBetweenExercises: action.timeBetweenExercises
+            }
+        case C.RESTORE_DEFAULT_SETTINGS:
+            console.log({
+                ...action.defaults
+            })
+            return {
+                ...action.defaults
+            }
+        default:
+            return state;
+    }
+}
+
 export const workoutPlan = (state = {}, action) => {
     switch (action.type) {
         case C.ADD_WORKOUT:

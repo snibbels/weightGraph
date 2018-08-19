@@ -2,10 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { MdPause, MdStop } from 'react-icons/lib/md'
 
-const IterationButton = ({ isLastExercise, isLastSet, finish = f => f,
-    iterate = f => f, pause = f => f, className }) => {
-    const timeBetweenSets = 1 * 1000 * 60;
-    const timeBetweenExercises = 3 * 1000 * 60;
+const IterationButton = ({ isLastExercise, isLastSet,
+    iterate = f => f, pause = f => f, className,
+    timeBetweenSets = 1 * 1000 * 60, timeBetweenExercises = 3 * 1000 * 60 }) => {
 
     const onNextExercise = () => {
         pause(timeBetweenExercises, iterate)
