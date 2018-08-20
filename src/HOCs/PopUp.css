@@ -6,7 +6,8 @@
     height: 120px;
     max-width: 1000px;
     margin: auto;
-    transition: bottom 0.2s
+    transition: bottom 0.2s;
+    z-index: 1;
 }
 
 .visible{
