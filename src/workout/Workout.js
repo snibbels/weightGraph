@@ -3,6 +3,7 @@ import { Link, Prompt } from 'react-router-dom';
 import StoreComponent from '../HOCs/StoreComponent';
 import { addHistoryEntry, cancelWorkout, changeWeight, finishWorkout, nextExercise, nextSet, startWorkout } from '../redux/actions';
 import FlexCardRow, { cardStyleClasses } from '../ui/FlexCardRow';
+import CurrentSplit from './CurrentSplit';
 import Meta from './Meta';
 import Timer from './Timer';
 import Weights from './Weights';
@@ -111,10 +112,10 @@ class _Workout extends Component {
 
     render() {
         const state = this.props.store.getState();
-        const { exercises, workout, workoutPlan, settings } = state;
-        const exercise = exercises.find(e => e.id === workout.exerciseId);
-        const split = workoutPlan.splits.find(s => s.id === workout.splitId);
-        const { weight, set, isLastExercise, isLastSet } = workout;
+        const { exercises, workout, workoutPlan, settings, history } = state;
+        const { weight, set, isLastExercise, isLastSet, exerciseId, splitId } = workout;
+        const exercise = exercises.find(e => e.id === exerciseId);
+        const split = workoutPlan.splits.find(s => s.id === splitId);
 
         return (
             <FlexCardRow>
@@ -144,13 +145,20 @@ class _Workout extends Component {
                     finish={this.finish}
                     pause={this.pause}
                     start={this.start}
-                    {...settings}
+                    timeBetweenExercises={settings.timeBetweenExercises}
+                    timeBetweenSets={settings.timeBetweenSets}
+                />
+                <CurrentSplit
+                    exercises={exercises}
+                    exerciseId={exerciseId}
+                    split={split}
+                    history={history}
                 />
                 <Weights
                     className={`${cardStyleClasses}`}
                     addWeight={this.addWeight}
                     sum={weight}
-                    {...settings}
+                    displayedDiscs={settings.displayedDiscs}
                 />
                 <Prompt when={this.isActive} message="Möchtest du dein Training wirklich abbrechen? Alle Fortschritte gehen verloren!" />
             </FlexCardRow>
