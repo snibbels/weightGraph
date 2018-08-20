@@ -32,17 +32,18 @@ const _DisplayedDiscs = ({ store, ...props }) => {
             </button>
             <ul className="w3-ul">
                 {
-                    displayedDiscs.map(
-                        (d, i) => (
-                            <li key={i} className="w3-display-container">
-                                <span>{d}</span>
-                                <div className="w3-display-right w3-padding"
-                                    onClick={() => deleteWeight(d)} >
-                                    &times;
+                    displayedDiscs ?
+                        displayedDiscs.map(
+                            (d, i) => (
+                                <li key={i} className="w3-display-container">
+                                    <span>{d}</span>
+                                    <div className="w3-display-right w3-padding"
+                                        onClick={() => deleteWeight(d)} >
+                                        &times;
                                 </div>
-                            </li>
-                        )
-                    )
+                                </li>
+                            )
+                        ) : undefined
                 }
             </ul>
         </div>
