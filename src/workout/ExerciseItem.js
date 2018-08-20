@@ -7,7 +7,7 @@ const ExerciseItem = ({ current = false, muscles = [], name, weight }) => (
             {muscles.map((m, i) => (
                 <span
                     key={i}
-                    className="w3-xlarge w3-padding"
+                    className="w3-xlarge"
                     style={{
                         verticalAlign: "middle",
                         color: muscleColors[m]
@@ -15,7 +15,7 @@ const ExerciseItem = ({ current = false, muscles = [], name, weight }) => (
                     &bull;
                 </span>
             ))}
-            <span style={{
+            <span className="w3-padding" style={{
                 verticalAlign: "middle"
             }}>
                 {name}

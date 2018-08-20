@@ -1,10 +1,21 @@
 import React from 'react'
 import StoreComponent from '../HOCs/StoreComponent';
 import { unselectExercise } from '../redux/actions';
+import { muscleColors } from '../redux/constants';
 
-const _SplitItem = ({ id, name, className, store }) => (
+const _SplitItem = ({ id, name, className, store, muscles=[] }) => (
     < li className={className + " w3-display-container"}>
-        <span>
+        {
+            muscles.map((m, i) => (
+                <span
+                    key={i}
+                    className="w3-xlarge"
+                    style={{
+                        verticalAlign: "middle",
+                        color: muscleColors[m]
+                    }}>&bull;</span>))
+        }
+        <span className="w3-padding" >
             {name}
         </span>
         <span className="w3-display-right"
