@@ -3,7 +3,7 @@ import { muscleColors } from '../redux/constants';
 
 const ExerciseItem = ({ current = false, muscles = [], name, weight }) => (
     <li style={{ fontWeight: current ? "bold" : "normal" }}>
-        <span style={{ width: "85%", display: "inline-block" }}>
+        <span style={{ width: "80%", display: "inline-block" }}>
             {muscles.map((m, i) => (
                 <span
                     key={i}
@@ -21,7 +21,7 @@ const ExerciseItem = ({ current = false, muscles = [], name, weight }) => (
                 {name}
             </span>
         </span>
-        <span style={{ textAlign: "right", width: "15%", display: "inline-block" }}>
+        <span style={{ textAlign: "right", width: "20%", display: "inline-block" }}>
             {weight} {weight !== undefined ? "kg" : ""}
         </span>
     </li>
