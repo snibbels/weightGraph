@@ -41,6 +41,11 @@ export const settings = (state = {}, action) => {
                 timeBetweenSets: action.timeBetweenSets,
                 timeBetweenExercises: action.timeBetweenExercises
             }
+        case C.CHANGE_DISPLAYED_DISCS:
+            return {
+                ...state,
+                displayedDiscs: action.discs
+            }
         case C.RESTORE_DEFAULT_SETTINGS:
             return {
                 ...action.defaults

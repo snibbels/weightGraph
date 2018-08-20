@@ -15,7 +15,8 @@ const C = {
     CHANGE_TIMER_SETTINGS: "CHANGE_TIMER_SETTINGS",
     RESTORE_DEFAULT_SETTINGS: "RESTORE_DEFAULT_SETTINGS",
     SHOW_POPUP: "SHOW_POPUP",
-    HIDE_POPUP: "HIDE_POPUP"
+    HIDE_POPUP: "HIDE_POPUP",
+    CHANGE_DISPLAYED_DISCS: "CHANGE_DISPLAYED_DISCS"
 };
 
 export default C;
@@ -27,7 +28,8 @@ export const defaults = {
 
 export const defaultSettings = {
     timeBetweenSets: 1000 * 60,
-    timeBetweenExercises: 1000 * 60 * 3
+    timeBetweenExercises: 1000 * 60 * 3,
+    displayedDiscs: [20, 10, 5, 4, 2.5, 2, 1, 0.5]
 }
 
 export const muscles = {

@@ -123,3 +123,8 @@ export const showPopUp = id => ({
 export const hidePopUp = () => ({
     type: C.HIDE_POPUP
 });
+
+export const changeDisplayedDiscs = discs => ({
+    type: C.CHANGE_DISPLAYED_DISCS,
+    discs
+});

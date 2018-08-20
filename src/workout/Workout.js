@@ -150,6 +150,7 @@ class _Workout extends Component {
                     className={`${cardStyleClasses}`}
                     addWeight={this.addWeight}
                     sum={weight}
+                    {...settings}
                 />
                 <Prompt when={this.isActive} message="Möchtest du dein Training wirklich abbrechen? Alle Fortschritte gehen verloren!" />
             </FlexCardRow>

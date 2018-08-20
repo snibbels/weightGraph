@@ -2,7 +2,7 @@ import React from 'react';
 import PopUp from '../HOCs/PopUp'
 
 const _Confirm = ({ onAccept = f => f, onDecline = f => f, onHide = f => f, message }) => (
-    <div>
+    <div className="w3-white" >
         <p>{message}</p>
         <div className="w3-display-bottomright w3-padding">
             <button

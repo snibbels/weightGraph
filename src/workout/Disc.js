@@ -21,6 +21,7 @@ const Disc = ({ weight = 1, selected = false, addWeight = f => f }) => {
                 y="50%"
                 textAnchor="middle"
                 stroke={selected ? "white" : "black"}
+                fill={selected ? "white" : "black"}
                 dy=".3em">
                 {weight}
             </text>
