@@ -71,7 +71,7 @@ class App extends Component {
     if (!localStorage.getItem(defaults.LOCALSTORAGE_NAME)) {
       setup();
     }
-    const { settings } = store;
+    const { settings } = store.getState();
     if (isObjectEmpty(settings)) {
       store.dispatch(restoreDefaultSettings())
     }
