@@ -1,6 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { MdPause, MdStop } from 'react-icons/lib/md'
+import React from 'react';
+import { MdPause, MdStop } from 'react-icons/lib/md';
 
 const IterationButton = ({ isLastExercise, isLastSet,
     iterate = f => f, pause = f => f, className,
@@ -24,14 +23,14 @@ const IterationButton = ({ isLastExercise, isLastSet,
 
     if (isLastExercise && isLastSet)
         return (
-            <Link
+            <div
                 className={`w3-large`}
                 style={{ textDecoration: "none" }}
                 onClick={iterate} to="/">
                 <h3>Training beenden</h3>
                 <MdStop className="w3-circle"
                     style={style} />
-            </Link>
+            </div>
         );
     else
         return (

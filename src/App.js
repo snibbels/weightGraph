@@ -3,7 +3,7 @@ import { HashRouter, Route } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import 'w3-css';
 import './App.css';
-import { addExercise, addSplit, addWorkout, selectExercise, unselectExercise, restoreDefaultSettings } from './redux/actions';
+import { addExercise, addSplit, addWorkout, selectExercise, unselectExercise, restoreDefaultSettings, showPopUp, hidePopUp } from './redux/actions';
 import { defaults, muscles } from './redux/constants';
 import { exercises, history, logger, workoutPlan, splitIndex, ui, settings } from './redux/reducers';
 import { workout } from './redux/workoutReducers';
@@ -13,6 +13,7 @@ import PageTemplate from './ui/PageTemplate';
 import Workout from './workout/Workout';
 import Workouts from './workouts/Workouts';
 import Settings from './settings/Settings';
+import Confirm from './ui/Confirm'
 
 const location = window.location;
 const { protocol, host, pathname } = location;
@@ -48,6 +49,14 @@ export const cardStyleClasses = ["w3-card", "w3-left-align", "w3-padding", "w3-d
 export const flexCardRow = ["w3-row"].join(' ');
 export const flexCardContainer = ["w3-col", "s12 m6 l4", "w3-padding"].join(' ');
 
+const popup_id = "TRANSITION_POPUP";
+let confirmMessage = "";
+let confirmCallback;
+const confirmTransition = (message, callback) => {
+  confirmMessage = message
+  store.dispatch(showPopUp(popup_id));
+  callback(false); confirmCallback = callback;
+}
 
 class App extends Component {
   constructor() {
@@ -83,15 +92,24 @@ class App extends Component {
   }
 
   render() {
+    const { popUpId } = store.getState().ui;
+
     return (
       <div className="App">
-        <HashRouter>
+        <HashRouter getUserConfirmation={confirmTransition}>
           <PageTemplate>
             <Route exact path="/" component={Start} />
             <Route path="/stats" component={Statistics} />
             <Route path="/edit" component={Workouts} />
             <Route path="/workout" component={Workout} />
             <Route path="/settings" component={Settings} />
+            <Confirm
+              message={confirmMessage}
+              isVisible={popup_id === popUpId}
+              onAccept={() => confirmCallback(true)}
+              onDecline={() => confirmCallback(false)}
+              onHide={() => store.dispatch(hidePopUp())}
+            />
           </PageTemplate>
         </HashRouter>
       </div>

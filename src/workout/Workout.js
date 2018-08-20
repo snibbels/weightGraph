@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { cardStyleClasses, flexCardContainer, flexCardRow } from '../App';
+import { Link, Prompt } from 'react-router-dom';
 import StoreComponent from '../HOCs/StoreComponent';
 import { addHistoryEntry, cancelWorkout, changeWeight, finishWorkout, nextExercise, nextSet, startWorkout } from '../redux/actions';
+import FlexCardRow, { cardStyleClasses } from '../ui/FlexCardRow';
 import Meta from './Meta';
 import Timer from './Timer';
 import Weights from './Weights';
@@ -116,36 +117,42 @@ class _Workout extends Component {
         const { weight, set, isLastExercise, isLastSet } = workout;
 
         return (
-            <div className={flexCardRow}>
-                <div className={`${flexCardContainer}`}>
-                    <Meta
-                        className={cardStyleClasses}
-                        exercise={exercise}
-                        split={split}
-                        weight={weight}
-                        set={set}
-                    />
-                </div>
-                <div className={`${flexCardContainer}`}>
-                    <Timer className={cardStyleClasses}
-                        {...this.state}
-                        {...workout}
-                        isLastExercise={isLastExercise || !exercise}
-                        isLastSet={isLastSet || !exercise}
-                        iterate={this.iterate}
-                        finish={this.finish}
-                        pause={this.pause}
-                        start={this.start}
-                        {...settings}
-                    />
-                </div>
-                <div className={`${flexCardContainer}`}>
-                    <Weights
-                        className={`${cardStyleClasses}`}
-                        addWeight={this.addWeight}
-                        sum={weight} />
-                </div>
-            </div>
+            <FlexCardRow>
+                {
+                    (!this.isActive) ?
+                        <Link
+                            to="/"
+                            style={{ textDecoration: "none" }}>
+                            <div className={cardStyleClasses}>
+                                zurück zum Startbildschirm
+                            </div>
+                        </Link> : undefined
+                }
+                <Meta
+                    className={cardStyleClasses}
+                    exercise={exercise}
+                    split={split}
+                    weight={weight}
+                    set={set}
+                />
+                <Timer className={cardStyleClasses}
+                    {...this.state}
+                    {...workout}
+                    isLastExercise={isLastExercise || !exercise}
+                    isLastSet={isLastSet || !exercise}
+                    iterate={this.iterate}
+                    finish={this.finish}
+                    pause={this.pause}
+                    start={this.start}
+                    {...settings}
+                />
+                <Weights
+                    className={`${cardStyleClasses}`}
+                    addWeight={this.addWeight}
+                    sum={weight}
+                />
+                <Prompt when={this.isActive} message="Möchtest du dein Training wirklich abbrechen? Alle Fortschritte gehen verloren!" />
+            </FlexCardRow>
         )
     }
 }
