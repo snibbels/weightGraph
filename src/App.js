@@ -11,7 +11,7 @@ import Start from './start/Start';
 import Statistics from './stats/Statistics';
 import PageTemplate from './ui/PageTemplate';
 import Workout from './workout/Workout';
-import Workouts from './workouts/Workouts';
+import Editor from './editor/Editor';
 import Settings from './settings/Settings';
 import Confirm from './ui/Confirm'
 
@@ -100,7 +100,7 @@ class App extends Component {
           <PageTemplate>
             <Route exact path="/" component={Start} />
             <Route path="/stats" component={Statistics} />
-            <Route path="/edit" component={Workouts} />
+            <Route path="/edit" component={Editor} />
             <Route path="/workout" component={Workout} />
             <Route path="/settings" component={Settings} />
             <Confirm

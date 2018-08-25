@@ -4,7 +4,7 @@ import ExerciseList from './ExerciseList';
 import WorkoutPlan from './WorkoutPlan';
 import { flexCardRow, cardStyleClasses, flexCardContainer } from '../App';
 
-const _Workouts = ({ store }) => {
+const _Editor = ({ store }) => {
     const plan = store.getState().workoutPlan;
     const exercises = store.getState().exercises;
     const isWorkoutEmpty = !store.getState().exercises
@@ -35,6 +35,6 @@ const _Workouts = ({ store }) => {
     );
 }
 
-const Workouts = StoreComponent(_Workouts);
+const Editor = StoreComponent(_Editor);
 
-export default Workouts;
+export default Editor;

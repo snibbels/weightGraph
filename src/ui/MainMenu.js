@@ -49,7 +49,7 @@ const MainMenu = () => (
             to="/edit">
             <MdEdit style={{ ...icon, ...mdIcon }} />
             <span className="w3-hide-small">
-                Mein Trainingsplan
+                Editor
             </span>
         </NavLink>
         <NavLink
