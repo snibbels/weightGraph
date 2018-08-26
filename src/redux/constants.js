@@ -49,5 +49,5 @@ export const muscleColors = {
     BIZEPS: "pink",
     TRIZEPS: "purple",
     SHOULDER: "yellow",
-    ABS: "turquoise"
+    ABS: "indigo"
 }
