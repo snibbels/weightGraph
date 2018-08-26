@@ -66,6 +66,8 @@ export const workoutPlan = (state = {}, action) => {
                 splits: action.splits
             };
         case C.ADD_SPLIT:
+        case C.EDIT_SPLIT:
+        case C.DELETE_SPLIT:
         case C.SELECT_EXERCISE:
         case C.UNSELECT_EXERCISE:
             return {
@@ -168,6 +170,10 @@ export const splits = (state = [], action) => {
                 ...state,
                 split(state, action)
             ];
+        case C.DELETE_SPLIT:
+            return state.filter(split =>
+                split.id !== action.id
+            );
         case C.SELECT_EXERCISE:
         case C.UNSELECT_EXERCISE:
             return state.map(

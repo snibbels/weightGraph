@@ -39,6 +39,16 @@ export const addSplit = (name = "split", muscles = []) => ({
     muscles
 });
 
+export const editSplit = (id, name, muscles = []) => ({
+    type: C.EDIT_SPLIT,
+    id, name, muscles
+});
+
+export const deleteSplit = id => ({
+    type: C.DELETE_SPLIT,
+    id
+});
+
 export const incrementSplitIndex = (currentIndex, maxIndex) => ({
     type: C.INCREMENT_SPLITINDEX,
     newIndex: (currentIndex < maxIndex) ?

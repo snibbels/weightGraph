@@ -1,9 +1,15 @@
 import React from 'react'
-import { muscles } from '../redux/constants';
 import MuscleTag from '../ui/MuscleTag';
+import StoreComponent from '../HOCs/StoreComponent';
+import { deleteSplit } from '../redux/actions';
 
-const SplitComposerItem = ({ name, muscles = [], unselectedMuscles = [] }) => (
-    <li style={{ maxWidth: "100%" }}>
+const _SplitComposerItem = ({ store, id, name, muscles = [], unselectedMuscles = [] }) => (
+    <li style={{ maxWidth: "100%" }} className="w3-display-container">
+        <div
+            onClick={() => store.dispatch(deleteSplit(id))}
+            className="w3-display-right w3-padding w3-xlarge w3-button">
+            <span>&times;</span>
+        </div>
         <h3>{name}</h3>
         {muscles.map((m, i) => (
             <MuscleTag
@@ -22,5 +28,7 @@ const SplitComposerItem = ({ name, muscles = [], unselectedMuscles = [] }) => (
         ))}
     </li>
 );
+
+const SplitComposerItem = StoreComponent(_SplitComposerItem)
 
 export default SplitComposerItem;
