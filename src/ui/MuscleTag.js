@@ -3,10 +3,11 @@ import { muscleColors } from '../redux/constants';
 
 const color = m => muscleColors[m];
 const baseStyle = {
+    display: "inline-block",
     cursor: "pointer",
     borderRadius: "4px",
     padding: "2px",
-    marginRight: "2px",
+    margin: "2px",
 };
 const selectedStyle = {
     border: "1px solid currentColor!important",

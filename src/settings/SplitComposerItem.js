@@ -38,11 +38,9 @@ const _SplitComposerItem = ({ store, id, name, muscles = [], unselectedMuscles =
 
     const onMuscleTagClick = muscle => {
         const newMuscles = muscles.filter(m => m !== muscle);
-
         store.dispatch(editSplit(
             id, generateSplitName(newMuscles), newMuscles
         ));
-
         if (!newMuscles.length) {
             store.dispatch(deleteSplit(id));
         }
@@ -56,24 +54,26 @@ const _SplitComposerItem = ({ store, id, name, muscles = [], unselectedMuscles =
                 className="w3-display-right w3-padding w3-xlarge w3-button">
                 <span>&times;</span>
             </div>
-            <h3>{name}</h3>
-            {muscles.map((m, i) => (
-                <MuscleTag
-                    onClick={() => onMuscleTagClick(m)}
-                    key={i}
-                    muscle={m}
-                    className="w3-large"
-                />
-            ))}
-            {unselectedMuscles.map((m, i) => (
-                <MuscleTag
-                    onClick={() => onUnselectedMuscleTagClick(m)}
-                    selected={false}
-                    key={i}
-                    muscle={m}
-                    className="w3-large"
-                />
-            ))}
+            <div style={{ width: "80%" }}>
+                <h3>{name}</h3>
+                {muscles.map((m, i) => (
+                    <MuscleTag
+                        onClick={() => onMuscleTagClick(m)}
+                        key={i}
+                        muscle={m}
+                        className="w3-large"
+                    />
+                ))}
+                {unselectedMuscles.map((m, i) => (
+                    <MuscleTag
+                        onClick={() => onUnselectedMuscleTagClick(m)}
+                        selected={false}
+                        key={i}
+                        muscle={m}
+                        className="w3-large"
+                    />
+                ))}
+            </div>
         </li>
     );
 }
