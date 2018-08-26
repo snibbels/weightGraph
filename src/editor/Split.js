@@ -1,7 +1,7 @@
 import React from 'react';
 import SplitItem from './SplitItem';
 import StoreComponent from '../HOCs/StoreComponent'
-import MuscleTag from './MuscleTag';
+import MuscleTag from '../ui/MuscleTag';
 
 
 const _Split = ({ name, muscles, className, style, store, exercises = [] }) => {

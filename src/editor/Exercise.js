@@ -2,7 +2,7 @@ import React from 'react'
 import StoreComponent from '../HOCs/StoreComponent'
 import { unselectExercise, selectExercise } from '../redux/actions';
 import AddDeleteButton from '../ui/AddDeleteButton';
-import MuscleTag from './MuscleTag';
+import MuscleTag from '../ui/MuscleTag';
 import { flexCardContainer, cardStyleClasses } from '../App';
 
 const _Exercise = ({ store, id, name, muscles, selected }) => {
