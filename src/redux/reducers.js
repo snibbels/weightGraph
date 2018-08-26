@@ -170,6 +170,10 @@ export const splits = (state = [], action) => {
                 ...state,
                 split(state, action)
             ];
+        case C.EDIT_SPLIT:
+            return state.map(s =>
+                split(s, action)
+            );
         case C.DELETE_SPLIT:
             return state.filter(split =>
                 split.id !== action.id
@@ -192,7 +196,15 @@ export const split = (state = {}, action) => {
                 id: action.id,
                 exercises: action.exercises,
                 muscles: action.muscles
-            }
+            };
+        case C.EDIT_SPLIT:
+            return state.id !== action.id ? {
+                ...state
+            } : {
+                    ...state,
+                    name: action.name,
+                    muscles: action.muscles
+                };
         case C.SELECT_EXERCISE:
             return !state.muscles.find(muscle => (action.muscles.indexOf(muscle) > -1)) ?
                 state :

@@ -3,6 +3,7 @@ import { muscleColors } from '../redux/constants';
 
 const color = m => muscleColors[m];
 const baseStyle = {
+    cursor: "pointer",
     borderRadius: "4px",
     padding: "2px",
     marginRight: "2px",
@@ -19,6 +20,7 @@ const unselectedStyle = {
 
 const MuscleTag = ({ muscle, ...props, selected = true }) => (
     <span
+        {...props}
         style={{ ...baseStyle, ...(selected ? selectedStyle : unselectedStyle) }}
         className={
             selected ?

@@ -44,6 +44,16 @@ export const muscles = {
     ABS: "ABS"
 }
 
+export const muscleLabels = {
+    CHEST: "Brust",
+    BACK: "Rücken",
+    LEGS: "Beine",
+    BIZEPS: "Bizeps",
+    TRIZEPS: "Trizeps",
+    SHOULDER: "Schultern",
+    ABS: "Bauch"
+}
+
 export const muscleColors = {
     CHEST: "blue",
     BACK: "green",
