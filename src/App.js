@@ -3,17 +3,18 @@ import { HashRouter, Route } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import 'w3-css';
 import './App.css';
-import { addExercise, addSplit, addWorkout, selectExercise, unselectExercise, restoreDefaultSettings, showPopUp, hidePopUp } from './redux/actions';
+import Editor from './editor/Editor';
+import QuickEdit from './quickedit/QuickEdit';
+import { addExercise, addSplit, addWorkout, hidePopUp, restoreDefaultSettings, selectExercise, showPopUp, unselectExercise } from './redux/actions';
 import { defaults, muscles } from './redux/constants';
-import { exercises, history, logger, workoutPlan, splitIndex, ui, settings } from './redux/reducers';
+import { exercises, history, logger, settings, splitIndex, ui, workoutPlan } from './redux/reducers';
 import { workout } from './redux/workoutReducers';
+import Settings from './settings/Settings';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
+import Confirm from './ui/Confirm';
 import PageTemplate from './ui/PageTemplate';
 import Workout from './workout/Workout';
-import Editor from './editor/Editor';
-import Settings from './settings/Settings';
-import Confirm from './ui/Confirm'
 
 const location = window.location;
 const { protocol, host, pathname } = location;
@@ -103,6 +104,7 @@ class App extends Component {
             <Route path="/edit" component={Editor} />
             <Route path="/workout" component={Workout} />
             <Route path="/settings" component={Settings} />
+            <Route path="/quickedit" component={QuickEdit} />
             <Confirm
               message={confirmMessage}
               isVisible={popup_id === popUpId}

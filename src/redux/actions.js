@@ -49,11 +49,9 @@ export const deleteSplit = id => ({
     id
 });
 
-export const incrementSplitIndex = (currentIndex, maxIndex) => ({
-    type: C.INCREMENT_SPLITINDEX,
-    newIndex: (currentIndex < maxIndex) ?
-        ++currentIndex :
-        0
+export const setSplitIndex = splitIndex => ({
+    type: C.SET_SPLITINDEX,
+    splitIndex
 });
 
 export const changeWeight = weight => ({

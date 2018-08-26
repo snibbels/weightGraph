@@ -25,6 +25,7 @@ export const exercises = (state = [], action) => {
 export const splitIndex = (state = 0, action) => {
     switch (action.type) {
         case C.FINISH_WORKOUT:
+        case C.SET_SPLITINDEX:
             return action.splitIndex
         default:
             return state;
