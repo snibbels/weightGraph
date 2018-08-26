@@ -9,6 +9,7 @@ import StoreComponent from '../HOCs/StoreComponent';
 import { MdEdit } from 'react-icons/lib/md';
 import FlexCardRow from '../ui/FlexCardRow';
 import Protocol from './Protocol';
+import QuickEditButton from './QuickEditButton';
 
 const _Start = ({ store }) => {
     const isWorkoutEmpty = !store.getState().exercises.map(e => e.selected).filter(e => e).length;
@@ -49,6 +50,11 @@ const _Start = ({ store }) => {
                 <div className={`${cardStyleClasses} w3-hover-blue`}>
                     <Link to="/workout" style={{ textDecoration: "none" }} >
                         <StartButton className="w3-large" />
+                    </Link>
+                </div>
+                <div className={`${cardStyleClasses} w3-hover-blue`}>
+                    <Link to="/quickedit" style={{ textDecoration: "none" }} >
+                        <QuickEditButton className="w3-large" />
                     </Link>
                 </div>
                 <Protocol {...store.getState().workoutPlan} className={cardStyleClasses} />
