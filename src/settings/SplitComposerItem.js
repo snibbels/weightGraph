@@ -5,9 +5,11 @@ import { deleteSplit, addSplit, editSplit, unselectExercise, selectExercise } fr
 import { muscleLabels } from '../redux/constants';
 
 const generateSplitName = (muscles = []) => {
-    return muscles
+    const string = muscles
         .map(m => muscleLabels[m])
-        .join(" & ");
+        .join(", ");
+    const lastIndex = string.lastIndexOf(",");
+    return [...string].map((s, i) => i !== lastIndex ? s : " &").join('');
 }
 
 const _SplitComposerItem = ({ store, id, name, muscles = [], unselectedMuscles = [] }) => {
