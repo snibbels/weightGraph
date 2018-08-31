@@ -11,3 +11,6 @@ export const getDataForMuscleGroup = (
 export const getAverage = (array) => array.reduce(
     (pv, cv) => pv ? (pv + cv) / 2 : cv, 0
 );
+
+export const getExerciseHistoryData = (exerciseId, history = []) =>
+    history.filter(h => h.exerciseId === exerciseId);
