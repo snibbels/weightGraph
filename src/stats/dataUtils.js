@@ -13,4 +13,4 @@ export const getAverage = (array) => array.reduce(
 );
 
 export const getExerciseHistoryData = (exerciseId, history = []) =>
-    history.filter(h => h.exerciseId === exerciseId);
+    history.filter(h => h.exerciseId === exerciseId).reverse();

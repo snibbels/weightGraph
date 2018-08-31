@@ -26,31 +26,31 @@ export default class ExerciseGraph extends Component {
             .attr('width', w)
             .attr('height', h)
 
-        const xScale = d3.scaleLinear()
-            .domain([d3.min(data, d => d.timestamp), d3.max(data, d => d.timestamp)])
-            .range([0, w])
+        const yAxisScale = d3.scaleLinear()
+            .domain([d3.min(data, d => d.weight), d3.max(data, d => d.weight)])
+            .range([h - 5, padding])
 
         const yScale = d3.scaleLinear()
             .domain([d3.min(data, d => d.weight), d3.max(data, d => d.weight)])
             .range([h - padding, padding])
 
         const yAxis = d3.axisLeft()
-            .scale(yScale)
-            .ticks(6)
+            .scale(yAxisScale)
+            .ticks(5)
 
         svg.selectAll('rect')
             .data(data)
             .enter()
             .append('rect')
             .attr('fill', 'teal')
-            .attr('y', d => h - yScale(d.weight) - padding)
-            .attr('x', (d, i) => 50 * i)
+            .attr('y', d => h - yScale(d.weight))
+            .attr('x', (d, i) => 50 * (i + 1))
             .attr('width', 40)
-            .attr('height', d => yScale(d.weight))
-
+            .attr('height', d => (yScale(d.weight) - 5)
+            )
         svg.append('g')
             .call(yAxis)
-            .attr('transform', `translate(20, 0)`)
+            .attr('transform', `translate(30, 0)`)
 
     }
 
