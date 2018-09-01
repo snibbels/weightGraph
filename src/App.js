@@ -15,6 +15,7 @@ import Statistics from './stats/Statistics';
 import Confirm from './ui/Confirm';
 import PageTemplate from './ui/PageTemplate';
 import Workout from './workout/Workout';
+import Export from './export/Export';
 
 const location = window.location;
 const { protocol, host, pathname } = location;
@@ -105,6 +106,7 @@ class App extends Component {
             <Route path="/workout" component={Workout} />
             <Route path="/settings" component={Settings} />
             <Route path="/quickedit" component={QuickEdit} />
+            <Route path="/export" component={Export} />
             <Confirm
               message={confirmMessage}
               isVisible={popup_id === popUpId}
