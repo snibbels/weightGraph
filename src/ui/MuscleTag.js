@@ -19,7 +19,7 @@ const unselectedStyle = {
     color: "black"
 };
 
-const MuscleTag = ({ muscle, ...props, selected = true }) => (
+const MuscleTag = ({ muscle, selected = true, ...props }) => (
     <span
         {...props}
         style={{ ...baseStyle, ...(selected ? selectedStyle : unselectedStyle) }}
