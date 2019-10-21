@@ -1,24 +1,37 @@
-import React from 'react'
-import PauseButton from './PauseButton';
-import IterationButton from './IterationButton';
+import React, { Component } from 'react'
+import { cardStyleClasses } from '../App'
 
-const Timer = ({ className, progress = 0, isLastExercise = true, isLastSet = true, isPaused = false,
-    iterate = f => f, pause = f => f, finish = f => f, timeBetweenExercises, timeBetweenSets }) => (
-        <div className={className}>
-            {
-                isPaused ?
-                    (<PauseButton
-                        progress={progress}
-                        className="w3-jumbo" />) :
-                    (<IterationButton
-                        className="w3-jumbo"
-                        isLastExercise={isLastExercise} isLastSet={isLastSet}
-                        finish={finish} iterate={iterate} pause={pause}
-                        timeBetweenExercises={timeBetweenExercises}
-                        timeBetweenSets={timeBetweenSets}
-                    />)
-            }
-        </div>
-    );
+export default class Timer extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            period: 1000 * 60,
+            ...props
+        }
+        this.startTimer = this.startTimer.bind(this)
+    }
 
-export default Timer;
+    startTimer() {
+        const now = Date.now();
+        const finish = now + this.state.period
+        this.setState({ finish })
+
+        const intervalId = setInterval(() => this.forceUpdate(), 100)
+        this.setState({ intervalId })
+    }
+
+    render() {
+        const timeLeft = this.state.finish - Date.now() || this.state.period
+        if (timeLeft < 0)
+            clearInterval(this.state.intervalId)
+
+        return (
+            <div className={cardStyleClasses}>
+                <h3>Timer</h3>
+                <button onClick={this.startTimer}>start</button>
+                {Math.floor((timeLeft / 1000 / 60) % 60).toFixed(0)}:
+                {(timeLeft / 1000 % 60).toFixed(2).padStart(5, '0')}
+            </div>
+        )
+    }
+}

@@ -14,9 +14,7 @@ class _Workout extends Component {
         this.addWeight = this.addWeight.bind(this);
         this.start = this.start.bind(this);
         this.cancel = this.cancel.bind(this);
-        this.pause = this.pause.bind(this);
         this.finish = this.finish.bind(this);
-        this.iterate = this.iterate.bind(this);
     }
 
     componentWillMount() {
@@ -54,30 +52,6 @@ class _Workout extends Component {
         this.props.store.dispatch(cancelWorkout());
     }
 
-    iterate() {
-        const { store } = this.props;
-        const { workout, history } = store.getState();
-        const { exercises = [], exerciseId, set = 1, weight } = workout;
-        const maxSets = 3;
-        const exerciseIndex = exercises.indexOf(exerciseId);
-
-        if (set < maxSets) {
-            const newSet = set + 1
-            store.dispatch(nextSet(newSet, newSet >= maxSets))
-        } else if (exerciseIndex < exercises.length - 1) {
-            const tempIndex = exerciseIndex + 1;
-            const isLastExercise = tempIndex >= exercises.length - 1
-            store.dispatch(
-                addHistoryEntry(exerciseId, weight)
-            )
-            store.dispatch(
-                nextExercise(exercises[tempIndex], history, isLastExercise)
-            )
-        } else {
-            this.finish()
-        }
-    }
-
     finish() {
         const { store } = this.props;
         const { splitIndex, workoutPlan, workout } = store.getState();
@@ -92,67 +66,30 @@ class _Workout extends Component {
         )
     }
 
-    pause(duration, next = f => f, steps = 100) {
-        this.setState({
-            isPaused: true,
-            duration,
-            progress: 0
-        });
-        const intervalId = setInterval(() =>
-            this.setState({
-                progress: (this.state.progress + (100 / steps))
-            }), duration / steps)
-        this.timeout = setTimeout(() => {
-            this.setState({ isPaused: false })
-            window.navigator.vibrate(500);
-            clearInterval(intervalId);
-            next();
-        }, duration);
-    }
-
     render() {
         const state = this.props.store.getState();
         const { exercises, workout, workoutPlan, settings, history } = state;
-        const { weight, set, isLastExercise, isLastSet, exerciseId, splitId } = workout;
+        const { weight, exerciseId, splitId } = workout;
         const exercise = exercises.find(e => e.id === exerciseId);
         const split = workoutPlan.splits.find(s => s.id === splitId);
 
         return (
             <FlexCardRow>
-                {
-                    (!this.isActive) ?
-                        <Link
-                            to="/"
-                            style={{ textDecoration: "none" }}>
-                            <div className={cardStyleClasses}>
-                                zurück zum Startbildschirm
-                            </div>
-                        </Link> : undefined
-                }
                 <Meta
                     className={cardStyleClasses}
                     exercise={exercise}
                     split={split}
                     weight={weight}
-                    set={set}
-                />
-                <Timer className={cardStyleClasses}
-                    {...this.state}
-                    {...workout}
-                    isLastExercise={isLastExercise || !exercise}
-                    isLastSet={isLastSet || !exercise}
-                    iterate={this.iterate}
-                    finish={this.finish}
-                    pause={this.pause}
-                    start={this.start}
-                    timeBetweenExercises={settings.timeBetweenExercises}
-                    timeBetweenSets={settings.timeBetweenSets}
                 />
                 <CurrentSplit
                     exercises={exercises}
                     exerciseId={exerciseId}
                     split={split}
                     history={history}
+                />
+                <Timer className={cardStyleClasses}
+                    timeBetweenExercises={settings.timeBetweenExercises}
+                    timeBetweenSets={settings.timeBetweenSets}
                 />
                 <Weights
                     className={`${cardStyleClasses}`}
