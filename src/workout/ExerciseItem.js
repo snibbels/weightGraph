@@ -1,8 +1,10 @@
 import React from 'react'
 import { muscleColors } from '../redux/constants';
 
-const ExerciseItem = ({ current = false, muscles = [], name, weight }) => (
-    <li style={{ fontWeight: current ? "bold" : "normal" }}>
+const ExerciseItem = ({ id, current = false, muscles = [], name, weight, activate = f => f }) => (
+    <li
+        onClick={() => activate(id)}
+        style={{ fontWeight: current ? "bold" : "normal" }}>
         <span style={{ width: "80%", display: "inline-block" }}>
             {muscles.map((m, i) => (
                 <span

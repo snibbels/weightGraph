@@ -78,32 +78,20 @@ export const startWorkout = (split, history = []) => {
     }
 }
 
+export const setCurrentExercise = id => ({
+    type: C.SET_CURRENT_EXERCISE, id
+})
+
+
 export const cancelWorkout = () => ({
     type: C.CANCEL_WORKOUT
 });
 
 export const finishWorkout = (splitIndex, splits = []) => ({
     type: C.FINISH_WORKOUT,
-    splitIndex: (splitIndex < splits.length - 1) ? splitIndex + 1 : 0,
+    splitIndex: (splitIndex + 1 % splits.length),
     timestamp: Date.now()
 });
-
-export const nextExercise = (exerciseId, history = [], isLastExercise = false) => {
-
-    const latest = history.find(h => h.exerciseId === exerciseId);
-    const weight = latest ? latest.weight : 0;
-
-    return {
-        type: C.NEXT_EXERCISE,
-        set: 1, exerciseId, weight, isLastExercise
-    }
-}
-
-export const nextSet = (set, isLastSet) => ({
-    type: C.NEXT_SET,
-    set,
-    isLastSet
-})
 
 export const addHistoryEntry = (exerciseId, weight) => ({
     type: C.ADD_HISTORY_ENTRY,

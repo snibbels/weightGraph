@@ -9,24 +9,11 @@ export const workout = (state = {}, action) => {
                 exercises: action.exercises,
                 historyId: action.historyId,
                 weight: action.weight,
-                set: 1,
-                isLastExercise: false,
-                isLastSet: false
             }
-        case C.NEXT_EXERCISE:
+        case C.SET_CURRENT_EXERCISE:
             return {
                 ...state,
-                set: action.set,
-                exerciseId: action.exerciseId,
-                weight: action.weight,
-                isLastExercise: action.isLastExercise,
-                isLastSet: false
-            }
-        case C.NEXT_SET:
-            return {
-                ...state,
-                set: action.set,
-                isLastSet: action.isLastSet
+                exerciseId: action.id
             }
         case C.CANCEL_WORKOUT:
         case C.FINISH_WORKOUT:
@@ -93,54 +80,6 @@ export const exercise = (state = {}, action) => {
         case C.CANCEL_WORKOUT:
         case C.FINISH_WORKOUT:
             return 0;
-        default:
-            return state;
-    }
-}
-
-export const set = (state = 0, action) => {
-    switch (action.type) {
-        case C.START_WORKOUT:
-        case C.ITERATE_WORKOUT:
-            return action.set;
-        case C.CANCEL_WORKOUT:
-        case C.FINISH_WORKOUT:
-            return 0;
-        default:
-            return state;
-    }
-}
-
-export const maxSets = (state = 3, action) => {
-    switch (action.type) {
-        case C.START_WORKOUT:
-            return action.maxSets;
-        default:
-            return state;
-    }
-}
-
-export const isLastExercise = (state = false, action) => {
-    switch (action.type) {
-        case C.START_WORKOUT:
-        case C.ITERATE_WORKOUT:
-            return action.isLastExercise;
-        case C.CANCEL_WORKOUT:
-        case C.FINISH_WORKOUT:
-            return false;
-        default:
-            return state;
-    }
-}
-
-export const isLastSet = (state = false, action) => {
-    switch (action.type) {
-        case C.START_WORKOUT:
-        case C.ITERATE_WORKOUT:
-            return action.isLastSet;
-        case C.CANCEL_WORKOUT:
-        case C.FINISH_WORKOUT:
-            return false;
         default:
             return state;
     }
