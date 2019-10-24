@@ -1,10 +1,10 @@
 import React from 'react'
 import store from '../redux/store'
 
-const NextSplit = ({  ...props }) => {
+const NextSplit = ({ ...props }) => {
 
-    const { splitIndex, workoutPlan } = store.getState();
-    const split = workoutPlan.splits[splitIndex];
+    const { splitIndex, splits } = store.getState();
+    const split = splits[splitIndex];
     return (
         <div {...props}>
             <span>

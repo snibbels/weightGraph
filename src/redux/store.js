@@ -1,12 +1,12 @@
 import { combineReducers, createStore } from 'redux';
-import { exercises, history, logger, settings, splitIndex, ui, workoutPlan } from './reducers';
+import { exercises, history, logger, settings, splitIndex, ui, splits } from './reducers';
 import { workout } from './workoutReducers';
 
 const store = createStore(combineReducers({
     logger,
     settings,
     exercises,
-    workoutPlan,
+    splits,
     workout,
     splitIndex,
     ui,

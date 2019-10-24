@@ -43,19 +43,17 @@ class Workout extends Component {
 
     start() {
         const state = store.getState();
-        const { splitIndex, history } = state;
-        const { splits } = state.workoutPlan;
+        const { splitIndex, history, splits = [] } = state;
         const split = splits[splitIndex];
         store.dispatch(startWorkout(split, history));
     }
     cancel() {
-        this.props.store.dispatch(cancelWorkout());
+        store.dispatch(cancelWorkout());
     }
 
     finish() {
-        const { splitIndex, workoutPlan, workout } = store.getState();
+        const { splitIndex, splits = [], workout } = store.getState();
         const { exerciseId, weight } = workout;
-        const { splits = [] } = workoutPlan;
         this.isActive = false;
         store.dispatch(
             addHistoryEntry(exerciseId, weight)
@@ -67,10 +65,10 @@ class Workout extends Component {
 
     render() {
         const state = store.getState();
-        const { exercises, workout, workoutPlan, settings, history } = state;
+        const { exercises, workout, splits = [], settings, history } = state;
         const { weight, exerciseId, splitId } = workout;
         const exercise = exercises.find(e => e.id === exerciseId);
-        const split = workoutPlan.splits.find(s => s.id === splitId);
+        const split = splits.find(s => s.id === splitId);
 
         return (
             <FlexCardRow>

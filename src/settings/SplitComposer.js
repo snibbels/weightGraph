@@ -4,7 +4,7 @@ import SplitComposerItem from './SplitComposerItem';
 import { muscles } from '../redux/constants';
 
 const SplitComposer = ({ ...props }) => {
-    const { splits } = store.getState().workoutPlan;
+    const { splits } = store.getState();
     const unselectedMuscles = Object
         .values(muscles)
         .filter(m => !(splits

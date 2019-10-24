@@ -56,35 +56,6 @@ export const settings = (state = {}, action) => {
     }
 }
 
-export const workoutPlan = (state = {}, action) => {
-    switch (action.type) {
-        case C.ADD_WORKOUT:
-            return {
-                id: action.id,
-                name: action.name,
-                timestamp: action.timestamp,
-                tags: action.tags,
-                splits: action.splits
-            };
-        case C.ADD_SPLIT:
-        case C.EDIT_SPLIT:
-        case C.DELETE_SPLIT:
-        case C.SELECT_EXERCISE:
-        case C.UNSELECT_EXERCISE:
-            return {
-                ...state,
-                splits: splits(state.splits, action)
-            };
-        case C.FINISH_WORKOUT:
-            return {
-                ...state,
-                lastWorkout: action.timestamp
-            };
-        default:
-            return state;
-    }
-};
-
 export const ui = (state = {}, action) => {
     switch (action.type) {
         case C.TOGGLE_ADD_EXERCISE_FORM:
