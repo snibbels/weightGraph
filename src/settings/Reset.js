@@ -1,11 +1,11 @@
 import React from 'react'
 import { defaults } from '../redux/constants';
-import StoreComponent from '../HOCs/StoreComponent';
+import store from '../redux/store'
 import { showPopUp, hidePopUp } from '../redux/actions';
 import Confirm from '../ui/Confirm';
 
 
-const _Reset = ({ store, className, style }) => {
+const Reset = ({ className, style }) => {
 
     const clearLocalStorageAndReload = ()=>setTimeout(() => {
         localStorage.clear(defaults.LOCALSTORAGE_NAME);
@@ -33,7 +33,5 @@ const _Reset = ({ store, className, style }) => {
         </div>
     );
 }
-
-const Reset = StoreComponent(_Reset);
 
 export default Reset;

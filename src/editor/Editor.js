@@ -1,10 +1,10 @@
 import React from 'react';
-import StoreComponent from '../HOCs/StoreComponent';
 import ExerciseList from './ExerciseList';
 import WorkoutPlan from './WorkoutPlan';
 import { flexCardRow, cardStyleClasses, flexCardContainer } from '../App';
+import store from '../redux/store'
 
-const _Editor = ({ store }) => {
+const Editor = () => {
     const plan = store.getState().workoutPlan;
     const exercises = store.getState().exercises;
     const isWorkoutEmpty = !store.getState().exercises
@@ -34,7 +34,5 @@ const _Editor = ({ store }) => {
         </div>
     );
 }
-
-const Editor = StoreComponent(_Editor);
 
 export default Editor;

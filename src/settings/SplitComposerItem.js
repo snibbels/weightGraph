@@ -1,6 +1,6 @@
 import React from 'react'
 import MuscleTag from '../ui/MuscleTag';
-import StoreComponent from '../HOCs/StoreComponent';
+import store from '../redux/store'
 import { deleteSplit, addSplit, editSplit, unselectExercise, selectExercise } from '../redux/actions';
 import { muscleLabels } from '../redux/constants';
 
@@ -12,7 +12,7 @@ const generateSplitName = (muscles = []) => {
     return [...string].map((s, i) => i !== lastIndex ? s : " &").join('');
 }
 
-const _SplitComposerItem = ({ store, id, name, muscles = [], unselectedMuscles = [] }) => {
+const SplitComposerItem = ({ id, name, muscles = [], unselectedMuscles = [] }) => {
     const reselectExercises = () => {
         const { exercises } = store.getState();
         exercises.forEach(e => {
@@ -79,7 +79,5 @@ const _SplitComposerItem = ({ store, id, name, muscles = [], unselectedMuscles =
         </li>
     );
 }
-
-const SplitComposerItem = StoreComponent(_SplitComposerItem)
 
 export default SplitComposerItem;

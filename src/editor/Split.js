@@ -1,10 +1,9 @@
 import React from 'react';
 import SplitItem from './SplitItem';
-import StoreComponent from '../HOCs/StoreComponent'
 import MuscleTag from '../ui/MuscleTag';
+import store from '../redux/store'
 
-
-const _Split = ({ name, muscles, className, style, store, exercises = [] }) => {
+const Split = ({ name, muscles, className, style, exercises = [] }) => {
     // const splitExercises = store.getState().exercises.map(
     //     e => exercises.indexOf(e.id) > -1 ? e : undefined
     // ).filter(item => item)
@@ -28,7 +27,5 @@ const _Split = ({ name, muscles, className, style, store, exercises = [] }) => {
         </div>
     );
 }
-
-const Split = StoreComponent(_Split);
 
 export default Split;

@@ -1,11 +1,11 @@
 import React from 'react'
-import StoreComponent from '../HOCs/StoreComponent'
 import { unselectExercise, selectExercise } from '../redux/actions';
 import AddDeleteButton from '../ui/AddDeleteButton';
 import MuscleTag from '../ui/MuscleTag';
 import { flexCardContainer, cardStyleClasses } from '../App';
+import store from '../redux/store'
 
-const _Exercise = ({ store, id, name, muscles, selected }) => {
+const Exercise = ({ id, name, muscles, selected }) => {
     const toggleSelect = ()=> store.dispatch(
         selected ? 
         unselectExercise(id, name, muscles):
@@ -31,7 +31,5 @@ const _Exercise = ({ store, id, name, muscles, selected }) => {
             </div>
         </div>
 );}
-
-const Exercise = StoreComponent(_Exercise);
 
 export default Exercise;

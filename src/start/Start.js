@@ -3,12 +3,12 @@ import StartButton from './StartButton';
 import NextSplit from './NextSplit';
 import { Link } from 'react-router-dom'
 import { cardStyleClasses, flexCardRow, flexCardContainer } from '../App';
-import StoreComponent from '../HOCs/StoreComponent';
+import store from '../redux/store'
 import { MdEdit } from 'react-icons/lib/md';
 import FlexCardRow from '../ui/FlexCardRow';
 import Protocol from './Protocol';
 
-const _Start = ({ store }) => {
+const Start = () => {
     const isWorkoutEmpty = !store.getState().exercises.map(e => e.selected).filter(e => e).length;
 
     if (isWorkoutEmpty)
@@ -52,7 +52,5 @@ const _Start = ({ store }) => {
             </FlexCardRow>
         );
 }
-
-const Start = StoreComponent(_Start);
 
 export default Start;

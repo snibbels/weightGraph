@@ -1,10 +1,9 @@
 import React from 'react'
-
-import StoreComponent from '../HOCs/StoreComponent';
+import store from '../redux/store'
 import SplitComposerItem from './SplitComposerItem';
 import { muscles } from '../redux/constants';
 
-const _SplitComposer = ({ store, ...props }) => {
+const SplitComposer = ({ ...props }) => {
     const { splits } = store.getState().workoutPlan;
     const unselectedMuscles = Object
         .values(muscles)
@@ -30,7 +29,5 @@ const _SplitComposer = ({ store, ...props }) => {
         </div>
     );
 }
-
-const SplitComposer = StoreComponent(_SplitComposer)
 
 export default SplitComposer;

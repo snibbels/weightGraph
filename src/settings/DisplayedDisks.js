@@ -1,9 +1,8 @@
 import React from 'react'
-
-import StoreComponent from '../HOCs/StoreComponent';
+import store from '../redux/store'
 import { changeDisplayedDiscs } from '../redux/actions';
 
-const _DisplayedDiscs = ({ store, ...props }) => {
+const DisplayedDiscs = ({ ...props }) => {
 
     let input;
     const { displayedDiscs } = store.getState().settings;
@@ -49,7 +48,5 @@ const _DisplayedDiscs = ({ store, ...props }) => {
         </div>
     );
 }
-
-const DisplayedDiscs = StoreComponent(_DisplayedDiscs)
 
 export default DisplayedDiscs;

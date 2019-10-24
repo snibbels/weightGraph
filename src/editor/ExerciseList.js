@@ -2,10 +2,10 @@ import React from 'react'
 import Exercise from './Exercise';
 import AddDeleteButton from '../ui/AddDeleteButton';
 import AddExerciseForm from './AddExerciseForm';
-import StoreComponent from '../HOCs/StoreComponent';
 import { toggleAddExerciseForm } from '../redux/actions';
+import store from '../redux/store'
 
-const _ExerciseList = ({ store, exercises = [], className, style }) => {
+const ExerciseList = ({ exercises = [], className, style }) => {
     const { showAddExerciseForm } = store.getState().ui
     const toggleView = () => store.dispatch(toggleAddExerciseForm())
     return (
@@ -33,7 +33,5 @@ const _ExerciseList = ({ store, exercises = [], className, style }) => {
         </div>
     );
 }
-
-const ExerciseList = StoreComponent(_ExerciseList);
 
 export default ExerciseList;

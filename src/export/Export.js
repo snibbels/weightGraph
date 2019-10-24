@@ -1,13 +1,10 @@
 import React from 'react'
+import store from '../redux/store'
 
-import StoreComponent from '../HOCs/StoreComponent';
-
-const _Export = ({ store }) => (
-    <div style={{userSelect:"all"}} >
+const Export = () => (
+    <div style={{ userSelect: "all" }} >
         {JSON.stringify(store.getState())}
     </div>
 );
-
-const Export = StoreComponent(_Export)
 
 export default Export;

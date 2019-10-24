@@ -1,10 +1,10 @@
 import React from 'react';
-import StoreComponent from '../HOCs/StoreComponent';
 import { addExercise } from '../redux/actions';
 import { muscles } from '../redux/constants';
 import { cardStyleClasses } from '../ui/FlexCardRow';
+import store from '../redux/store'
 
-const _AddExerciseForm = ({ store, toggleView }) => {
+const AddExerciseForm = ({ toggleView }) => {
     let _muscle, _name;
     const submit = () => {
         if (!_muscle.value || !_name.value) return;
@@ -47,7 +47,5 @@ const _AddExerciseForm = ({ store, toggleView }) => {
         </div >
     );
 }
-
-const AddExerciseForm = StoreComponent(_AddExerciseForm);
 
 export default AddExerciseForm;

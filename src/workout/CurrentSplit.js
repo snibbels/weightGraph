@@ -1,10 +1,10 @@
 import React from 'react';
 import { cardStyleClasses } from '../ui/FlexCardRow';
 import ExerciseItem from './ExerciseItem';
-import StoreComponet from '../HOCs/StoreComponent'
 import { setCurrentExercise } from '../redux/actions';
+import store from '../redux/store'
 
-const _CurrentSplit = ({ store, split, exercises, exerciseId, history = [] }) => {
+const CurrentSplit = ({ split, exercises, exerciseId, history = [] }) => {
     if (!split) return null;
     const currentExercises = split.exercises.map(
         e => ({
@@ -33,7 +33,5 @@ const _CurrentSplit = ({ store, split, exercises, exerciseId, history = [] }) =>
         </div>
     );
 }
-
-const CurrentSplit = StoreComponet(_CurrentSplit)
 
 export default CurrentSplit;

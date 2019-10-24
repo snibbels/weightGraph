@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Link, Prompt } from 'react-router-dom';
-import StoreComponent from '../HOCs/StoreComponent';
-import { addHistoryEntry, cancelWorkout, changeWeight, finishWorkout, nextExercise, nextSet, startWorkout } from '../redux/actions';
+import { Prompt } from 'react-router-dom';
+import { addHistoryEntry, cancelWorkout, changeWeight, finishWorkout, startWorkout } from '../redux/actions';
+import store from '../redux/store';
 import FlexCardRow, { cardStyleClasses } from '../ui/FlexCardRow';
 import CurrentSplit from './CurrentSplit';
 import Meta from './Meta';
 import Timer from './Timer';
 import Weights from './Weights';
-class _Workout extends Component {
+
+
+class Workout extends Component {
     constructor(props) {
         super(props);
 
@@ -33,7 +35,6 @@ class _Workout extends Component {
     }
 
     addWeight(value) {
-        const { store } = this.props;
         const { weight } = store.getState().workout;
         store.dispatch(
             changeWeight(weight + value)
@@ -41,7 +42,6 @@ class _Workout extends Component {
     }
 
     start() {
-        const { store } = this.props;
         const state = store.getState();
         const { splitIndex, history } = state;
         const { splits } = state.workoutPlan;
@@ -53,7 +53,6 @@ class _Workout extends Component {
     }
 
     finish() {
-        const { store } = this.props;
         const { splitIndex, workoutPlan, workout } = store.getState();
         const { exerciseId, weight } = workout;
         const { splits = [] } = workoutPlan;
@@ -67,7 +66,7 @@ class _Workout extends Component {
     }
 
     render() {
-        const state = this.props.store.getState();
+        const state = store.getState();
         const { exercises, workout, workoutPlan, settings, history } = state;
         const { weight, exerciseId, splitId } = workout;
         const exercise = exercises.find(e => e.id === exerciseId);
@@ -103,6 +102,5 @@ class _Workout extends Component {
     }
 }
 
-const Workout = StoreComponent(_Workout);
 
 export default Workout;

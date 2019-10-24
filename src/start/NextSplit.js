@@ -1,7 +1,7 @@
 import React from 'react'
-import StoreComponent from '../HOCs/StoreComponent';
+import store from '../redux/store'
 
-const _NextSplit = ({ store, ...props }) => {
+const NextSplit = ({  ...props }) => {
 
     const { splitIndex, workoutPlan } = store.getState();
     const split = workoutPlan.splits[splitIndex];
@@ -17,7 +17,5 @@ const _NextSplit = ({ store, ...props }) => {
         </div>
     );
 }
-
-const NextSplit = StoreComponent(_NextSplit);
 
 export default NextSplit;

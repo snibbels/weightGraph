@@ -1,10 +1,10 @@
 import React from 'react';
-import StoreComponent from '../HOCs/StoreComponent';
+import store from '../redux/store'
 import { restoreDefaultSettings, showPopUp, hidePopUp } from '../redux/actions';
 import Confirm from '../ui/Confirm';
 
 
-const _RestoreDefaults = ({ store, ...props }) => {
+const RestoreDefaults = ({ ...props }) => {
     const restore = () => {
         store.dispatch(restoreDefaultSettings());
         window.location.reload();
@@ -28,7 +28,5 @@ const _RestoreDefaults = ({ store, ...props }) => {
         </div>
     );
 }
-
-const RestoreDefaults = StoreComponent(_RestoreDefaults)
 
 export default RestoreDefaults;

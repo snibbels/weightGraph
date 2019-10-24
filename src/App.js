@@ -3,11 +3,10 @@ import { HashRouter, Route } from 'react-router-dom';
 import 'w3-css';
 import './App.css';
 import Editor from './editor/Editor';
-import { addExercise, addSplit, addWorkout, hidePopUp, restoreDefaultSettings, selectExercise, showPopUp, unselectExercise } from './redux/actions';
+import { addExercise, addSplit, addWorkout, hidePopUp, restoreDefaultSettings, showPopUp } from './redux/actions';
 import { defaults, muscles } from './redux/constants';
 import Settings from './settings/Settings';
 import Start from './start/Start';
-import Statistics from './stats/Statistics';
 import Confirm from './ui/Confirm';
 import PageTemplate from './ui/PageTemplate';
 import Workout from './workout/Workout';
@@ -36,7 +35,6 @@ const setup = () => {
 
 const isObjectEmpty = obj => !obj || !Object.keys(obj) || !Object.keys(obj).length;
 
-export const StoreContext = React.createContext({ store });
 export const cardStyleClasses = ["w3-card", "w3-left-align", "w3-padding", "w3-display-container"].join(' ');
 export const flexCardRow = ["w3-row"].join(' ');
 export const flexCardContainer = ["w3-col", "s12 m6 l4", "w3-padding"].join(' ');
@@ -77,7 +75,6 @@ class App extends Component {
         <HashRouter getUserConfirmation={confirmTransition}>
           <PageTemplate>
             <Route exact path="/" component={Start} />
-            <Route path="/stats" component={Statistics} />
             <Route path="/edit" component={Editor} />
             <Route path="/workout" component={Workout} />
             <Route path="/settings" component={Settings} />

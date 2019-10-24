@@ -1,9 +1,9 @@
 import React from 'react'
-import StoreComponent from '../HOCs/StoreComponent';
 import { unselectExercise } from '../redux/actions';
 import { muscleColors } from '../redux/constants';
+import store from '../redux/store'
 
-const _SplitItem = ({ id, name, className, store, muscles=[] }) => (
+const SplitItem = ({ id, name, className, muscles=[] }) => (
     < li className={className + " w3-display-container"}>
         {
             muscles.map((m, i) => (
@@ -27,7 +27,5 @@ const _SplitItem = ({ id, name, className, store, muscles=[] }) => (
         </span>
     </li>
 );
-
-const SplitItem = StoreComponent(_SplitItem);
 
 export default SplitItem;
