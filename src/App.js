@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
-import { combineReducers, createStore } from 'redux';
 import 'w3-css';
 import './App.css';
 import Editor from './editor/Editor';
-import QuickEdit from './quickedit/QuickEdit';
 import { addExercise, addSplit, addWorkout, hidePopUp, restoreDefaultSettings, selectExercise, showPopUp, unselectExercise } from './redux/actions';
 import { defaults, muscles } from './redux/constants';
-import { exercises, history, logger, settings, splitIndex, ui, workoutPlan } from './redux/reducers';
-import { workout } from './redux/workoutReducers';
 import Settings from './settings/Settings';
 import Start from './start/Start';
 import Statistics from './stats/Statistics';
@@ -16,6 +12,7 @@ import Confirm from './ui/Confirm';
 import PageTemplate from './ui/PageTemplate';
 import Workout from './workout/Workout';
 import Export from './export/Export';
+import store from './redux/store'
 
 const location = window.location;
 const { protocol, host, pathname } = location;
@@ -36,13 +33,6 @@ const setup = () => {
     ))
 }
 
-const store = createStore(combineReducers({
-  logger, settings, exercises, workoutPlan, history, workout, splitIndex, ui
-}), (
-  localStorage['localWeights']) ?
-    JSON.parse(localStorage['localWeights']) :
-    undefined
-);
 
 const isObjectEmpty = obj => !obj || !Object.keys(obj) || !Object.keys(obj).length;
 
@@ -77,20 +67,6 @@ class App extends Component {
     if (isObjectEmpty(settings)) {
       store.dispatch(restoreDefaultSettings())
     }
-    // To provide compatibility with older versions, exercises will be reselected
-    if (store.getState().workoutPlan.splits.filter(
-      s => s.exercises.filter(e => e).length > 0
-    ).length === 0) {
-      store.getState().exercises.forEach(
-        e => {
-          if (e.selected) {
-            store.dispatch(unselectExercise(e.id, e.name, e.muscles));
-            store.dispatch(selectExercise(e.id, e.name, e.muscles));
-          }
-        }
-      )
-    }
-    // end of compatibility code
   }
 
   render() {
@@ -105,7 +81,6 @@ class App extends Component {
             <Route path="/edit" component={Editor} />
             <Route path="/workout" component={Workout} />
             <Route path="/settings" component={Settings} />
-            <Route path="/quickedit" component={QuickEdit} />
             <Route path="/export" component={Export} />
             <Confirm
               message={confirmMessage}
