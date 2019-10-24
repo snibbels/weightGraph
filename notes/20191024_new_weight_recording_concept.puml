@@ -1,0 +1,29 @@
+@startuml
+
+title new weight recording concept
+
+|editing|
+start
+:select muscle groups for split;
+:select favorite exercises;
+|start|
+:select split for workout;
+:start workout;
+|workout|
+repeat
+:select exercise from split;
+repeat
+fork
+:start timer;
+fork again
+:edit weight;
+end fork
+repeat while (exercise is not ended)
+:save recordings;
+repeat while (no exercises left or user cancels workout)
+|start|
+:show summary;
+stop
+
+
+@enduml
