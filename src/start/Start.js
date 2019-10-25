@@ -47,7 +47,7 @@ const Start = () => {
                         <StartButton className="w3-large" />
                     </Link>
                 </div>
-                <Protocol {...store.getState()} className={cardStyleClasses} />
+                <Protocol className={cardStyleClasses} />
 
             </FlexCardRow>
         );

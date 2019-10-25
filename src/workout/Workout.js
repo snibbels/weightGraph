@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Prompt } from 'react-router-dom';
-import { addHistoryEntry, cancelWorkout, changeWeight, finishWorkout, startWorkout } from '../redux/actions';
+import { addHistoryEntry, cancelWorkout, changeWeight, startWorkout } from '../redux/actions';
 import store from '../redux/store';
+import { Link } from 'react-router-dom';
 import FlexCardRow, { cardStyleClasses } from '../ui/FlexCardRow';
 import CurrentSplit from './CurrentSplit';
 import Meta from './Meta';
@@ -35,7 +36,6 @@ class Workout extends Component {
         clearTimeout(this.timeout);
     }
 
-    // TODO: Gewichtseditierung grundlegend überarbeiten
     addWeight(value) {
         const { exercises = [], exerciseId = "" } = store.getState().workout;
         console.log(exerciseId, exercises)
@@ -82,11 +82,12 @@ class Workout extends Component {
                     split={split}
                 />
                 <div className={cardStyleClasses}>
-                    <button
+                    <Link
+                        to="/"
                         onClick={this.finish}
                         className="w3-button">
                         Training beenden und Gewichte speichern
-                </button>
+                    </Link>
                 </div>
                 <CurrentSplit
                     exerciseId={exerciseId}
