@@ -7,6 +7,7 @@ import CurrentSplit from './CurrentSplit';
 import Meta from './Meta';
 import Timer from './Timer';
 import Weights from './Weights';
+import { activateNextSplit } from '../redux/utils';
 
 
 class Workout extends Component {
@@ -34,41 +35,44 @@ class Workout extends Component {
         clearTimeout(this.timeout);
     }
 
+    // TODO: Gewichtseditierung grundlegend überarbeiten
     addWeight(value) {
-        const { weight } = store.getState().workout;
+        const { exercises = [], exerciseId = "" } = store.getState().workout;
+        console.log(exerciseId, exercises)
+        const { weight = 0 } = exercises.find(e => e.id === exerciseId)
+
         store.dispatch(
-            changeWeight(weight + value)
+            changeWeight(exerciseId, weight + value)
         )
     }
 
     start() {
-        const state = store.getState();
-        const { splitIndex, history, splits = [] } = state;
+        const { splitIndex, splits = [], exercises } = store.getState();
         const split = splits[splitIndex];
-        store.dispatch(startWorkout(split, history));
+        const mappedExercises = split.exercises.map(id => ({
+            ...exercises.find(item => item.id === id)
+        }))
+
+        store.dispatch(startWorkout(mappedExercises));
     }
     cancel() {
         store.dispatch(cancelWorkout());
     }
 
     finish() {
-        const { splitIndex, splits = [], workout } = store.getState();
-        const { exerciseId, weight } = workout;
+        const { exercises = [] } = store.getState().workout;
         this.isActive = false;
-        store.dispatch(
-            addHistoryEntry(exerciseId, weight)
-        )
-        store.dispatch(
-            finishWorkout(splitIndex, splits)
-        )
+        exercises.filter(e => !!e.weight).forEach(e => store.dispatch(
+            addHistoryEntry(e.id, e.weight)
+        ))
+        activateNextSplit()
     }
 
     render() {
-        const state = store.getState();
-        const { exercises, workout, splits = [], settings, history } = state;
-        const { weight, exerciseId, splitId } = workout;
+        const { workout, splits = [], settings, splitIndex } = store.getState();
+        const { exercises = [], exerciseId = "" } = workout
         const exercise = exercises.find(e => e.id === exerciseId);
-        const split = splits.find(s => s.id === splitId);
+        const split = splits[splitIndex]
 
         return (
             <FlexCardRow>
@@ -76,22 +80,25 @@ class Workout extends Component {
                     className={cardStyleClasses}
                     exercise={exercise}
                     split={split}
-                    weight={weight}
                 />
+                <div className={cardStyleClasses}>
+                    <button
+                        onClick={this.finish}
+                        className="w3-button">
+                        Training beenden und Gewichte speichern
+                </button>
+                </div>
                 <CurrentSplit
-                    exercises={exercises}
                     exerciseId={exerciseId}
+                    exercises={exercises}
                     split={split}
-                    history={history}
                 />
                 <Timer className={cardStyleClasses}
-                    timeBetweenExercises={settings.timeBetweenExercises}
-                    timeBetweenSets={settings.timeBetweenSets}
                 />
                 <Weights
+                    sum={exercise.weight}
                     className={`${cardStyleClasses}`}
                     addWeight={this.addWeight}
-                    sum={weight}
                     displayedDiscs={settings.displayedDiscs}
                 />
                 <Prompt when={this.isActive} message="Möchtest du dein Training wirklich abbrechen? Alle Fortschritte gehen verloren!" />

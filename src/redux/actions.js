@@ -54,27 +54,17 @@ export const setSplitIndex = splitIndex => ({
     splitIndex
 });
 
-export const changeWeight = weight => ({
+export const changeWeight = (exerciseId, weight) => ({
     type: C.CHANGE_WEIGHT,
-    weight
+    exerciseId, weight
 })
 
-export const startWorkout = (split, history = []) => {
-    const { exercises, id } = split;
-    const exerciseId = exercises[0];
-    const historyId = history.filter(
-        item => item.exerciseId === exerciseId
-    ).map(item => item.id)[0]
-    const latest = history.find(h => h.id === historyId);
-    const weight = latest ? latest.weight : 0;
+export const startWorkout = (exercises = []) => {
+    const exerciseId = [...exercises.map(e => e.id), ""][0];
 
     return {
         type: C.START_WORKOUT,
-        splitId: id,
-        exerciseId,
-        exercises,
-        historyId,
-        weight
+        exercises, exerciseId
     }
 }
 

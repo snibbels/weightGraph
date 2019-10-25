@@ -4,23 +4,20 @@ import ExerciseItem from './ExerciseItem';
 import { setCurrentExercise } from '../redux/actions';
 import store from '../redux/store'
 
-const CurrentSplit = ({ split, exercises, exerciseId, history = [] }) => {
+const CurrentSplit = ({ split }) => {
     if (!split) return null;
-    const currentExercises = split.exercises.map(
-        e => ({
-            ...history.find(h => h.exerciseId === e),
-            ...exercises.find(ex => ex.id === e),
-        })
-    );
+
+    const { exercises = [], exerciseId = "" } = store.getState().workout;
 
     const selectCurrentExercise = id => {
+        console.log(setCurrentExercise(id))
         store.dispatch(setCurrentExercise(id))
     }
 
     return (
         <div className={cardStyleClasses}>
             <ul className="w3-ul">
-                {currentExercises.map(
+                {exercises.map(
                     (e, i) => (
                         <ExerciseItem
                             activate={selectCurrentExercise}

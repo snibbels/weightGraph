@@ -5,6 +5,32 @@ export const logger = (state, action) => {
     return null;
 }
 
+export const workout = (state = {}, action) => {
+    switch (action.type) {
+        case C.SET_CURRENT_EXERCISE:
+            return {
+                ...state,
+                exerciseId: action.id
+            }
+        case C.START_WORKOUT:
+            console.log(action)
+            return {
+                exercises: action.exercises,
+                exerciseId: action.exerciseId
+            }
+        case C.CHANGE_WEIGHT:
+            return {
+                ...state,
+                exercises: state.exercises.map(
+                    item => item.id !== action.exerciseId ?
+                        item : { ...item, weight: action.weight }
+                )
+            }
+        default:
+            return state
+    }
+}
+
 export const exercises = (state = [], action) => {
     switch (action.type) {
         case C.ADD_EXERCISE:
@@ -24,7 +50,6 @@ export const exercises = (state = [], action) => {
 
 export const splitIndex = (state = 0, action) => {
     switch (action.type) {
-        case C.FINISH_WORKOUT:
         case C.SET_SPLITINDEX:
             return action.splitIndex
         default:
