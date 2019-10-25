@@ -26,6 +26,9 @@ export const workout = (state = {}, action) => {
                         item : { ...item, weight: action.weight }
                 )
             }
+        case C.FINISH_WORKOUT:
+        case C.CANCEL_WORKOUT:
+            return {}
         default:
             return state
     }

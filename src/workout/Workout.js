@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Prompt } from 'react-router-dom';
 import { addHistoryEntry, cancelWorkout, changeWeight, startWorkout } from '../redux/actions';
 import store from '../redux/store';
-import { Link } from 'react-router-dom';
 import FlexCardRow, { cardStyleClasses } from '../ui/FlexCardRow';
 import CurrentSplit from './CurrentSplit';
 import Meta from './Meta';
@@ -66,6 +65,7 @@ class Workout extends Component {
             addHistoryEntry(e.id, e.weight)
         ))
         activateNextSplit()
+        window.location.hash = "/"
     }
 
     render() {
@@ -82,12 +82,11 @@ class Workout extends Component {
                     split={split}
                 />
                 <div className={cardStyleClasses}>
-                    <Link
-                        to="/"
+                    <button
                         onClick={this.finish}
                         className="w3-button">
                         Training beenden und Gewichte speichern
-                    </Link>
+                    </button>
                 </div>
                 <CurrentSplit
                     exerciseId={exerciseId}
