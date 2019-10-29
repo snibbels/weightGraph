@@ -81,13 +81,6 @@ class Workout extends Component {
                     exercise={exercise}
                     split={split}
                 />
-                <div className={cardStyleClasses}>
-                    <button
-                        onClick={this.finish}
-                        className="w3-button">
-                        Training beenden und Gewichte speichern
-                    </button>
-                </div>
                 <CurrentSplit
                     exerciseId={exerciseId}
                     exercises={exercises}
@@ -101,6 +94,13 @@ class Workout extends Component {
                     addWeight={this.addWeight}
                     displayedDiscs={settings.displayedDiscs}
                 />
+                <div className={cardStyleClasses + " w3-red"}>
+                    <button
+                        onClick={this.finish}
+                        className="w3-button w3-hover-red">
+                        Training beenden und Gewichte speichern
+                    </button>
+                </div>
                 <Prompt when={this.isActive} message="Möchtest du dein Training wirklich abbrechen? Alle Fortschritte gehen verloren!" />
             </FlexCardRow>
         )
