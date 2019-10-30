@@ -25,6 +25,14 @@ export const workout = (state = {}, action) => {
                         item : { ...item, weight: action.weight }
                 )
             }
+        case C.SET_BELL_TYPE:
+            return {
+                ...state,
+                exercises: state.exercises.map(
+                    item => item.id !== action.exerciseId ?
+                        item : { ...item, bellType: action.bellType }
+                )
+            }
         case C.FINISH_WORKOUT:
         case C.CANCEL_WORKOUT:
             return {}

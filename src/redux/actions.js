@@ -114,3 +114,7 @@ export const changeDisplayedDiscs = discs => ({
     type: C.CHANGE_DISPLAYED_DISCS,
     discs
 });
+
+export const setBellType = (bellType, exerciseId) => ({
+    type: C.SET_BELL_TYPE, bellType, exerciseId
+})

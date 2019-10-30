@@ -19,6 +19,7 @@ const C = {
     SHOW_POPUP: "SHOW_POPUP",
     HIDE_POPUP: "HIDE_POPUP",
     CHANGE_DISPLAYED_DISCS: "CHANGE_DISPLAYED_DISCS",
+    SET_BELL_TYPE: "SET_BELL_TYPE",
 };
 
 export default C;
@@ -62,4 +63,9 @@ export const muscleColors = {
     TRIZEPS: "purple",
     SHOULDER: "yellow",
     ABS: "indigo"
+}
+
+export const bellTypes = {
+    barbell: "BARBELL",
+    dumbbell: "DUMBBELL"
 }

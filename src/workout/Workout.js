@@ -8,6 +8,7 @@ import Meta from './Meta';
 import Timer from './Timer';
 import Weights from './Weights';
 import { activateNextSplit } from '../redux/utils';
+import BellTypeSelector from './BellTypeSelector';
 
 
 class Workout extends Component {
@@ -94,6 +95,9 @@ class Workout extends Component {
                     addWeight={this.addWeight}
                     displayedDiscs={settings.displayedDiscs}
                 />
+                <BellTypeSelector
+                    exercise={exercise}
+                    className={`${cardStyleClasses}`} />
                 <div className={cardStyleClasses + " w3-red"}>
                     <button
                         onClick={this.finish}
