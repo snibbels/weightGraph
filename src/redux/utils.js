@@ -7,13 +7,11 @@ export const activateNextSplit = () => {
     store.dispatch(setSplitIndex(nextIndex))
 }
 
-export const getLastWeightOfExercise = id => {
+export const getLastExerciseData = id => {
     const { history = [] } = store.getState();
-    const weightsOfExercise = [
-        ...(history
-            .filter(item => item.exerciseId === id)
-            .map(item => item.weight)),
+    const exerciseData = [
+        ...(history.filter(item => item.exerciseId === id)),
         0
     ]
-    return weightsOfExercise[0]
+    return exerciseData[0]
 }

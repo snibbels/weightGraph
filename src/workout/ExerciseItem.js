@@ -1,8 +1,10 @@
 import React from 'react'
 import { muscleColors } from '../redux/constants';
+import BellTypeIndicator from './BellTypeIndicator';
 
-const ExerciseItem = ({ id, current = false, muscles = [], name, weight, activate = f => f }) => (
+const ExerciseItem = ({ id, current = false, muscles = [], name, weight, bellType, activate = f => f }) => (
     <li
+        className="w3-display-container"
         onClick={() => activate(id)}
         style={{ fontWeight: current ? "bold" : "normal" }}>
         <span style={{ width: "80%", display: "inline-block" }}>
@@ -23,8 +25,9 @@ const ExerciseItem = ({ id, current = false, muscles = [], name, weight, activat
                 {name}
             </span>
         </span>
-        <span style={{ textAlign: "right", width: "20%", display: "inline-block" }}>
+        <span className="w3-display-right">
             {weight} {weight !== undefined ? "kg" : ""}
+            <BellTypeIndicator bellType={bellType} />
         </span>
     </li>
 );

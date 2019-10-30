@@ -83,11 +83,12 @@ export const finishWorkout = (splitIndex, splits = []) => ({
     timestamp: Date.now()
 });
 
-export const addHistoryEntry = (exerciseId, weight) => ({
+export const addHistoryEntry = (exerciseId, weight, bellType) => ({
     type: C.ADD_HISTORY_ENTRY,
     id: v4(),
     exerciseId,
     weight,
+    bellType,
     timestamp: Date.now()
 });
 

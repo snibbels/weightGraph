@@ -63,7 +63,7 @@ class Workout extends Component {
         const { exercises = [] } = store.getState().workout;
         this.isActive = false;
         exercises.filter(e => !!e.weight).forEach(e => store.dispatch(
-            addHistoryEntry(e.id, e.weight)
+            addHistoryEntry(e.id, e.weight, e.bellType)
         ))
         activateNextSplit()
         window.location.hash = "/"

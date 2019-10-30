@@ -145,6 +145,7 @@ export const historyEntry = (state = {}, action) => {
                 id: action.id,
                 exerciseId: action.exerciseId,
                 weight: action.weight,
+                bellType: action.bellType,
                 timestamp: action.timestamp
             }
         default:
