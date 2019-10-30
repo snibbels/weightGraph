@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e2a96363058b8b5602d69e04dc60e27c",
+    "revision": "84e572edeeb37b7c8e4a8dce24ae532c",
     "url": "/weightGraph/index.html"
   },
   {
-    "revision": "c8146f1378ffa0b708df",
+    "revision": "a4f3ed33cabdeca9dddd",
     "url": "/weightGraph/static/css/2.823a9121.chunk.css"
   },
   {
-    "revision": "9f046e22a61f64e30f87",
+    "revision": "483276660b888d8d5379",
     "url": "/weightGraph/static/css/main.c11535e0.chunk.css"
   },
   {
-    "revision": "c8146f1378ffa0b708df",
-    "url": "/weightGraph/static/js/2.672d635d.chunk.js"
+    "revision": "a4f3ed33cabdeca9dddd",
+    "url": "/weightGraph/static/js/2.7c14fabc.chunk.js"
   },
   {
-    "revision": "9f046e22a61f64e30f87",
-    "url": "/weightGraph/static/js/main.c4730f32.chunk.js"
+    "revision": "483276660b888d8d5379",
+    "url": "/weightGraph/static/js/main.fff16439.chunk.js"
   },
   {
     "revision": "cf50e9868061474c1c6f",
