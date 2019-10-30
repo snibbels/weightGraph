@@ -13,7 +13,6 @@ export const workout = (state = {}, action) => {
                 exerciseId: action.id
             }
         case C.START_WORKOUT:
-            console.log(action)
             return {
                 exercises: action.exercises,
                 exerciseId: action.exerciseId
