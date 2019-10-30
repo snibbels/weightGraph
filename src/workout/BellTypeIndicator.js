@@ -10,6 +10,8 @@ const selectIcon = type => {
             return Dumbbell
         case bellTypes.barbell:
             return Barbell
+        default:
+            return undefined
     }
 }
 
