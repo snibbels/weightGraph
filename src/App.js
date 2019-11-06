@@ -80,7 +80,7 @@ class App extends Component {
             <Route path="/workout" component={Workout} />
             <Route path="/settings" component={Settings} />
             <Route path="/export" component={Export} />
-            <Route path="/stats" componen={Stats} />
+            <Route path="/stats" component={Stats} />
             <Confirm
               message={confirmMessage}
               isVisible={popup_id === popUpId}

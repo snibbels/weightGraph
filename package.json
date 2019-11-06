@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://snibbels.github.io/weightGraph",
   "dependencies": {
-    "d3": "^5.7.0",
+    "d3": "^5.12.0",
     "gh-pages": "^1.2.0",
     "react": "^16.4.1",
     "react-circular-progressbar": "^1.0.0",
