@@ -2,6 +2,7 @@ import React from 'react';
 import { MdEdit, MdSettings } from 'react-icons/lib/md';
 import { NavLink } from 'react-router-dom';
 import Dumbbell from '../icons/Dumbbell.js';
+import Chart from '../icons/Chart'
 
 const activeStyle = {
     borderBottom: "4px solid #2395F3",
@@ -32,16 +33,16 @@ const MainMenu = () => (
                 Start
             </span>
         </NavLink>
-        {/* <NavLink
+        <NavLink
             activeStyle={activeStyle}
-            style={{textDecoration: "none"}}
+            style={{ textDecoration: "none" }}
             className="w3-bar-item"
             to="/stats">
-            <img src={chart} style={icon} alt="" />
+            <Chart style={{ ...icon, ...mdIcon }} />
             <span className="w3-hide-small">
                 Meine Statistik
             </span>
-        </NavLink> */}
+        </NavLink>
         <NavLink
             activeStyle={activeStyle}
             style={{ textDecoration: "none" }}

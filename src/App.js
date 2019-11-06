@@ -12,6 +12,7 @@ import PageTemplate from './ui/PageTemplate';
 import Workout from './workout/Workout';
 import Export from './export/Export';
 import store from './redux/store'
+import Stats from './stats/Stats';
 
 const location = window.location;
 const { protocol, host, pathname } = location;
@@ -79,6 +80,7 @@ class App extends Component {
             <Route path="/workout" component={Workout} />
             <Route path="/settings" component={Settings} />
             <Route path="/export" component={Export} />
+            <Route path="/stats" componen={Stats} />
             <Confirm
               message={confirmMessage}
               isVisible={popup_id === popUpId}
