@@ -2,14 +2,17 @@ import React, { Component } from 'react'
 import * as d3 from 'd3'
 import store from '../redux/store'
 import { getRandomPastelColor } from '../redux/utils'
-import { exercise } from '../redux/reducers'
+
 /**
  * This should render the timeline and weights for any recorded exercise
  */
 export default class ExerciseHistoryGraph extends Component {
     componentDidMount() {
         const { target } = this.refs
-        const { history = [], exercises = [] } = store.getState()
+        const elementWidth = target.offsetWidth
+        const padding = 20, height = 200
+
+        const { history = [] } = store.getState()
         const times = d3.extent(history.map(h => h.timestamp))
         const weights = d3.extent(history.map(h => h.weight))
         const colorMap = history.reduce((pv, cv) => {
@@ -18,15 +21,19 @@ export default class ExerciseHistoryGraph extends Component {
                 pv[exerciseId] = getRandomPastelColor()
             return pv
         }, {})
-        const timeScale = d3.scaleTime().domain(times).range([20, 450])
-        const weightScale = d3.scaleLinear().domain(weights).range([180, 20])
+        const timeScale = d3.scaleTime()
+            .domain(times)
+            .range([padding, elementWidth - padding])
+        const weightScale = d3.scaleLinear()
+            .domain(weights)
+            .range([height - padding, padding])
         const xAxis = d3.axisBottom(timeScale).ticks(6)
         const yAxis = d3.axisLeft(weightScale).ticks(4)
 
         const svg = d3.select(target)
             .append('svg')
             .attr('height', 200)
-            .attr('width', 500)
+            .attr('width', elementWidth)
 
         svg.append('g')
             .attr('transform', "translate(0, 180)")
