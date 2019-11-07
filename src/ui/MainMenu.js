@@ -40,7 +40,7 @@ const MainMenu = () => (
             to="/stats">
             <Chart style={{ ...icon, ...mdIcon }} />
             <span className="w3-hide-small">
-                Meine Statistik
+                Statistik
             </span>
         </NavLink>
         <NavLink
