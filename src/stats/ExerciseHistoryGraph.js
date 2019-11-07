@@ -9,8 +9,8 @@ import { getRandomPastelColor } from '../redux/utils'
 export default class ExerciseHistoryGraph extends Component {
     componentDidMount() {
         const { target } = this.refs
-        const elementWidth = target.offsetWidth
         const padding = 20, height = 200
+        const elementWidth = target.offsetWidth
 
         const { history = [] } = store.getState()
         const times = d3.extent(history.map(h => h.timestamp))
@@ -21,19 +21,22 @@ export default class ExerciseHistoryGraph extends Component {
                 pv[exerciseId] = getRandomPastelColor()
             return pv
         }, {})
+
+        const formatDate = d3.timeFormat("%d.%m.%y")
         const timeScale = d3.scaleTime()
             .domain(times)
             .range([padding, elementWidth - padding])
         const weightScale = d3.scaleLinear()
             .domain(weights)
             .range([height - padding, padding])
-        const xAxis = d3.axisBottom(timeScale).ticks(6)
+        const xAxis = d3.axisBottom(timeScale).ticks(4).tickFormat(formatDate)
         const yAxis = d3.axisLeft(weightScale).ticks(4)
 
         const svg = d3.select(target)
             .append('svg')
             .attr('height', 200)
             .attr('width', elementWidth)
+        window.onresize = () => svg.attr('width', target.offsetWidth)
 
         svg.append('g')
             .attr('transform', "translate(0, 180)")
