@@ -15,3 +15,9 @@ export const getLastExerciseData = id => {
     ]
     return exerciseData[0]
 }
+
+export const getRandomPastelColor = () => {
+    return "hsl(" + 360 * Math.random() + ',' +
+        (25 + 70 * Math.random()) + '%,' +
+        (75 + 10 * Math.random()) + '%)'
+}
