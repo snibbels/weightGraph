@@ -36,13 +36,24 @@ export default class ExerciseHistoryGraph extends Component {
             .append('svg')
             .attr('height', 200)
             .attr('width', elementWidth)
-        window.onresize = () => svg.attr('width', target.offsetWidth)
+
+        window.onresize = () => {
+            const w = target.offsetWidth
+            svg.attr('width', w)
+            timeScale.range([20, w - 20])
+            d3.select('.x.axis').call(xAxis)
+            d3.selectAll('circle')
+                .data(history)
+                .attr('cx', d => timeScale(d.timestamp))
+        }
 
         svg.append('g')
+            .attr('class', 'x axis')
             .attr('transform', "translate(0, 180)")
             .call(xAxis)
 
         svg.append('g')
+            .attr('class', 'y axis')
             .attr('transform', "translate(20, 0)")
             .call(yAxis)
 
