@@ -47,6 +47,14 @@ export default class ExerciseHistoryGraph extends Component {
                 .attr('cx', d => timeScale(d.timestamp))
         }
 
+        svg.append("clipPath")
+            .attr("id", "chart-area")
+            .append("rect")
+            .attr("x", padding)
+            .attr("y", padding)
+            .attr("width", elementWidth - padding * 2)
+            .attr("height", 160);
+
         svg.append('g')
             .attr('class', 'x axis')
             .attr('transform', "translate(0, 180)")
@@ -61,6 +69,7 @@ export default class ExerciseHistoryGraph extends Component {
             .data(history)
             .enter()
             .append('circle')
+            .attr("clip-path", "url(#chart-area)")
             .attr('cx', d => timeScale(d.timestamp))
             .attr('cy', d => weightScale(d.weight))
             .attr('r', 7)
