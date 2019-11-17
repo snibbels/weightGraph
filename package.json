@@ -5,7 +5,9 @@
   "homepage": "http://snibbels.github.io/weightGraph",
   "dependencies": {
     "d3": "^5.7.0",
+    "dropbox": "^4.0.30",
     "gh-pages": "^1.2.0",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^16.4.1",
     "react-circular-progressbar": "^1.0.0",
     "react-dom": "^16.4.1",

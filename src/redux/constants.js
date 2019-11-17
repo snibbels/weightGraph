@@ -26,7 +26,7 @@ export default C;
 
 export const defaults = {
     LOCALSTORAGE_NAME: 'localWeights',
-    SET_AMOUNT: 3
+    UPLOAD_FILE_NAME: 'storeDump.json'
 }
 
 export const defaultSettings = {
